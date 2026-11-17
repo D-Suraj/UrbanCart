@@ -1,0 +1,35 @@
+{
+  "formula": "100 * records satisfying required fields and every business rule / all records",
+  "unknown_rule_values": "Counted as unverifiable, never silently considered valid.",
+  "raw_rows": {
+    "records": 5150,
+    "clean_records": 2330,
+    "dq_score_pct": 45.24271844660194,
+    "failed_or_unverifiable_by_rule": {
+      "required_fields": 1591,
+      "price_positive": 1357,
+      "discount_range": 1104,
+      "rating_range": 238,
+      "stock_nonnegative": 152,
+      "mrp_gte_price": 2050,
+      "return_window_0_to_30": 450,
+      "unique_sku": 308
+    }
+  },
+  "resolved_skus": {
+    "records": 4996,
+    "clean_records": 2165,
+    "dq_score_pct": 43.33466773418735,
+    "failed_or_unverifiable_by_rule": {
+      "required_fields": 2323,
+      "price_positive": 2048,
+      "discount_range": 1275,
+      "rating_range": 229,
+      "stock_nonnegative": 301,
+      "mrp_gte_price": 2048,
+      "return_window_0_to_30": 439,
+      "unique_sku": 0
+    }
+  },
+  "note": "Denominators differ after SKU consolidation. Strict DQ is separate from required-field completeness. Source price formats are parsed for numeric business checks."
+}

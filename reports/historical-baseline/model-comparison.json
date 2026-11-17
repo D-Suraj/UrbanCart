@@ -1,0 +1,449 @@
+[
+  {
+    "model": "google/gemini-3.1-flash-lite",
+    "id": "Q01",
+    "expected": "return_refund_policy:1.2",
+    "selected": [
+      "return_refund_policy:1.2"
+    ],
+    "contains_expected": true,
+    "elapsed_ms": 2150,
+    "error": null,
+    "calls": [
+      {
+        "endpoint": "chat/completions",
+        "requested_model": "google/gemini-3.1-flash-lite",
+        "ok": true,
+        "http_status": 200,
+        "model": "google/gemini-3.1-flash-lite",
+        "provider": "Google",
+        "usage": {
+          "prompt_tokens": 1402,
+          "completion_tokens": 25,
+          "total_tokens": 1427,
+          "cost": 0.000388,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.000388,
+            "upstream_inference_prompt_cost": 0.0003505,
+            "upstream_inference_completions_cost": 3.75e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "seconds": 2.1495
+      }
+    ]
+  },
+  {
+    "model": "google/gemini-3.1-flash-lite",
+    "id": "Q02",
+    "expected": "return_refund_policy:3.3",
+    "selected": [
+      "return_refund_policy:3.3"
+    ],
+    "contains_expected": true,
+    "elapsed_ms": 835,
+    "error": null,
+    "calls": [
+      {
+        "endpoint": "chat/completions",
+        "requested_model": "google/gemini-3.1-flash-lite",
+        "ok": true,
+        "http_status": 200,
+        "model": "google/gemini-3.1-flash-lite",
+        "provider": "Google",
+        "usage": {
+          "prompt_tokens": 1404,
+          "completion_tokens": 14,
+          "total_tokens": 1418,
+          "cost": 0.000372,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.000372,
+            "upstream_inference_prompt_cost": 0.000351,
+            "upstream_inference_completions_cost": 2.1e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "seconds": 0.8349
+      }
+    ]
+  },
+  {
+    "model": "google/gemini-3.1-flash-lite",
+    "id": "Q03",
+    "expected": "payment_cod_policy:2.2",
+    "selected": [
+      "payment_cod_policy:2.2"
+    ],
+    "contains_expected": true,
+    "elapsed_ms": 890,
+    "error": null,
+    "calls": [
+      {
+        "endpoint": "chat/completions",
+        "requested_model": "google/gemini-3.1-flash-lite",
+        "ok": true,
+        "http_status": 200,
+        "model": "google/gemini-3.1-flash-lite",
+        "provider": "Google",
+        "usage": {
+          "prompt_tokens": 991,
+          "completion_tokens": 25,
+          "total_tokens": 1016,
+          "cost": 0.00028525,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00028525,
+            "upstream_inference_prompt_cost": 0.00024775,
+            "upstream_inference_completions_cost": 3.75e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "seconds": 0.89
+      }
+    ]
+  },
+  {
+    "model": "google/gemini-3.1-flash-lite",
+    "id": "Q04",
+    "expected": "shipping_delivery_policy:2.1",
+    "selected": [],
+    "contains_expected": false,
+    "elapsed_ms": 820,
+    "error": null,
+    "calls": [
+      {
+        "endpoint": "chat/completions",
+        "requested_model": "google/gemini-3.1-flash-lite",
+        "ok": true,
+        "http_status": 200,
+        "model": "google/gemini-3.1-flash-lite",
+        "provider": "Google",
+        "usage": {
+          "prompt_tokens": 1130,
+          "completion_tokens": 9,
+          "total_tokens": 1139,
+          "cost": 0.000296,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.000296,
+            "upstream_inference_prompt_cost": 0.0002825,
+            "upstream_inference_completions_cost": 1.35e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "seconds": 0.8198
+      }
+    ]
+  },
+  {
+    "model": "google/gemini-3.1-flash-lite",
+    "id": "Q12",
+    "expected": "warranty_policy:1.1",
+    "selected": [
+      "warranty_policy:1.1"
+    ],
+    "contains_expected": true,
+    "elapsed_ms": 1195,
+    "error": null,
+    "calls": [
+      {
+        "endpoint": "chat/completions",
+        "requested_model": "google/gemini-3.1-flash-lite",
+        "ok": true,
+        "http_status": 200,
+        "model": "google/gemini-3.1-flash-lite",
+        "provider": "Google",
+        "usage": {
+          "prompt_tokens": 888,
+          "completion_tokens": 23,
+          "total_tokens": 911,
+          "cost": 0.0002565,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0002565,
+            "upstream_inference_prompt_cost": 0.000222,
+            "upstream_inference_completions_cost": 3.45e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "seconds": 1.1946
+      }
+    ]
+  },
+  {
+    "model": "anthropic/claude-sonnet-5.5",
+    "id": "Q01",
+    "expected": "return_refund_policy:1.2",
+    "selected": [
+      "return_refund_policy:1.2"
+    ],
+    "contains_expected": true,
+    "elapsed_ms": 2052,
+    "error": null,
+    "calls": [
+      {
+        "endpoint": "chat/completions",
+        "requested_model": "anthropic/claude-sonnet-5.5",
+        "ok": true,
+        "http_status": 200,
+        "model": "anthropic/claude-sonnet-5.5",
+        "provider": "Anthropic",
+        "usage": {
+          "prompt_tokens": 2154,
+          "completion_tokens": 22,
+          "total_tokens": 2176,
+          "cost": 0.004528,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.004528,
+            "upstream_inference_prompt_cost": 0.004308,
+            "upstream_inference_completions_cost": 0.00022
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "seconds": 2.0516
+      }
+    ]
+  },
+  {
+    "model": "anthropic/claude-sonnet-5.5",
+    "id": "Q02",
+    "expected": "return_refund_policy:3.3",
+    "selected": [
+      "return_refund_policy:3.3",
+      "return_refund_policy:3.1"
+    ],
+    "contains_expected": true,
+    "elapsed_ms": 2445,
+    "error": null,
+    "calls": [
+      {
+        "endpoint": "chat/completions",
+        "requested_model": "anthropic/claude-sonnet-5.5",
+        "ok": true,
+        "http_status": 200,
+        "model": "anthropic/claude-sonnet-5.5",
+        "provider": "Azure",
+        "usage": {
+          "prompt_tokens": 2158,
+          "completion_tokens": 34,
+          "total_tokens": 2192,
+          "cost": 0.004656,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.004656,
+            "upstream_inference_prompt_cost": 0.004316,
+            "upstream_inference_completions_cost": 0.00034
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "seconds": 2.4449
+      }
+    ]
+  },
+  {
+    "model": "anthropic/claude-sonnet-5.5",
+    "id": "Q03",
+    "expected": "payment_cod_policy:2.2",
+    "selected": [
+      "payment_cod_policy:2.2"
+    ],
+    "contains_expected": true,
+    "elapsed_ms": 1541,
+    "error": null,
+    "calls": [
+      {
+        "endpoint": "chat/completions",
+        "requested_model": "anthropic/claude-sonnet-5.5",
+        "ok": true,
+        "http_status": 200,
+        "model": "anthropic/claude-sonnet-5.5",
+        "provider": "Anthropic",
+        "usage": {
+          "prompt_tokens": 1613,
+          "completion_tokens": 23,
+          "total_tokens": 1636,
+          "cost": 0.003456,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.003456,
+            "upstream_inference_prompt_cost": 0.003226,
+            "upstream_inference_completions_cost": 0.00023
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "seconds": 1.5408
+      }
+    ]
+  },
+  {
+    "model": "anthropic/claude-sonnet-5.5",
+    "id": "Q04",
+    "expected": "shipping_delivery_policy:2.1",
+    "selected": [],
+    "contains_expected": false,
+    "elapsed_ms": 1464,
+    "error": null,
+    "calls": [
+      {
+        "endpoint": "chat/completions",
+        "requested_model": "anthropic/claude-sonnet-5.5",
+        "ok": true,
+        "http_status": 200,
+        "model": "anthropic/claude-sonnet-5.5",
+        "provider": "Anthropic",
+        "usage": {
+          "prompt_tokens": 1841,
+          "completion_tokens": 10,
+          "total_tokens": 1851,
+          "cost": 0.003782,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.003782,
+            "upstream_inference_prompt_cost": 0.003682,
+            "upstream_inference_completions_cost": 0.0001
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "seconds": 1.4641
+      }
+    ]
+  },
+  {
+    "model": "anthropic/claude-sonnet-5.5",
+    "id": "Q12",
+    "expected": "warranty_policy:1.1",
+    "selected": [
+      "warranty_policy:1.1"
+    ],
+    "contains_expected": true,
+    "elapsed_ms": 1333,
+    "error": null,
+    "calls": [
+      {
+        "endpoint": "chat/completions",
+        "requested_model": "anthropic/claude-sonnet-5.5",
+        "ok": true,
+        "http_status": 200,
+        "model": "anthropic/claude-sonnet-5.5",
+        "provider": "Anthropic",
+        "usage": {
+          "prompt_tokens": 1434,
+          "completion_tokens": 21,
+          "total_tokens": 1455,
+          "cost": 0.003078,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.003078,
+            "upstream_inference_prompt_cost": 0.002868,
+            "upstream_inference_completions_cost": 0.00021
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "seconds": 1.3326
+      }
+    ]
+  }
+]

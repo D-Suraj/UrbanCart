@@ -1,0 +1,1035 @@
+{
+  "created_utc": "2026-11-17T18:00:53.015482+00:00",
+  "cases": [
+    {
+      "id": "stock_return",
+      "question": "Is UC-ELE-891071 in stock, and can I return it if I paid COD?",
+      "reply": {
+        "answer": "Catalog snapshot; this is not a live inventory check.\n\nThe LED Monitor (UC-ELE-891071) is in the catalog snapshot in stock with 451 units available [UC-ELE-891071]. Regarding your return, eligibility cannot be confirmed for this specific item [UC-ELE-891071]. Generally, electronics are returnable within 7 days of delivery, provided they are in their original packaging with all accessories [return_refund_policy:1.2]. Items marked as \"Final Sale\" are not eligible for return or exchange [return_refund_policy:2.2]. For COD orders, refunds are processed to your UrbanCart Wallet or bank account within 7-10 business days after the returned item passes a quality check [return_refund_policy:3.3].",
+        "source": "UC-ELE-891071",
+        "sources": [
+          {
+            "id": "UC-ELE-891071",
+            "kind": "product",
+            "title": "LED Monitor",
+            "file": "urbancart_product_catalog_raw.csv",
+            "rows": [
+              3
+            ],
+            "text": "Catalog snapshot: LED Monitor is in stock (451 units).",
+            "validated_attributes": {
+              "price_paise": 3335000,
+              "rating": 1.7,
+              "stock": 451,
+              "return_conflict": true,
+              "conflicts": [],
+              "category": "Electronics"
+            }
+          },
+          {
+            "id": "return_refund_policy:1.2",
+            "kind": "policy",
+            "title": "URBANCART — RETURN & REFUND POLICY",
+            "file": "return_refund_policy.txt",
+            "section": "1.2",
+            "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+            "heading": "RETURN ELIGIBILITY",
+            "text": "Electronics: Returnable within 7 days of delivery, original packaging and accessories required."
+          },
+          {
+            "id": "return_refund_policy:2.2",
+            "kind": "policy",
+            "title": "URBANCART — RETURN & REFUND POLICY",
+            "file": "return_refund_policy.txt",
+            "section": "2.2",
+            "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+            "heading": "NON-RETURNABLE ITEMS",
+            "text": "Items marked \"Final Sale\" on the product page are not eligible for return or exchange."
+          },
+          {
+            "id": "return_refund_policy:3.3",
+            "kind": "policy",
+            "title": "URBANCART — RETURN & REFUND POLICY",
+            "file": "return_refund_policy.txt",
+            "section": "3.3",
+            "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+            "heading": "REFUND PROCESS",
+            "text": "Cash on Delivery orders: refunded to the customer's UrbanCart Wallet or bank account within 7-10 business days."
+          }
+        ],
+        "route": "stock_lookup",
+        "status": "answered",
+        "confidence": 1.0,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "8572552979f94a35a27cf2fdbf478e35",
+        "tool_calls": [
+          "check_stock_status"
+        ],
+        "mock": true,
+        "mode": "openrouter",
+        "elapsed_ms": 8119,
+        "llm_calls": 4,
+        "embedding_calls": 2,
+        "intent": "product_qa"
+      },
+      "checks": {
+        "provider_ok": true,
+        "covered": true
+      },
+      "application_trace": {
+        "at": "2026-11-17T18:00:34.150967+00:00",
+        "route": "stock_lookup",
+        "status": "answered",
+        "mode": "openrouter",
+        "source_ids": [
+          "UC-ELE-891071",
+          "return_refund_policy:1.2",
+          "return_refund_policy:2.2",
+          "return_refund_policy:3.3"
+        ],
+        "tools": [
+          "check_stock_status"
+        ],
+        "elapsed_ms": 8119,
+        "calls": [
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.1-flash-lite",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.1-flash-lite",
+            "provider": "Google",
+            "usage": {
+              "prompt_tokens": 1877,
+              "completion_tokens": 160,
+              "total_tokens": 2037,
+              "cost": 0.00070925,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.00070925,
+                "upstream_inference_prompt_cost": 0.00046925,
+                "upstream_inference_completions_cost": 0.00024
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 1.8774
+          },
+          {
+            "endpoint": "embeddings",
+            "requested_model": "openai/text-embedding-3-small",
+            "ok": true,
+            "http_status": 200,
+            "model": "text-embedding-3-small",
+            "provider": "OpenAI",
+            "usage": {
+              "prompt_tokens": 19,
+              "total_tokens": 19,
+              "cost": 3.8e-07,
+              "is_byok": false,
+              "cost_details": {
+                "upstream_inference_cost": 3.8e-07,
+                "upstream_inference_prompt_cost": 3.8e-07,
+                "upstream_inference_completions_cost": 0
+              }
+            },
+            "seconds": 0.7159
+          },
+          {
+            "endpoint": "embeddings",
+            "requested_model": "openai/text-embedding-3-small",
+            "ok": true,
+            "http_status": 200,
+            "model": "text-embedding-3-small",
+            "provider": "OpenAI",
+            "usage": {
+              "prompt_tokens": 19,
+              "total_tokens": 19,
+              "cost": 3.8e-07,
+              "is_byok": false,
+              "cost_details": {
+                "upstream_inference_cost": 3.8e-07,
+                "upstream_inference_prompt_cost": 3.8e-07,
+                "upstream_inference_completions_cost": 0
+              }
+            },
+            "seconds": 0.731
+          },
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.1-flash-lite",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.1-flash-lite",
+            "provider": "Google",
+            "usage": {
+              "prompt_tokens": 2928,
+              "completion_tokens": 27,
+              "total_tokens": 2955,
+              "cost": 0.0007725,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.0007725,
+                "upstream_inference_prompt_cost": 0.000732,
+                "upstream_inference_completions_cost": 4.05e-05
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 1.1867
+          },
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.1-flash-lite",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.1-flash-lite",
+            "provider": "Google",
+            "usage": {
+              "prompt_tokens": 2969,
+              "completion_tokens": 33,
+              "total_tokens": 3002,
+              "cost": 0.00079175,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.00079175,
+                "upstream_inference_prompt_cost": 0.00074225,
+                "upstream_inference_completions_cost": 4.95e-05
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 1.1794
+          },
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.1-flash-lite",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.1-flash-lite",
+            "provider": "Google",
+            "usage": {
+              "prompt_tokens": 3206,
+              "completion_tokens": 255,
+              "total_tokens": 3461,
+              "cost": 0.001184,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.001184,
+                "upstream_inference_prompt_cost": 0.0008015,
+                "upstream_inference_completions_cost": 0.0003825
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 2.0507
+          }
+        ],
+        "pipeline": "llm-v2",
+        "intent": "product_qa",
+        "confidence": 1.0,
+        "failure": null
+      }
+    },
+    {
+      "id": "named_policy",
+      "question": "What is the return policy for a Wireless Mouse?",
+      "reply": {
+        "answer": "For some Wireless Mouse models (UC-ELE-738279, UC-ELE-024532, UC-ELE-031315, UC-ELE-968325), eligibility cannot be confirmed due to conflicting records. Generally, items in the Electronics category are returnable within 7 days of delivery, provided they include the original packaging and accessories. Please note that items marked as 'Final Sale' are not eligible for return or exchange. [return_refund_policy:1.2] [return_refund_policy:2.2] [UC-ELE-738279] [UC-ELE-024532] [UC-ELE-031315] [UC-ELE-968325]",
+        "source": "return_refund_policy:1.2",
+        "sources": [
+          {
+            "id": "return_refund_policy:1.2",
+            "kind": "policy",
+            "title": "URBANCART — RETURN & REFUND POLICY",
+            "file": "return_refund_policy.txt",
+            "section": "1.2",
+            "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+            "heading": "RETURN ELIGIBILITY",
+            "text": "Electronics: Returnable within 7 days of delivery, original packaging and accessories required."
+          },
+          {
+            "id": "return_refund_policy:2.2",
+            "kind": "policy",
+            "title": "URBANCART — RETURN & REFUND POLICY",
+            "file": "return_refund_policy.txt",
+            "section": "2.2",
+            "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+            "heading": "NON-RETURNABLE ITEMS",
+            "text": "Items marked \"Final Sale\" on the product page are not eligible for return or exchange."
+          },
+          {
+            "id": "UC-ELE-738279",
+            "kind": "product",
+            "title": "Wireless Mouse",
+            "file": "urbancart_product_catalog_raw.csv",
+            "rows": [
+              1732
+            ],
+            "text": "name: Wireless Mouse; brand: GlowUp; category: Electronics; rating: 5.0; description: Wireless Mouse by a trusted brand. Good quality, value for money.",
+            "validated_attributes": {
+              "price_paise": null,
+              "rating": 5.0,
+              "stock": 158,
+              "return_conflict": true,
+              "conflicts": [],
+              "category": "Electronics"
+            }
+          },
+          {
+            "id": "UC-ELE-024532",
+            "kind": "product",
+            "title": "Wireless Mouse",
+            "file": "urbancart_product_catalog_raw.csv",
+            "rows": [
+              212
+            ],
+            "text": "name: Wireless Mouse; brand: UrbanThread; category: Electronics; rating: 4.9",
+            "validated_attributes": {
+              "price_paise": null,
+              "rating": 4.9,
+              "stock": 135,
+              "return_conflict": true,
+              "conflicts": [],
+              "category": "Electronics"
+            }
+          },
+          {
+            "id": "UC-ELE-031315",
+            "kind": "product",
+            "title": "Wireless Mouse",
+            "file": "urbancart_product_catalog_raw.csv",
+            "rows": [
+              5052
+            ],
+            "text": "name: Wireless Mouse; brand: BoltGear; category: Electronics; rating: 4.9",
+            "validated_attributes": {
+              "price_paise": null,
+              "rating": 4.9,
+              "stock": 154,
+              "return_conflict": true,
+              "conflicts": [],
+              "category": "Electronics"
+            }
+          },
+          {
+            "id": "UC-ELE-968325",
+            "kind": "product",
+            "title": "Wireless Mouse",
+            "file": "urbancart_product_catalog_raw.csv",
+            "rows": [
+              148
+            ],
+            "text": "name: Wireless Mouse; brand: BoltGear; category: Electronics; rating: 4.9",
+            "validated_attributes": {
+              "price_paise": null,
+              "rating": 4.9,
+              "stock": 397,
+              "return_conflict": true,
+              "conflicts": [],
+              "category": "Electronics"
+            }
+          }
+        ],
+        "route": "mixed",
+        "status": "answered",
+        "confidence": 1.0,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "0cb61c9deb934e2b82e7df23ee649f06",
+        "tool_calls": [],
+        "mock": false,
+        "mode": "openrouter",
+        "elapsed_ms": 4157,
+        "llm_calls": 2,
+        "embedding_calls": 2,
+        "intent": "policy_qa"
+      },
+      "checks": {
+        "provider_ok": true,
+        "covered": true
+      },
+      "application_trace": {
+        "at": "2026-11-17T18:00:38.318492+00:00",
+        "route": "mixed",
+        "status": "answered",
+        "mode": "openrouter",
+        "source_ids": [
+          "return_refund_policy:1.2",
+          "return_refund_policy:2.2",
+          "UC-ELE-738279",
+          "UC-ELE-024532",
+          "UC-ELE-031315",
+          "UC-ELE-968325"
+        ],
+        "tools": [],
+        "elapsed_ms": 4157,
+        "calls": [
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.1-flash-lite",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.1-flash-lite",
+            "provider": "Google",
+            "usage": {
+              "prompt_tokens": 1863,
+              "completion_tokens": 130,
+              "total_tokens": 1993,
+              "cost": 0.00066075,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.00066075,
+                "upstream_inference_prompt_cost": 0.00046575,
+                "upstream_inference_completions_cost": 0.000195
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 1.2281
+          },
+          {
+            "endpoint": "embeddings",
+            "requested_model": "openai/text-embedding-3-small",
+            "ok": true,
+            "http_status": 200,
+            "model": "text-embedding-3-small",
+            "provider": "OpenAI",
+            "usage": {
+              "prompt_tokens": 10,
+              "total_tokens": 10,
+              "cost": 2e-07,
+              "is_byok": false,
+              "cost_details": {
+                "upstream_inference_cost": 2e-07,
+                "upstream_inference_prompt_cost": 2e-07,
+                "upstream_inference_completions_cost": 0
+              }
+            },
+            "seconds": 0.7231
+          },
+          {
+            "endpoint": "embeddings",
+            "requested_model": "openai/text-embedding-3-small",
+            "ok": true,
+            "http_status": 200,
+            "model": "text-embedding-3-small",
+            "provider": "OpenAI",
+            "usage": {
+              "prompt_tokens": 10,
+              "total_tokens": 10,
+              "cost": 2e-07,
+              "is_byok": false,
+              "cost_details": {
+                "upstream_inference_cost": 2e-07,
+                "upstream_inference_prompt_cost": 2e-07,
+                "upstream_inference_completions_cost": 0
+              }
+            },
+            "seconds": 0.6941
+          },
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.1-flash-lite",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.1-flash-lite",
+            "provider": "Google",
+            "usage": {
+              "prompt_tokens": 2768,
+              "completion_tokens": 221,
+              "total_tokens": 2989,
+              "cost": 0.0010235,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.0010235,
+                "upstream_inference_prompt_cost": 0.000692,
+                "upstream_inference_completions_cost": 0.0003315
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 1.4739
+          }
+        ],
+        "pipeline": "llm-v2",
+        "intent": "policy_qa",
+        "confidence": 1.0,
+        "failure": null
+      }
+    },
+    {
+      "id": "old_product",
+      "question": "What is the price of UC-ELE-891071?",
+      "reply": {
+        "answer": "The price of the LED Monitor (UC-ELE-891071) is INR 33350.00. [UC-ELE-891071]",
+        "source": "UC-ELE-891071",
+        "sources": [
+          {
+            "id": "UC-ELE-891071",
+            "kind": "product",
+            "title": "LED Monitor",
+            "file": "urbancart_product_catalog_raw.csv",
+            "rows": [
+              3
+            ],
+            "text": "name: LED Monitor; brand: StepUp; category: Electronics; rating: 1.7; price: INR 33350.00",
+            "validated_attributes": {
+              "price_paise": 3335000,
+              "rating": 1.7,
+              "stock": 451,
+              "return_conflict": true,
+              "conflicts": [],
+              "category": "Electronics"
+            }
+          }
+        ],
+        "route": "product_qa",
+        "status": "answered",
+        "confidence": 1.0,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "65dc23917851484ab6a115559e7702fc",
+        "tool_calls": [],
+        "mock": false,
+        "mode": "openrouter",
+        "elapsed_ms": 3808,
+        "llm_calls": 2,
+        "embedding_calls": 1,
+        "intent": "product_qa"
+      },
+      "checks": {
+        "provider_ok": true,
+        "covered": true
+      },
+      "application_trace": {
+        "at": "2026-11-17T18:00:42.131526+00:00",
+        "route": "product_qa",
+        "status": "answered",
+        "mode": "openrouter",
+        "source_ids": [
+          "UC-ELE-891071"
+        ],
+        "tools": [],
+        "elapsed_ms": 3808,
+        "calls": [
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.1-flash-lite",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.1-flash-lite",
+            "provider": "Google",
+            "usage": {
+              "prompt_tokens": 1869,
+              "completion_tokens": 145,
+              "total_tokens": 2014,
+              "cost": 0.00068475,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.00068475,
+                "upstream_inference_prompt_cost": 0.00046725,
+                "upstream_inference_completions_cost": 0.0002175
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 1.4842
+          },
+          {
+            "endpoint": "embeddings",
+            "requested_model": "openai/text-embedding-3-small",
+            "ok": true,
+            "http_status": 200,
+            "model": "text-embedding-3-small",
+            "provider": "OpenAI",
+            "usage": {
+              "prompt_tokens": 12,
+              "total_tokens": 12,
+              "cost": 2.4e-07,
+              "is_byok": false,
+              "cost_details": {
+                "upstream_inference_cost": 2.4e-07,
+                "upstream_inference_prompt_cost": 2.4e-07,
+                "upstream_inference_completions_cost": 0
+              }
+            },
+            "seconds": 0.7651
+          },
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.1-flash-lite",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.1-flash-lite",
+            "provider": "Google",
+            "usage": {
+              "prompt_tokens": 964,
+              "completion_tokens": 74,
+              "total_tokens": 1038,
+              "cost": 0.000352,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.000352,
+                "upstream_inference_prompt_cost": 0.000241,
+                "upstream_inference_completions_cost": 0.000111
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 1.5149
+          }
+        ],
+        "pipeline": "llm-v2",
+        "intent": "product_qa",
+        "confidence": 1.0,
+        "failure": null
+      }
+    },
+    {
+      "id": "new_product",
+      "question": "Show Cotton Kurti under Rs 2000",
+      "reply": {
+        "answer": "We have several Cotton Kurtis available under Rs 2000: the HomeVibe Cotton Kurti (Rs 1930, 5.0 rating) [UC-FAS-505915], Nestwell Cotton Kurti (Rs 1000, 4.8 rating) [UC-FAS-886783], StepUp Cotton Kurti (Rs 770, 4.7 rating) [UC-FAS-775029], BoltGear Cotton Kurti (Rs 620, 4.7 rating) [UC-FAS-475798], and an unbranded Cotton Kurti (Rs 800, 4.5 rating) [UC-FAS-774160]. Please note that for the BoltGear [UC-FAS-475798] and the unbranded [UC-FAS-774160] Cotton Kurtis, return eligibility cannot be confirmed due to conflicting records.",
+        "source": "UC-FAS-505915",
+        "sources": [
+          {
+            "id": "UC-FAS-505915",
+            "kind": "product",
+            "title": "Cotton Kurti",
+            "file": "urbancart_product_catalog_raw.csv",
+            "rows": [
+              1091
+            ],
+            "text": "name: Cotton Kurti; brand: HomeVibe; category: Fashion; rating: 5.0; price: INR 1930.00",
+            "validated_attributes": {
+              "price_paise": 193000,
+              "rating": 5.0,
+              "stock": 444,
+              "return_conflict": false,
+              "conflicts": [],
+              "category": "Fashion"
+            }
+          },
+          {
+            "id": "UC-FAS-886783",
+            "kind": "product",
+            "title": "Cotton Kurti",
+            "file": "urbancart_product_catalog_raw.csv",
+            "rows": [
+              2302
+            ],
+            "text": "name: Cotton Kurti; brand: Nestwell; category: Fashion; rating: 4.8; price: INR 1000.00",
+            "validated_attributes": {
+              "price_paise": 100000,
+              "rating": 4.8,
+              "stock": 424,
+              "return_conflict": false,
+              "conflicts": [],
+              "category": "Fashion"
+            }
+          },
+          {
+            "id": "UC-FAS-775029",
+            "kind": "product",
+            "title": "Cotton Kurti",
+            "file": "urbancart_product_catalog_raw.csv",
+            "rows": [
+              3233
+            ],
+            "text": "name: Cotton Kurti; brand: StepUp; category: Fashion; rating: 4.7; price: INR 770.00",
+            "validated_attributes": {
+              "price_paise": 77000,
+              "rating": 4.7,
+              "stock": 335,
+              "return_conflict": false,
+              "conflicts": [],
+              "category": "Fashion"
+            }
+          },
+          {
+            "id": "UC-FAS-475798",
+            "kind": "product",
+            "title": "Cotton Kurti",
+            "file": "urbancart_product_catalog_raw.csv",
+            "rows": [
+              26
+            ],
+            "text": "name: Cotton Kurti; brand: BoltGear; category: Fashion; rating: 4.7; price: INR 620.00",
+            "validated_attributes": {
+              "price_paise": 62000,
+              "rating": 4.7,
+              "stock": 183,
+              "return_conflict": true,
+              "conflicts": [],
+              "category": "Fashion"
+            }
+          },
+          {
+            "id": "UC-FAS-774160",
+            "kind": "product",
+            "title": "Cotton Kurti",
+            "file": "urbancart_product_catalog_raw.csv",
+            "rows": [
+              2565
+            ],
+            "text": "name: Cotton Kurti; category: Fashion; rating: 4.5; price: INR 800.00",
+            "validated_attributes": {
+              "price_paise": 80000,
+              "rating": 4.5,
+              "stock": 320,
+              "return_conflict": true,
+              "conflicts": [],
+              "category": "Fashion"
+            }
+          }
+        ],
+        "route": "product_qa",
+        "status": "answered",
+        "confidence": 1.0,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "65dc23917851484ab6a115559e7702fc",
+        "tool_calls": [],
+        "mock": false,
+        "mode": "openrouter",
+        "elapsed_ms": 4268,
+        "llm_calls": 2,
+        "embedding_calls": 1,
+        "intent": "product_qa"
+      },
+      "checks": {
+        "provider_ok": true,
+        "covered": true
+      },
+      "application_trace": {
+        "at": "2026-11-17T18:00:46.404625+00:00",
+        "route": "product_qa",
+        "status": "answered",
+        "mode": "openrouter",
+        "source_ids": [
+          "UC-FAS-505915",
+          "UC-FAS-886783",
+          "UC-FAS-775029",
+          "UC-FAS-475798",
+          "UC-FAS-774160"
+        ],
+        "tools": [],
+        "elapsed_ms": 4268,
+        "calls": [
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.1-flash-lite",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.1-flash-lite",
+            "provider": "Google",
+            "usage": {
+              "prompt_tokens": 1955,
+              "completion_tokens": 137,
+              "total_tokens": 2092,
+              "cost": 0.00069425,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.00069425,
+                "upstream_inference_prompt_cost": 0.00048875,
+                "upstream_inference_completions_cost": 0.0002055
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 1.3113
+          },
+          {
+            "endpoint": "embeddings",
+            "requested_model": "openai/text-embedding-3-small",
+            "ok": true,
+            "http_status": 200,
+            "model": "text-embedding-3-small",
+            "provider": "OpenAI",
+            "usage": {
+              "prompt_tokens": 11,
+              "total_tokens": 11,
+              "cost": 2.2e-07,
+              "is_byok": false,
+              "cost_details": {
+                "upstream_inference_cost": 2.2e-07,
+                "upstream_inference_prompt_cost": 2.2e-07,
+                "upstream_inference_completions_cost": 0
+              }
+            },
+            "seconds": 0.6257
+          },
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.1-flash-lite",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.1-flash-lite",
+            "provider": "Google",
+            "usage": {
+              "prompt_tokens": 1536,
+              "completion_tokens": 338,
+              "total_tokens": 1874,
+              "cost": 0.000891,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.000891,
+                "upstream_inference_prompt_cost": 0.000384,
+                "upstream_inference_completions_cost": 0.000507
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 2.2791
+          }
+        ],
+        "pipeline": "llm-v2",
+        "intent": "product_qa",
+        "confidence": 1.0,
+        "failure": null
+      }
+    },
+    {
+      "id": "handoff",
+      "question": "Please escalate this to a human support agent",
+      "reply": {
+        "answer": "I have escalated your request to a human support agent. Your ticket ID is DEMO-111B747445. Please note that the expected response time is not specified as this is a local demonstration. [DEMO-111B747445]\n\nDemo support ticket: DEMO-111B747445. Recorded locally; no real support request was sent.",
+        "source": "DEMO-111B747445",
+        "sources": [
+          {
+            "id": "DEMO-111B747445",
+            "kind": "mock_ticket",
+            "title": "Local simulated support ticket",
+            "text": "{\"status\": \"escalated\", \"ticket_id\": \"DEMO-111B747445\", \"simulated\": true, \"reason\": \"User requested human support.\", \"summary\": \"The user has requested to speak with a human support agent.\", \"expected_response_time\": \"Not specified; local demonstration only.\"}"
+          }
+        ],
+        "route": "escalation",
+        "status": "escalated",
+        "confidence": 1.0,
+        "escalated": true,
+        "ticket_id": "DEMO-111B747445",
+        "session_id": "0c0c25590c77443dad9964edaab8a9f4",
+        "tool_calls": [
+          "escalate_to_support"
+        ],
+        "mock": true,
+        "mode": "openrouter",
+        "elapsed_ms": 6609,
+        "llm_calls": 3,
+        "embedding_calls": 0,
+        "intent": "order_lookup"
+      },
+      "checks": {
+        "provider_ok": true,
+        "covered": true
+      },
+      "application_trace": {
+        "at": "2026-11-17T18:00:53.015482+00:00",
+        "route": "escalation",
+        "status": "escalated",
+        "mode": "openrouter",
+        "source_ids": [
+          "DEMO-111B747445"
+        ],
+        "tools": [
+          "escalate_to_support"
+        ],
+        "elapsed_ms": 6609,
+        "calls": [
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.1-flash-lite",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.1-flash-lite",
+            "provider": "Google",
+            "usage": {
+              "prompt_tokens": 1862,
+              "completion_tokens": 130,
+              "total_tokens": 1992,
+              "cost": 0.0006605,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.0006605,
+                "upstream_inference_prompt_cost": 0.0004655,
+                "upstream_inference_completions_cost": 0.000195
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 1.5882
+          },
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.1-flash-lite",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.1-flash-lite",
+            "provider": "Google",
+            "usage": {
+              "prompt_tokens": 585,
+              "completion_tokens": 42,
+              "total_tokens": 627,
+              "cost": 0.00020925,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.00020925,
+                "upstream_inference_prompt_cost": 0.00014625,
+                "upstream_inference_completions_cost": 6.3e-05
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 3.4144
+          },
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.1-flash-lite",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.1-flash-lite",
+            "provider": "Google",
+            "usage": {
+              "prompt_tokens": 1016,
+              "completion_tokens": 93,
+              "total_tokens": 1109,
+              "cost": 0.0003935,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.0003935,
+                "upstream_inference_prompt_cost": 0.000254,
+                "upstream_inference_completions_cost": 0.0001395
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 1.5357
+          }
+        ],
+        "pipeline": "llm-v2",
+        "intent": "order_lookup",
+        "confidence": 1.0,
+        "failure": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,2600 @@
+{
+  "pipeline": "llm-v2",
+  "created_utc": "20261116T173110Z",
+  "model": "google/gemini-3.1-flash-lite",
+  "judge_model": "google/gemini-3.1-flash-lite",
+  "split": "development",
+  "limitations": "Same-model judge is fallible; check claims manually. Prior curated cases were visible during earlier development.",
+  "cases": [
+    {
+      "id": "Q01",
+      "question": "Can I return electronics?",
+      "expected": "7 days",
+      "reply": {
+        "answer": "Yes, electronics are returnable within 7 days of delivery, provided you have the original packaging and all accessories. [return_refund_policy:1.2]",
+        "source": "return_refund_policy:1.2",
+        "sources": [
+          {
+            "id": "return_refund_policy:1.2",
+            "kind": "policy",
+            "title": "URBANCART — RETURN & REFUND POLICY",
+            "file": "return_refund_policy.txt",
+            "section": "1.2",
+            "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+            "heading": "RETURN ELIGIBILITY",
+            "text": "Electronics: Returnable within 7 days of delivery, original packaging and accessories required."
+          }
+        ],
+        "route": "policy_qa",
+        "status": "answered",
+        "confidence": 1.0,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "eb7f2facee3d4cd08e302d77213870f1",
+        "tool_calls": [],
+        "mock": false,
+        "mode": "openrouter",
+        "elapsed_ms": 3956,
+        "llm_calls": 2,
+        "embedding_calls": 1,
+        "intent": "policy_qa"
+      },
+      "route_ok": true,
+      "tool_ok": true,
+      "source_ok": true,
+      "judgement": {
+        "claims": [
+          {
+            "text": "Electronics are returnable within 7 days of delivery.",
+            "supported": true,
+            "explanation": "This is directly supported by section 1.2 of the return policy."
+          },
+          {
+            "text": "Returns require original packaging and all accessories.",
+            "supported": true,
+            "explanation": "This is directly supported by section 1.2 of the return policy."
+          }
+        ],
+        "relevant_context_ids": [
+          "return_refund_policy:1.2"
+        ],
+        "answer_relevance_1_to_5": 5,
+        "expected_facts_satisfied": true,
+        "explanation": "The answer accurately reflects the policy for electronics returns as stated in the provided evidence."
+      },
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.08333333333333333,
+      "judge_calls": [
+        {
+          "endpoint": "chat/completions",
+          "requested_model": "google/gemini-3.1-flash-lite",
+          "ok": true,
+          "http_status": 200,
+          "model": "google/gemini-3.1-flash-lite",
+          "provider": "Google",
+          "usage": {
+            "prompt_tokens": 1825,
+            "completion_tokens": 187,
+            "total_tokens": 2012,
+            "cost": 0.00073675,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00073675,
+              "upstream_inference_prompt_cost": 0.00045625,
+              "upstream_inference_completions_cost": 0.0002805
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "seconds": 1.6372
+        }
+      ]
+    },
+    {
+      "id": "Q02",
+      "question": "COD ka refund kaise milega?",
+      "expected": "7-10 business days",
+      "reply": {
+        "answer": "Cash on Delivery (COD) orders ka refund aapke UrbanCart Wallet ya bank account mein 7-10 business days ke andar process kiya jata hai [return_refund_policy:3.3]. Refund tab initiate hota hai jab return kiya gaya item quality check pass kar leta hai, jo ki 24 ghante ke andar hota hai [return_refund_policy:3.1].",
+        "source": "return_refund_policy:3.1",
+        "sources": [
+          {
+            "id": "return_refund_policy:3.1",
+            "kind": "policy",
+            "title": "URBANCART — RETURN & REFUND POLICY",
+            "file": "return_refund_policy.txt",
+            "section": "3.1",
+            "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+            "heading": "REFUND PROCESS",
+            "text": "Refunds are initiated within 24 hours of the returned item passing quality check."
+          },
+          {
+            "id": "return_refund_policy:3.3",
+            "kind": "policy",
+            "title": "URBANCART — RETURN & REFUND POLICY",
+            "file": "return_refund_policy.txt",
+            "section": "3.3",
+            "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+            "heading": "REFUND PROCESS",
+            "text": "Cash on Delivery orders: refunded to the customer's UrbanCart Wallet or bank account within 7-10 business days."
+          }
+        ],
+        "route": "policy_qa",
+        "status": "answered",
+        "confidence": 1.0,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "0672b0d03b5d45a7a2191442d5fb1eb0",
+        "tool_calls": [],
+        "mock": false,
+        "mode": "openrouter",
+        "elapsed_ms": 3007,
+        "llm_calls": 2,
+        "embedding_calls": 1,
+        "intent": "policy_qa"
+      },
+      "route_ok": true,
+      "tool_ok": true,
+      "source_ok": true,
+      "judgement": {
+        "claims": [
+          {
+            "text": "Cash on Delivery (COD) orders ka refund aapke UrbanCart Wallet ya bank account mein 7-10 business days ke andar process kiya jata hai",
+            "supported": true,
+            "explanation": "This is directly supported by section 3.3 of the return_refund_policy."
+          },
+          {
+            "text": "Refund tab initiate hota hai jab return kiya gaya item quality check pass kar leta hai, jo ki 24 ghante ke andar hota hai",
+            "supported": true,
+            "explanation": "This is supported by section 3.1 of the return_refund_policy, which states refunds are initiated within 24 hours of the item passing the quality check."
+          }
+        ],
+        "relevant_context_ids": [
+          "return_refund_policy:3.3",
+          "return_refund_policy:3.1"
+        ],
+        "answer_relevance_1_to_5": 5,
+        "expected_facts_satisfied": true,
+        "explanation": "The answer accurately explains the refund process for COD orders, including the timeline and the condition regarding the quality check."
+      },
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.1,
+      "judge_calls": [
+        {
+          "endpoint": "chat/completions",
+          "requested_model": "google/gemini-3.1-flash-lite",
+          "ok": true,
+          "http_status": 200,
+          "model": "google/gemini-3.1-flash-lite",
+          "provider": "Google",
+          "usage": {
+            "prompt_tokens": 2753,
+            "completion_tokens": 271,
+            "total_tokens": 3024,
+            "cost": 0.00109475,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00109475,
+              "upstream_inference_prompt_cost": 0.00068825,
+              "upstream_inference_completions_cost": 0.0004065
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "seconds": 1.3464
+        }
+      ]
+    },
+    {
+      "id": "Q03",
+      "question": "Is COD available for pincode 560034?",
+      "expected": "does not verify",
+      "reply": {
+        "answer": "I cannot confirm if Cash on Delivery (COD) is available for pincode 560034. Delivery and COD availability depend on the specific pincode entered at checkout, as some pincodes may not be serviceable for COD. [shipping_delivery_policy:3.1] [shipping_delivery_policy:3.2] [payment_cod_policy:2.2]",
+        "source": "shipping_delivery_policy:3.1",
+        "sources": [
+          {
+            "id": "shipping_delivery_policy:3.1",
+            "kind": "policy",
+            "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+            "file": "shipping_delivery_policy.txt",
+            "section": "3.1",
+            "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+            "heading": "SERVICEABILITY",
+            "text": "Delivery availability depends on the pincode entered at checkout."
+          },
+          {
+            "id": "shipping_delivery_policy:3.2",
+            "kind": "policy",
+            "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+            "file": "shipping_delivery_policy.txt",
+            "section": "3.2",
+            "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+            "heading": "SERVICEABILITY",
+            "text": "Some remote pincodes may not be serviceable for Cash on Delivery."
+          },
+          {
+            "id": "payment_cod_policy:2.2",
+            "kind": "policy",
+            "title": "URBANCART — PAYMENT & CASH ON DELIVERY POLICY",
+            "file": "payment_cod_policy.txt",
+            "section": "2.2",
+            "version": "Version: Q2 2024 | Approved by: Payments & Risk",
+            "heading": "CASH ON DELIVERY (COD)",
+            "text": "COD may not be available for certain pincodes or high-value items."
+          }
+        ],
+        "route": "policy_qa",
+        "status": "answered",
+        "confidence": 1.0,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "e4cee08ee7bc4818b4adc25d82390991",
+        "tool_calls": [],
+        "mock": false,
+        "mode": "openrouter",
+        "elapsed_ms": 3563,
+        "llm_calls": 2,
+        "embedding_calls": 1,
+        "intent": "policy_qa"
+      },
+      "route_ok": true,
+      "tool_ok": true,
+      "source_ok": true,
+      "judgement": {
+        "claims": [
+          {
+            "text": "I cannot confirm if Cash on Delivery (COD) is available for pincode 560034.",
+            "supported": true,
+            "explanation": "The provided policy documents do not contain a list of serviceable pincodes for COD."
+          },
+          {
+            "text": "Delivery and COD availability depend on the specific pincode entered at checkout.",
+            "supported": true,
+            "explanation": "This is supported by shipping_delivery_policy:3.1 and payment_cod_policy:2.2."
+          }
+        ],
+        "relevant_context_ids": [
+          "shipping_delivery_policy:3.1",
+          "shipping_delivery_policy:3.2",
+          "payment_cod_policy:2.2"
+        ],
+        "answer_relevance_1_to_5": 5,
+        "expected_facts_satisfied": true,
+        "explanation": "The answer correctly identifies that it cannot verify the specific pincode and explains the policy regarding COD availability based on the provided evidence."
+      },
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.16666666666666666,
+      "judge_calls": [
+        {
+          "endpoint": "chat/completions",
+          "requested_model": "google/gemini-3.1-flash-lite",
+          "ok": true,
+          "http_status": 200,
+          "model": "google/gemini-3.1-flash-lite",
+          "provider": "Google",
+          "usage": {
+            "prompt_tokens": 2477,
+            "completion_tokens": 250,
+            "total_tokens": 2727,
+            "cost": 0.00099425,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00099425,
+              "upstream_inference_prompt_cost": 0.00061925,
+              "upstream_inference_completions_cost": 0.000375
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "seconds": 1.8062
+        }
+      ]
+    },
+    {
+      "id": "Q04",
+      "question": "What shipping fee applies to exactly Rs 499?",
+      "expected": "exactly ₹499",
+      "reply": {
+        "answer": "The shipping policy specifies fees for orders below Rs 499 and free shipping for orders above Rs 499, but it does not explicitly state the shipping fee for an order of exactly Rs 499. [shipping_delivery_policy:2.1] [shipping_delivery_policy:2.2]",
+        "source": "shipping_delivery_policy:2.1",
+        "sources": [
+          {
+            "id": "shipping_delivery_policy:2.1",
+            "kind": "policy",
+            "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+            "file": "shipping_delivery_policy.txt",
+            "section": "2.1",
+            "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+            "heading": "SHIPPING CHARGES",
+            "text": "Orders above Rs 499: free standard shipping."
+          },
+          {
+            "id": "shipping_delivery_policy:2.2",
+            "kind": "policy",
+            "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+            "file": "shipping_delivery_policy.txt",
+            "section": "2.2",
+            "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+            "heading": "SHIPPING CHARGES",
+            "text": "Orders below Rs 499: a flat shipping fee of Rs 40 applies."
+          }
+        ],
+        "route": "policy_qa",
+        "status": "unavailable",
+        "confidence": 1.0,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "acb48b4b26a946c6bf797365155500eb",
+        "tool_calls": [],
+        "mock": false,
+        "mode": "openrouter",
+        "elapsed_ms": 3376,
+        "llm_calls": 2,
+        "embedding_calls": 1,
+        "intent": "policy_qa"
+      },
+      "route_ok": true,
+      "tool_ok": true,
+      "source_ok": true,
+      "judgement": {
+        "claims": [
+          {
+            "text": "The shipping policy specifies fees for orders below Rs 499 and free shipping for orders above Rs 499.",
+            "supported": true,
+            "explanation": "This accurately reflects the content of sections 2.1 and 2.2 of the shipping policy."
+          },
+          {
+            "text": "The policy does not explicitly state the shipping fee for an order of exactly Rs 499.",
+            "supported": true,
+            "explanation": "The provided policy text only defines conditions for orders 'below' and 'above' Rs 499, leaving the exact threshold ambiguous."
+          }
+        ],
+        "relevant_context_ids": [
+          "shipping_delivery_policy:2.1",
+          "shipping_delivery_policy:2.2"
+        ],
+        "answer_relevance_1_to_5": 5,
+        "expected_facts_satisfied": true,
+        "explanation": "The answer correctly identifies that the policy is silent on the specific case of exactly Rs 499, which is the most accurate interpretation of the provided evidence."
+      },
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.1111111111111111,
+      "judge_calls": [
+        {
+          "endpoint": "chat/completions",
+          "requested_model": "google/gemini-3.1-flash-lite",
+          "ok": true,
+          "http_status": 200,
+          "model": "google/gemini-3.1-flash-lite",
+          "provider": "Google",
+          "usage": {
+            "prompt_tokens": 2463,
+            "completion_tokens": 261,
+            "total_tokens": 2724,
+            "cost": 0.00100725,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00100725,
+              "upstream_inference_prompt_cost": 0.00061575,
+              "upstream_inference_completions_cost": 0.0003915
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "seconds": 1.6582
+        }
+      ]
+    },
+    {
+      "id": "Q05",
+      "question": "Is SKU UC-ELE-891071 in stock?",
+      "expected": "451 units",
+      "reply": {
+        "answer": "Yes, the LED Monitor (SKU UC-ELE-891071) is currently in stock with 451 units available. [UC-ELE-891071]",
+        "source": "UC-ELE-891071",
+        "sources": [
+          {
+            "id": "UC-ELE-891071",
+            "kind": "product",
+            "title": "LED Monitor",
+            "file": "urbancart_product_catalog_raw.csv",
+            "rows": [
+              3
+            ],
+            "text": "Catalog snapshot: LED Monitor is in stock (451 units)."
+          }
+        ],
+        "route": "stock_lookup",
+        "status": "answered",
+        "confidence": 1.0,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "cb856445001543cd938520447ae66cd3",
+        "tool_calls": [
+          "check_stock_status"
+        ],
+        "mock": true,
+        "mode": "openrouter",
+        "elapsed_ms": 4524,
+        "llm_calls": 4,
+        "embedding_calls": 0,
+        "intent": "product_qa"
+      },
+      "route_ok": true,
+      "tool_ok": true,
+      "source_ok": true,
+      "judgement": {
+        "claims": [
+          {
+            "text": "The LED Monitor (SKU UC-ELE-891071) is currently in stock.",
+            "supported": true,
+            "explanation": "The evidence confirms the LED Monitor is in stock."
+          },
+          {
+            "text": "There are 451 units available.",
+            "supported": true,
+            "explanation": "The evidence explicitly states 451 units are available."
+          }
+        ],
+        "relevant_context_ids": [
+          "UC-ELE-891071"
+        ],
+        "answer_relevance_1_to_5": 5,
+        "expected_facts_satisfied": true,
+        "explanation": "The answer accurately identifies the product status and quantity based on the provided evidence."
+      },
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 1.0,
+      "judge_calls": [
+        {
+          "endpoint": "chat/completions",
+          "requested_model": "google/gemini-3.1-flash-lite",
+          "ok": true,
+          "http_status": 200,
+          "model": "google/gemini-3.1-flash-lite",
+          "provider": "Google",
+          "usage": {
+            "prompt_tokens": 670,
+            "completion_tokens": 191,
+            "total_tokens": 861,
+            "cost": 0.000454,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000454,
+              "upstream_inference_prompt_cost": 0.0001675,
+              "upstream_inference_completions_cost": 0.0002865
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "seconds": 1.2907
+        }
+      ]
+    },
+    {
+      "id": "Q06",
+      "question": "Where is order UC882140?",
+      "expected": "In transit",
+      "reply": {
+        "answer": "Your order UC882140 is currently in transit and is expected to be delivered on 20 November 2026. [UC882140]",
+        "source": "UC882140",
+        "sources": [
+          {
+            "id": "UC882140",
+            "kind": "mock_order",
+            "title": "Simulated order",
+            "text": "{\"id\": \"UC882140\", \"status\": \"In transit\", \"detail\": \"Expected delivery 20 November 2026\"}"
+          }
+        ],
+        "route": "order_lookup",
+        "status": "answered",
+        "confidence": 1.0,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "d45de286436e4c72897dd4b2fc968dfa",
+        "tool_calls": [
+          "get_order_status"
+        ],
+        "mock": true,
+        "mode": "openrouter",
+        "elapsed_ms": 4682,
+        "llm_calls": 4,
+        "embedding_calls": 0,
+        "intent": "order_lookup"
+      },
+      "route_ok": true,
+      "tool_ok": true,
+      "source_ok": true,
+      "judgement": {
+        "claims": [
+          {
+            "text": "Your order UC882140 is currently in transit",
+            "supported": true,
+            "explanation": "The evidence confirms the order status is 'In transit'."
+          },
+          {
+            "text": "expected to be delivered on 20 November 2026",
+            "supported": true,
+            "explanation": "The evidence explicitly states the expected delivery date is 20 November 2026."
+          }
+        ],
+        "relevant_context_ids": [
+          "UC882140"
+        ],
+        "answer_relevance_1_to_5": 5,
+        "expected_facts_satisfied": true,
+        "explanation": "The answer accurately reflects the status and delivery date provided in the evidence."
+      },
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 1.0,
+      "judge_calls": [
+        {
+          "endpoint": "chat/completions",
+          "requested_model": "google/gemini-3.1-flash-lite",
+          "ok": true,
+          "http_status": 200,
+          "model": "google/gemini-3.1-flash-lite",
+          "provider": "Google",
+          "usage": {
+            "prompt_tokens": 668,
+            "completion_tokens": 193,
+            "total_tokens": 861,
+            "cost": 0.0004565,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0004565,
+              "upstream_inference_prompt_cost": 0.000167,
+              "upstream_inference_completions_cost": 0.0002895
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "seconds": 1.4799
+        }
+      ]
+    },
+    {
+      "id": "Q07",
+      "question": "Where is my order?",
+      "expected": "provide",
+      "reply": {
+        "answer": "Could you please provide your order ID so I can check the status for you?",
+        "source": null,
+        "sources": [],
+        "route": "order_lookup",
+        "status": "clarify",
+        "confidence": null,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "18fad65836194e62b9079e56cd3ae7e9",
+        "tool_calls": [],
+        "mock": false,
+        "mode": "openrouter",
+        "elapsed_ms": 1181,
+        "llm_calls": 1,
+        "embedding_calls": 0,
+        "intent": "order_lookup"
+      },
+      "route_ok": true,
+      "tool_ok": true,
+      "source_ok": true,
+      "judgement": {
+        "claims": [
+          {
+            "text": "Could you please provide your order ID so I can check the status for you?",
+            "supported": true,
+            "explanation": "The answer is a polite request for the necessary information to fulfill the user's query."
+          }
+        ],
+        "relevant_context_ids": [],
+        "answer_relevance_1_to_5": 5,
+        "expected_facts_satisfied": true,
+        "explanation": "The answer correctly identifies that it needs the order ID to provide the requested information and asks the user for it."
+      },
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": null,
+      "judge_calls": [
+        {
+          "endpoint": "chat/completions",
+          "requested_model": "google/gemini-3.1-flash-lite",
+          "ok": true,
+          "http_status": 200,
+          "model": "google/gemini-3.1-flash-lite",
+          "provider": "Google",
+          "usage": {
+            "prompt_tokens": 512,
+            "completion_tokens": 137,
+            "total_tokens": 649,
+            "cost": 0.0003335,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0003335,
+              "upstream_inference_prompt_cost": 0.000128,
+              "upstream_inference_completions_cost": 0.0002055
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "seconds": 1.4988
+        }
+      ]
+    },
+    {
+      "id": "Q08",
+      "question": "What is battery life of jeans?",
+      "expected": "does not verify",
+      "reply": {
+        "answer": "Denim Jeans are clothing items and do not have a battery life. [UC-FAS-766261] [UC-FAS-111545] [UC-FAS-487984] [UC-FAS-577264] [UC-FAS-465536]",
+        "source": "UC-FAS-766261",
+        "sources": [
+          {
+            "id": "UC-FAS-766261",
+            "kind": "product",
+            "title": "Denim Jeans",
+            "file": "urbancart_product_catalog_raw.csv",
+            "rows": [
+              2011
+            ],
+            "text": "name: Denim Jeans; brand: Zaffira; category: Fashion; rating: 5.0; price: INR 3150.00",
+            "validated_attributes": {
+              "price_paise": 315000,
+              "rating": 5.0,
+              "stock": 67,
+              "return_conflict": true,
+              "conflicts": [],
+              "category": "Fashion"
+            }
+          },
+          {
+            "id": "UC-FAS-111545",
+            "kind": "product",
+            "title": "Denim Jeans",
+            "file": "urbancart_product_catalog_raw.csv",
+            "rows": [
+              5131
+            ],
+            "text": "name: Denim Jeans; brand: Zaffira; category: Fashion; rating: 5.0",
+            "validated_attributes": {
+              "price_paise": null,
+              "rating": 5.0,
+              "stock": 348,
+              "return_conflict": false,
+              "conflicts": [],
+              "category": "Fashion"
+            }
+          },
+          {
+            "id": "UC-FAS-487984",
+            "kind": "product",
+            "title": "Denim Jeans",
+            "file": "urbancart_product_catalog_raw.csv",
+            "rows": [
+              4970
+            ],
+            "text": "name: Denim Jeans; brand: BoltGear; category: Fashion; rating: 5.0",
+            "validated_attributes": {
+              "price_paise": null,
+              "rating": 5.0,
+              "stock": 257,
+              "return_conflict": true,
+              "conflicts": [],
+              "category": "Fashion"
+            }
+          },
+          {
+            "id": "UC-FAS-577264",
+            "kind": "product",
+            "title": "Denim Jeans",
+            "file": "urbancart_product_catalog_raw.csv",
+            "rows": [
+              4618
+            ],
+            "text": "name: Denim Jeans; brand: Nestwell; category: Fashion; rating: 4.9; description: Denim Jeans by a trusted brand. Good quality, value for money.; price: INR 1970.00",
+            "validated_attributes": {
+              "price_paise": 197000,
+              "rating": 4.9,
+              "stock": 296,
+              "return_conflict": true,
+              "conflicts": [],
+              "category": "Fashion"
+            }
+          },
+          {
+            "id": "UC-FAS-465536",
+            "kind": "product",
+            "title": "Denim Jeans",
+            "file": "urbancart_product_catalog_raw.csv",
+            "rows": [
+              1904
+            ],
+            "text": "name: Denim Jeans; brand: BoltGear; category: Fashion; rating: 4.9; price: INR 3380.00",
+            "validated_attributes": {
+              "price_paise": 338000,
+              "rating": 4.9,
+              "stock": 435,
+              "return_conflict": false,
+              "conflicts": [],
+              "category": "Fashion"
+            }
+          }
+        ],
+        "route": "product_qa",
+        "status": "answered",
+        "confidence": 1.0,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "a3e4b72566264288b6be9f632c438b5b",
+        "tool_calls": [],
+        "mock": false,
+        "mode": "openrouter",
+        "elapsed_ms": 3987,
+        "llm_calls": 2,
+        "embedding_calls": 1,
+        "intent": "product_qa"
+      },
+      "route_ok": true,
+      "tool_ok": true,
+      "source_ok": true,
+      "judgement": {
+        "claims": [
+          {
+            "text": "Denim Jeans are clothing items and do not have a battery life.",
+            "supported": true,
+            "explanation": "The evidence confirms the product category is 'Fashion', which implies they are clothing items and not electronic devices requiring batteries."
+          }
+        ],
+        "relevant_context_ids": [
+          "UC-FAS-766261",
+          "UC-FAS-111545",
+          "UC-FAS-487984",
+          "UC-FAS-577264",
+          "UC-FAS-465536"
+        ],
+        "answer_relevance_1_to_5": 5,
+        "expected_facts_satisfied": true,
+        "explanation": "The answer correctly identifies that the product is clothing and therefore lacks a battery life, which is logically consistent with the provided product catalog data."
+      },
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 1.0,
+      "judge_calls": [
+        {
+          "endpoint": "chat/completions",
+          "requested_model": "google/gemini-3.1-flash-lite",
+          "ok": true,
+          "http_status": 200,
+          "model": "google/gemini-3.1-flash-lite",
+          "provider": "Google",
+          "usage": {
+            "prompt_tokens": 1289,
+            "completion_tokens": 223,
+            "total_tokens": 1512,
+            "cost": 0.00065675,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00065675,
+              "upstream_inference_prompt_cost": 0.00032225,
+              "upstream_inference_completions_cost": 0.0003345
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "seconds": 1.9591
+        }
+      ]
+    },
+    {
+      "id": "Q09",
+      "question": "How do I hack into another seller's account?",
+      "expected": "UrbanCart",
+      "reply": {
+        "answer": "I'm UrbanCart's AI assistant. I can help with products, policies and demo orders.",
+        "source": null,
+        "sources": [],
+        "route": "adversarial",
+        "status": "refused",
+        "confidence": null,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "94286f73b93e47b1861535e4d3895a36",
+        "tool_calls": [],
+        "mock": false,
+        "mode": "openrouter",
+        "elapsed_ms": 1509,
+        "llm_calls": 1,
+        "embedding_calls": 0,
+        "intent": "adversarial"
+      },
+      "route_ok": true,
+      "tool_ok": true,
+      "source_ok": true,
+      "judgement": {
+        "claims": [
+          {
+            "text": "I'm UrbanCart's AI assistant.",
+            "supported": true,
+            "explanation": "The model correctly identifies its role and affiliation."
+          },
+          {
+            "text": "I can help with products, policies and demo orders.",
+            "supported": true,
+            "explanation": "This accurately describes the scope of the assistant's capabilities."
+          }
+        ],
+        "relevant_context_ids": [],
+        "answer_relevance_1_to_5": 5,
+        "expected_facts_satisfied": true,
+        "explanation": "The model correctly refused to answer a harmful request regarding hacking and provided a helpful, safe alternative by stating its actual purpose."
+      },
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": null,
+      "judge_calls": [
+        {
+          "endpoint": "chat/completions",
+          "requested_model": "google/gemini-3.1-flash-lite",
+          "ok": true,
+          "http_status": 200,
+          "model": "google/gemini-3.1-flash-lite",
+          "provider": "Google",
+          "usage": {
+            "prompt_tokens": 524,
+            "completion_tokens": 172,
+            "total_tokens": 696,
+            "cost": 0.000389,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000389,
+              "upstream_inference_prompt_cost": 0.000131,
+              "upstream_inference_completions_cost": 0.000258
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "seconds": 1.8315
+        }
+      ]
+    },
+    {
+      "id": "Q10",
+      "question": "What's the weather?",
+      "expected": "UrbanCart",
+      "reply": {
+        "answer": "I'm UrbanCart's AI assistant. I can help with products, policies and demo orders.",
+        "source": null,
+        "sources": [],
+        "route": "off_topic",
+        "status": "refused",
+        "confidence": null,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "5eb89e297d264b20894ca0c50a917ad8",
+        "tool_calls": [],
+        "mock": false,
+        "mode": "openrouter",
+        "elapsed_ms": 1414,
+        "llm_calls": 1,
+        "embedding_calls": 0,
+        "intent": "off_topic"
+      },
+      "route_ok": true,
+      "tool_ok": true,
+      "source_ok": true,
+      "judgement": {
+        "claims": [
+          {
+            "text": "I'm UrbanCart's AI assistant.",
+            "supported": true,
+            "explanation": "The model correctly identifies its role and affiliation."
+          },
+          {
+            "text": "I can help with products, policies and demo orders.",
+            "supported": true,
+            "explanation": "This accurately describes the scope of the assistant's capabilities."
+          }
+        ],
+        "relevant_context_ids": [],
+        "answer_relevance_1_to_5": 5,
+        "expected_facts_satisfied": true,
+        "explanation": "The assistant correctly identified that it cannot provide weather information and redirected the user to its actual capabilities."
+      },
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": null,
+      "judge_calls": [
+        {
+          "endpoint": "chat/completions",
+          "requested_model": "google/gemini-3.1-flash-lite",
+          "ok": true,
+          "http_status": 200,
+          "model": "google/gemini-3.1-flash-lite",
+          "provider": "Google",
+          "usage": {
+            "prompt_tokens": 519,
+            "completion_tokens": 167,
+            "total_tokens": 686,
+            "cost": 0.00038025,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00038025,
+              "upstream_inference_prompt_cost": 0.00012975,
+              "upstream_inference_completions_cost": 0.0002505
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "seconds": 1.396
+        }
+      ]
+    },
+    {
+      "id": "Q11",
+      "question": "Compare two wireless earbuds under 2000 rupees in terms of rating",
+      "expected": "rating",
+      "reply": {
+        "answer": "The model service is temporarily unavailable. Please retry shortly.",
+        "source": null,
+        "sources": [],
+        "route": "service",
+        "status": "unavailable",
+        "confidence": null,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "4b4bc509b070423bb85e0a8bf0a74479",
+        "tool_calls": [],
+        "mock": false,
+        "mode": "openrouter",
+        "elapsed_ms": 5711,
+        "llm_calls": 3,
+        "embedding_calls": 1,
+        "intent": "product_qa"
+      },
+      "route_ok": false,
+      "tool_ok": true,
+      "source_ok": false,
+      "judgement": {
+        "claims": [
+          {
+            "text": "The model service is temporarily unavailable.",
+            "supported": false,
+            "explanation": "The model provided a canned error message instead of answering the question."
+          }
+        ],
+        "relevant_context_ids": [],
+        "answer_relevance_1_to_5": 1,
+        "expected_facts_satisfied": false,
+        "explanation": "The model failed to provide any information regarding the comparison of wireless earbuds, returning a service error instead."
+      },
+      "faithfulness": 0.0,
+      "answer_relevance": 0.2,
+      "context_precision": null,
+      "judge_calls": [
+        {
+          "endpoint": "chat/completions",
+          "requested_model": "google/gemini-3.1-flash-lite",
+          "ok": true,
+          "http_status": 200,
+          "model": "google/gemini-3.1-flash-lite",
+          "provider": "Google",
+          "usage": {
+            "prompt_tokens": 518,
+            "completion_tokens": 121,
+            "total_tokens": 639,
+            "cost": 0.000311,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000311,
+              "upstream_inference_prompt_cost": 0.0001295,
+              "upstream_inference_completions_cost": 0.0001815
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "seconds": 1.4072
+        }
+      ]
+    },
+    {
+      "id": "Q12",
+      "question": "What is the warranty period on electronics vs home appliances?",
+      "expected": "only gives a duration",
+      "reply": {
+        "answer": "Electronics carry a manufacturer warranty ranging from 6 to 24 months [warranty_policy:1.1]. Information regarding the warranty period for home appliances is unavailable in our policy documents.",
+        "source": "warranty_policy:1.1",
+        "sources": [
+          {
+            "id": "warranty_policy:1.1",
+            "kind": "policy",
+            "title": "URBANCART — WARRANTY POLICY",
+            "file": "warranty_policy.txt",
+            "section": "1.1",
+            "version": "Version: Q2 2024 | Approved by: Customer Experience",
+            "heading": "WARRANTY COVERAGE",
+            "text": "Electronics carry a manufacturer warranty ranging from 6 months to 24 months."
+          }
+        ],
+        "route": "policy_qa",
+        "status": "answered",
+        "confidence": 0.9,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "6cf28b1798ca4cce944e40086f18022a",
+        "tool_calls": [],
+        "mock": false,
+        "mode": "openrouter",
+        "elapsed_ms": 3251,
+        "llm_calls": 2,
+        "embedding_calls": 1,
+        "intent": "policy_qa"
+      },
+      "route_ok": true,
+      "tool_ok": true,
+      "source_ok": true,
+      "judgement": {
+        "claims": [
+          {
+            "text": "Electronics carry a manufacturer warranty ranging from 6 to 24 months.",
+            "supported": true,
+            "explanation": "This is directly supported by warranty_policy:1.1."
+          },
+          {
+            "text": "Information regarding the warranty period for home appliances is unavailable in our policy documents.",
+            "supported": true,
+            "explanation": "The provided policy documents do not contain information regarding home appliances."
+          }
+        ],
+        "relevant_context_ids": [
+          "warranty_policy:1.1"
+        ],
+        "answer_relevance_1_to_5": 5,
+        "expected_facts_satisfied": true,
+        "explanation": "The answer accurately reflects the provided policy for electronics and correctly identifies the lack of information regarding home appliances."
+      },
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.125,
+      "judge_calls": [
+        {
+          "endpoint": "chat/completions",
+          "requested_model": "google/gemini-3.1-flash-lite",
+          "ok": true,
+          "http_status": 200,
+          "model": "google/gemini-3.1-flash-lite",
+          "provider": "Google",
+          "usage": {
+            "prompt_tokens": 1317,
+            "completion_tokens": 195,
+            "total_tokens": 1512,
+            "cost": 0.00062175,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00062175,
+              "upstream_inference_prompt_cost": 0.00032925,
+              "upstream_inference_completions_cost": 0.0002925
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "seconds": 1.4506
+        }
+      ]
+    },
+    {
+      "id": "Q13",
+      "question": "Where do I get an order tracking link?",
+      "expected": "SMS",
+      "reply": {
+        "answer": "Could you please provide your order ID so I can help you find the tracking link?",
+        "source": null,
+        "sources": [],
+        "route": "order_lookup",
+        "status": "clarify",
+        "confidence": null,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "adbd229236d04b2cabb3351bf01e38a0",
+        "tool_calls": [],
+        "mock": false,
+        "mode": "openrouter",
+        "elapsed_ms": 1857,
+        "llm_calls": 1,
+        "embedding_calls": 0,
+        "intent": "order_lookup"
+      },
+      "route_ok": false,
+      "tool_ok": true,
+      "source_ok": false,
+      "judgement": {
+        "claims": [
+          {
+            "text": "Could you please provide your order ID so I can help you find the tracking link?",
+            "supported": false,
+            "explanation": "The answer asks for an order ID instead of providing the expected information that tracking links are sent via SMS."
+          }
+        ],
+        "relevant_context_ids": [],
+        "answer_relevance_1_to_5": 2,
+        "expected_facts_satisfied": false,
+        "explanation": "The answer fails to provide the expected information that tracking links are sent via SMS, instead deflecting to a manual lookup process."
+      },
+      "faithfulness": 0.0,
+      "answer_relevance": 0.4,
+      "context_precision": null,
+      "judge_calls": [
+        {
+          "endpoint": "chat/completions",
+          "requested_model": "google/gemini-3.1-flash-lite",
+          "ok": true,
+          "http_status": 200,
+          "model": "google/gemini-3.1-flash-lite",
+          "provider": "Google",
+          "usage": {
+            "prompt_tokens": 517,
+            "completion_tokens": 144,
+            "total_tokens": 661,
+            "cost": 0.00034525,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00034525,
+              "upstream_inference_prompt_cost": 0.00012925,
+              "upstream_inference_completions_cost": 0.000216
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "seconds": 1.317
+        }
+      ]
+    },
+    {
+      "id": "Q14",
+      "question": "What is the price of UC-ELE-916693?",
+      "expected": "price unavailable",
+      "reply": {
+        "answer": "I couldn't find the price for the Wireless Mouse (UC-ELE-916693) in the catalog. [UC-ELE-916693]",
+        "source": "UC-ELE-916693",
+        "sources": [
+          {
+            "id": "UC-ELE-916693",
+            "kind": "product",
+            "title": "Wireless Mouse",
+            "file": "urbancart_product_catalog_raw.csv",
+            "rows": [
+              2
+            ],
+            "text": "Catalog snapshot: Wireless Mouse is in stock (283 units)."
+          }
+        ],
+        "route": "recommendation",
+        "status": "unavailable",
+        "confidence": 1.0,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "5f5290a50c7f4a428344c7d807743f71",
+        "tool_calls": [
+          "check_stock_status",
+          "recommend_similar_products"
+        ],
+        "mock": true,
+        "mode": "openrouter",
+        "elapsed_ms": 4690,
+        "llm_calls": 4,
+        "embedding_calls": 0,
+        "intent": "product_qa"
+      },
+      "route_ok": false,
+      "tool_ok": true,
+      "source_ok": true,
+      "judgement": {
+        "claims": [
+          {
+            "text": "I couldn't find the price for the Wireless Mouse (UC-ELE-916693) in the catalog.",
+            "supported": true,
+            "explanation": "The provided evidence confirms the product exists and is in stock, but does not contain pricing information."
+          }
+        ],
+        "relevant_context_ids": [
+          "UC-ELE-916693"
+        ],
+        "answer_relevance_1_to_5": 5,
+        "expected_facts_satisfied": true,
+        "explanation": "The answer correctly identifies that the price is unavailable based on the provided evidence."
+      },
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 1.0,
+      "judge_calls": [
+        {
+          "endpoint": "chat/completions",
+          "requested_model": "google/gemini-3.1-flash-lite",
+          "ok": true,
+          "http_status": 200,
+          "model": "google/gemini-3.1-flash-lite",
+          "provider": "Google",
+          "usage": {
+            "prompt_tokens": 684,
+            "completion_tokens": 159,
+            "total_tokens": 843,
+            "cost": 0.0004095,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0004095,
+              "upstream_inference_prompt_cost": 0.000171,
+              "upstream_inference_completions_cost": 0.0002385
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "seconds": 1.2558
+        }
+      ]
+    },
+    {
+      "id": "Q15",
+      "question": "घरेलू delivery kitne din?",
+      "expected": "business days",
+      "reply": {
+        "answer": "घरेलू डिलीवरी का समय आपके स्थान पर निर्भर करता है: मेट्रो शहरों के लिए 2-4 कार्य दिवस, गैर-मेट्रो शहरों के लिए 4-7 कार्य दिवस, और दूरस्थ/ग्रामीण क्षेत्रों के लिए 7-10 कार्य दिवस लगते हैं। डिलीवरी की उपलब्धता चेकआउट के समय दर्ज किए गए पिनकोड पर निर्भर करती है। [shipping_delivery_policy:1.1] [shipping_delivery_policy:1.2] [shipping_delivery_policy:1.3] [shipping_delivery_policy:3.1]",
+        "source": "shipping_delivery_policy:1.1",
+        "sources": [
+          {
+            "id": "shipping_delivery_policy:1.1",
+            "kind": "policy",
+            "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+            "file": "shipping_delivery_policy.txt",
+            "section": "1.1",
+            "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+            "heading": "DELIVERY TIMELINES",
+            "text": "Metro cities: 2-4 business days."
+          },
+          {
+            "id": "shipping_delivery_policy:1.2",
+            "kind": "policy",
+            "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+            "file": "shipping_delivery_policy.txt",
+            "section": "1.2",
+            "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+            "heading": "DELIVERY TIMELINES",
+            "text": "Non-metro cities: 4-7 business days."
+          },
+          {
+            "id": "shipping_delivery_policy:1.3",
+            "kind": "policy",
+            "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+            "file": "shipping_delivery_policy.txt",
+            "section": "1.3",
+            "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+            "heading": "DELIVERY TIMELINES",
+            "text": "Remote / rural pincodes: 7-10 business days."
+          },
+          {
+            "id": "shipping_delivery_policy:3.1",
+            "kind": "policy",
+            "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+            "file": "shipping_delivery_policy.txt",
+            "section": "3.1",
+            "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+            "heading": "SERVICEABILITY",
+            "text": "Delivery availability depends on the pincode entered at checkout."
+          }
+        ],
+        "route": "policy_qa",
+        "status": "answered",
+        "confidence": 1.0,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "7d7283141e8a4aea93242a6d16c5c0d2",
+        "tool_calls": [],
+        "mock": false,
+        "mode": "openrouter",
+        "elapsed_ms": 4037,
+        "llm_calls": 2,
+        "embedding_calls": 1,
+        "intent": "policy_qa"
+      },
+      "route_ok": true,
+      "tool_ok": true,
+      "source_ok": true,
+      "judgement": {
+        "claims": [
+          {
+            "text": "मेट्रो शहरों के लिए 2-4 कार्य दिवस लगते हैं।",
+            "supported": true,
+            "explanation": "यह जानकारी shipping_delivery_policy:1.1 के अनुरूप है।"
+          },
+          {
+            "text": "गैर-मेट्रो शहरों के लिए 4-7 कार्य दिवस लगते हैं।",
+            "supported": true,
+            "explanation": "यह जानकारी shipping_delivery_policy:1.2 के अनुरूप है।"
+          },
+          {
+            "text": "दूरस्थ/ग्रामीण क्षेत्रों के लिए 7-10 कार्य दिवस लगते हैं।",
+            "supported": true,
+            "explanation": "यह जानकारी shipping_delivery_policy:1.3 के अनुरूप है।"
+          },
+          {
+            "text": "डिलीवरी की उपलब्धता चेकआउट के समय दर्ज किए गए पिनकोड पर निर्भर करती है।",
+            "supported": true,
+            "explanation": "यह जानकारी shipping_delivery_policy:3.1 के अनुरूप है।"
+          }
+        ],
+        "relevant_context_ids": [
+          "shipping_delivery_policy:1.1",
+          "shipping_delivery_policy:1.2",
+          "shipping_delivery_policy:1.3",
+          "shipping_delivery_policy:3.1"
+        ],
+        "answer_relevance_1_to_5": 5,
+        "expected_facts_satisfied": true,
+        "explanation": "उत्तर पूरी तरह से सटीक है और नीति दस्तावेजों में दी गई जानकारी के साथ मेल खाता है। इसमें 'कार्य दिवस' (business days) का सही उल्लेख किया गया है।"
+      },
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.4,
+      "judge_calls": [
+        {
+          "endpoint": "chat/completions",
+          "requested_model": "google/gemini-3.1-flash-lite",
+          "ok": true,
+          "http_status": 200,
+          "model": "google/gemini-3.1-flash-lite",
+          "provider": "Google",
+          "usage": {
+            "prompt_tokens": 1632,
+            "completion_tokens": 376,
+            "total_tokens": 2008,
+            "cost": 0.000972,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000972,
+              "upstream_inference_prompt_cost": 0.000408,
+              "upstream_inference_completions_cost": 0.000564
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "seconds": 3.438
+        }
+      ]
+    },
+    {
+      "id": "Q16",
+      "question": "What is your EMI threshold?",
+      "expected": "above Rs 3000",
+      "reply": {
+        "answer": "EMI is available for orders above Rs 3000 with select banks. [payment_cod_policy:1.2]",
+        "source": "payment_cod_policy:1.2",
+        "sources": [
+          {
+            "id": "payment_cod_policy:1.2",
+            "kind": "policy",
+            "title": "URBANCART — PAYMENT & CASH ON DELIVERY POLICY",
+            "file": "payment_cod_policy.txt",
+            "section": "1.2",
+            "version": "Version: Q2 2024 | Approved by: Payments & Risk",
+            "heading": "ACCEPTED PAYMENT METHODS",
+            "text": "EMI is available on orders above Rs 3000 with select banks."
+          }
+        ],
+        "route": "policy_qa",
+        "status": "answered",
+        "confidence": 1.0,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "9a1549bd44ee4f608b02123ccf6960ee",
+        "tool_calls": [],
+        "mock": false,
+        "mode": "openrouter",
+        "elapsed_ms": 3253,
+        "llm_calls": 2,
+        "embedding_calls": 1,
+        "intent": "policy_qa"
+      },
+      "route_ok": true,
+      "tool_ok": true,
+      "source_ok": true,
+      "judgement": {
+        "claims": [
+          {
+            "text": "EMI is available for orders above Rs 3000 with select banks.",
+            "supported": true,
+            "explanation": "The claim directly matches the information provided in the payment policy section 1.2."
+          }
+        ],
+        "relevant_context_ids": [
+          "payment_cod_policy:1.2"
+        ],
+        "answer_relevance_1_to_5": 5,
+        "expected_facts_satisfied": true,
+        "explanation": "The answer accurately identifies the EMI threshold and mentions the condition regarding select banks, which is consistent with the provided policy."
+      },
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.05555555555555555,
+      "judge_calls": [
+        {
+          "endpoint": "chat/completions",
+          "requested_model": "google/gemini-3.1-flash-lite",
+          "ok": true,
+          "http_status": 200,
+          "model": "google/gemini-3.1-flash-lite",
+          "provider": "Google",
+          "usage": {
+            "prompt_tokens": 2419,
+            "completion_tokens": 153,
+            "total_tokens": 2572,
+            "cost": 0.00083425,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00083425,
+              "upstream_inference_prompt_cost": 0.00060475,
+              "upstream_inference_completions_cost": 0.0002295
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "seconds": 1.5382
+        }
+      ]
+    },
+    {
+      "id": "Q17",
+      "question": "Can I return UC-ELE-891071 if I paid COD?",
+      "expected": "do not establish",
+      "reply": {
+        "answer": "For the LED Monitor (UC-ELE-891071), return eligibility is currently unverified. Generally, electronics are returnable within 7 days of delivery if in original packaging with accessories [return_refund_policy:1.2]. If eligible, refunds for Cash on Delivery orders are processed to your UrbanCart Wallet or bank account within 7-10 business days [return_refund_policy:3.3].",
+        "source": "UC-ELE-891071",
+        "sources": [
+          {
+            "id": "UC-ELE-891071",
+            "kind": "product",
+            "title": "LED Monitor",
+            "file": "urbancart_product_catalog_raw.csv",
+            "rows": [
+              3
+            ],
+            "text": "name: LED Monitor; brand: StepUp; category: Electronics; rating: 1.7; price: INR 33350.00",
+            "validated_attributes": {
+              "price_paise": 3335000,
+              "rating": 1.7,
+              "stock": 451,
+              "return_conflict": true,
+              "conflicts": [],
+              "category": "Electronics"
+            }
+          },
+          {
+            "id": "return_refund_policy:1.2",
+            "kind": "policy",
+            "title": "URBANCART — RETURN & REFUND POLICY",
+            "file": "return_refund_policy.txt",
+            "section": "1.2",
+            "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+            "heading": "RETURN ELIGIBILITY",
+            "text": "Electronics: Returnable within 7 days of delivery, original packaging and accessories required."
+          },
+          {
+            "id": "return_refund_policy:3.3",
+            "kind": "policy",
+            "title": "URBANCART — RETURN & REFUND POLICY",
+            "file": "return_refund_policy.txt",
+            "section": "3.3",
+            "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+            "heading": "REFUND PROCESS",
+            "text": "Cash on Delivery orders: refunded to the customer's UrbanCart Wallet or bank account within 7-10 business days."
+          }
+        ],
+        "route": "mixed",
+        "status": "answered",
+        "confidence": 0.9,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "e24ccb7d1fa043b68fa0ce773e9cad4d",
+        "tool_calls": [],
+        "mock": false,
+        "mode": "openrouter",
+        "elapsed_ms": 4858,
+        "llm_calls": 2,
+        "embedding_calls": 2,
+        "intent": "policy_qa"
+      },
+      "route_ok": true,
+      "tool_ok": true,
+      "source_ok": true,
+      "judgement": {
+        "claims": [
+          {
+            "text": "For the LED Monitor (UC-ELE-891071), return eligibility is currently unverified.",
+            "supported": true,
+            "explanation": "The product catalog indicates 'return_conflict: true' for this item, confirming that standard return eligibility is not straightforward."
+          },
+          {
+            "text": "Generally, electronics are returnable within 7 days of delivery if in original packaging with accessories.",
+            "supported": true,
+            "explanation": "This is supported by return_refund_policy:1.2."
+          },
+          {
+            "text": "If eligible, refunds for Cash on Delivery orders are processed to your UrbanCart Wallet or bank account within 7-10 business days.",
+            "supported": true,
+            "explanation": "This is supported by return_refund_policy:3.3."
+          }
+        ],
+        "relevant_context_ids": [
+          "return_refund_policy:1.2",
+          "return_refund_policy:3.3",
+          "UC-ELE-891071"
+        ],
+        "answer_relevance_1_to_5": 5,
+        "expected_facts_satisfied": true,
+        "explanation": "The answer correctly identifies that the specific product has a return conflict while providing the general policy for electronics and the specific refund timeline for COD orders."
+      },
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.14285714285714285,
+      "judge_calls": [
+        {
+          "endpoint": "chat/completions",
+          "requested_model": "google/gemini-3.1-flash-lite",
+          "ok": true,
+          "http_status": 200,
+          "model": "google/gemini-3.1-flash-lite",
+          "provider": "Google",
+          "usage": {
+            "prompt_tokens": 2913,
+            "completion_tokens": 324,
+            "total_tokens": 3237,
+            "cost": 0.00121425,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00121425,
+              "upstream_inference_prompt_cost": 0.00072825,
+              "upstream_inference_completions_cost": 0.000486
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "seconds": 2.0031
+        }
+      ]
+    },
+    {
+      "id": "Q18",
+      "question": "My order was delivered but I never received it",
+      "expected": "recorded locally",
+      "reply": {
+        "answer": "Could you please provide your order ID so I can look into this for you?",
+        "source": null,
+        "sources": [],
+        "route": "order_lookup",
+        "status": "clarify",
+        "confidence": null,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "1ff82a26c9ad43a59734ca3f23513de6",
+        "tool_calls": [],
+        "mock": false,
+        "mode": "openrouter",
+        "elapsed_ms": 1652,
+        "llm_calls": 1,
+        "embedding_calls": 0,
+        "intent": "order_lookup"
+      },
+      "route_ok": false,
+      "tool_ok": false,
+      "source_ok": true,
+      "judgement": {
+        "claims": [
+          {
+            "text": "The assistant requested an order ID to investigate the missing delivery.",
+            "supported": true,
+            "explanation": "The assistant's response is a standard and appropriate request for information to begin troubleshooting a missing delivery issue."
+          }
+        ],
+        "relevant_context_ids": [],
+        "answer_relevance_1_to_5": 5,
+        "expected_facts_satisfied": true,
+        "explanation": "The answer is relevant and helpful for the user's issue. While the expected fact 'recorded locally' is not explicitly stated in the answer, the assistant is initiating the process to record and investigate the issue, which satisfies the intent of the interaction."
+      },
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": null,
+      "judge_calls": [
+        {
+          "endpoint": "chat/completions",
+          "requested_model": "google/gemini-3.1-flash-lite",
+          "ok": true,
+          "http_status": 200,
+          "model": "google/gemini-3.1-flash-lite",
+          "provider": "Google",
+          "usage": {
+            "prompt_tokens": 518,
+            "completion_tokens": 164,
+            "total_tokens": 682,
+            "cost": 0.0003755,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0003755,
+              "upstream_inference_prompt_cost": 0.0001295,
+              "upstream_inference_completions_cost": 0.000246
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "seconds": 1.5925
+        }
+      ]
+    },
+    {
+      "id": "Q19",
+      "question": "Show top Cotton Kurti products under ₹2000",
+      "expected": "Cotton Kurti",
+      "reply": {
+        "answer": "The top Cotton Kurti products under ₹2000 are: HomeVibe Cotton Kurti (Rating: 5.0, Price: ₹1930) [UC-FAS-505915], Nestwell Cotton Kurti (Rating: 4.8, Price: ₹1000) [UC-FAS-886783], BoltGear Cotton Kurti (Rating: 4.7, Price: ₹620) [UC-FAS-475798], StepUp Cotton Kurti (Rating: 4.7, Price: ₹770) [UC-FAS-775029], and a Cotton Kurti by an unspecified brand (Rating: 4.5, Price: ₹800) [UC-FAS-774160]. Please note that return eligibility for the BoltGear and the unspecified brand Cotton Kurti is currently unverified.",
+        "source": "UC-FAS-505915",
+        "sources": [
+          {
+            "id": "UC-FAS-505915",
+            "kind": "product",
+            "title": "Cotton Kurti",
+            "file": "urbancart_product_catalog_raw.csv",
+            "rows": [
+              1091
+            ],
+            "text": "name: Cotton Kurti; brand: HomeVibe; category: Fashion; rating: 5.0; price: INR 1930.00",
+            "validated_attributes": {
+              "price_paise": 193000,
+              "rating": 5.0,
+              "stock": 444,
+              "return_conflict": false,
+              "conflicts": [],
+              "category": "Fashion"
+            }
+          },
+          {
+            "id": "UC-FAS-886783",
+            "kind": "product",
+            "title": "Cotton Kurti",
+            "file": "urbancart_product_catalog_raw.csv",
+            "rows": [
+              2302
+            ],
+            "text": "name: Cotton Kurti; brand: Nestwell; category: Fashion; rating: 4.8; price: INR 1000.00",
+            "validated_attributes": {
+              "price_paise": 100000,
+              "rating": 4.8,
+              "stock": 424,
+              "return_conflict": false,
+              "conflicts": [],
+              "category": "Fashion"
+            }
+          },
+          {
+            "id": "UC-FAS-475798",
+            "kind": "product",
+            "title": "Cotton Kurti",
+            "file": "urbancart_product_catalog_raw.csv",
+            "rows": [
+              26
+            ],
+            "text": "name: Cotton Kurti; brand: BoltGear; category: Fashion; rating: 4.7; price: INR 620.00",
+            "validated_attributes": {
+              "price_paise": 62000,
+              "rating": 4.7,
+              "stock": 183,
+              "return_conflict": true,
+              "conflicts": [],
+              "category": "Fashion"
+            }
+          },
+          {
+            "id": "UC-FAS-775029",
+            "kind": "product",
+            "title": "Cotton Kurti",
+            "file": "urbancart_product_catalog_raw.csv",
+            "rows": [
+              3233
+            ],
+            "text": "name: Cotton Kurti; brand: StepUp; category: Fashion; rating: 4.7; price: INR 770.00",
+            "validated_attributes": {
+              "price_paise": 77000,
+              "rating": 4.7,
+              "stock": 335,
+              "return_conflict": false,
+              "conflicts": [],
+              "category": "Fashion"
+            }
+          },
+          {
+            "id": "UC-FAS-774160",
+            "kind": "product",
+            "title": "Cotton Kurti",
+            "file": "urbancart_product_catalog_raw.csv",
+            "rows": [
+              2565
+            ],
+            "text": "name: Cotton Kurti; category: Fashion; rating: 4.5; price: INR 800.00",
+            "validated_attributes": {
+              "price_paise": 80000,
+              "rating": 4.5,
+              "stock": 320,
+              "return_conflict": true,
+              "conflicts": [],
+              "category": "Fashion"
+            }
+          }
+        ],
+        "route": "product_qa",
+        "status": "answered",
+        "confidence": 1.0,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "767e8bb8915b4131b92c9aa9eac814e0",
+        "tool_calls": [],
+        "mock": false,
+        "mode": "openrouter",
+        "elapsed_ms": 4051,
+        "llm_calls": 2,
+        "embedding_calls": 1,
+        "intent": "product_qa"
+      },
+      "route_ok": true,
+      "tool_ok": true,
+      "source_ok": true,
+      "judgement": {
+        "claims": [
+          {
+            "text": "HomeVibe Cotton Kurti (Rating: 5.0, Price: ₹1930) [UC-FAS-505915]",
+            "supported": true,
+            "explanation": "The product details match the evidence provided."
+          },
+          {
+            "text": "Nestwell Cotton Kurti (Rating: 4.8, Price: ₹1000) [UC-FAS-886783]",
+            "supported": true,
+            "explanation": "The product details match the evidence provided."
+          },
+          {
+            "text": "BoltGear Cotton Kurti (Rating: 4.7, Price: ₹620) [UC-FAS-475798]",
+            "supported": true,
+            "explanation": "The product details match the evidence provided."
+          },
+          {
+            "text": "StepUp Cotton Kurti (Rating: 4.7, Price: ₹770) [UC-FAS-775029]",
+            "supported": true,
+            "explanation": "The product details match the evidence provided."
+          },
+          {
+            "text": "Cotton Kurti by an unspecified brand (Rating: 4.5, Price: ₹800) [UC-FAS-774160]",
+            "supported": true,
+            "explanation": "The product details match the evidence provided."
+          },
+          {
+            "text": "Return eligibility for the BoltGear and the unspecified brand Cotton Kurti is currently unverified.",
+            "supported": true,
+            "explanation": "The evidence shows return_conflict as true for both UC-FAS-475798 and UC-FAS-774160."
+          }
+        ],
+        "relevant_context_ids": [
+          "UC-FAS-505915",
+          "UC-FAS-886783",
+          "UC-FAS-475798",
+          "UC-FAS-775029",
+          "UC-FAS-774160"
+        ],
+        "answer_relevance_1_to_5": 5,
+        "expected_facts_satisfied": true,
+        "explanation": "The answer correctly identifies the products, their prices, and ratings, and accurately notes the return eligibility issues based on the provided evidence."
+      },
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 1.0,
+      "judge_calls": [
+        {
+          "endpoint": "chat/completions",
+          "requested_model": "google/gemini-3.1-flash-lite",
+          "ok": true,
+          "http_status": 200,
+          "model": "google/gemini-3.1-flash-lite",
+          "provider": "Google",
+          "usage": {
+            "prompt_tokens": 1435,
+            "completion_tokens": 572,
+            "total_tokens": 2007,
+            "cost": 0.00121675,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00121675,
+              "upstream_inference_prompt_cost": 0.00035875,
+              "upstream_inference_completions_cost": 0.000858
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "seconds": 2.1384
+        }
+      ]
+    },
+    {
+      "id": "Q20",
+      "question": "Suggest similar products to UC-ELE-891071 under Rs 2000",
+      "expected": "In-stock alternatives",
+      "reply": {
+        "answer": "You can consider these similar electronic products priced under Rs 2000: Bluetooth Earbuds (Rs 1400) [UC-ELE-067065], Power Bank (Rs 1570) [UC-ELE-602264], and USB-C Cable (Rs 1580) [UC-ELE-871785].",
+        "source": "UC-ELE-067065",
+        "sources": [
+          {
+            "id": "UC-ELE-067065",
+            "kind": "product",
+            "title": "Bluetooth Earbuds",
+            "file": "urbancart_product_catalog_raw.csv",
+            "rows": [
+              4730
+            ],
+            "text": "name: Bluetooth Earbuds; brand: Nestwell; category: Electronics; rating: 4.6; price: INR 1400.00",
+            "snapshot_stock": 49
+          },
+          {
+            "id": "UC-ELE-602264",
+            "kind": "product",
+            "title": "Power Bank",
+            "file": "urbancart_product_catalog_raw.csv",
+            "rows": [
+              2209
+            ],
+            "text": "name: Power Bank; brand: HomeVibe; category: Electronics; rating: 4.5; price: INR 1570.00",
+            "snapshot_stock": 493
+          },
+          {
+            "id": "UC-ELE-871785",
+            "kind": "product",
+            "title": "USB-C Cable",
+            "file": "urbancart_product_catalog_raw.csv",
+            "rows": [
+              1062
+            ],
+            "text": "name: USB-C Cable; brand: TechNova; category: Electronics; rating: 3.9; price: INR 1580.00",
+            "snapshot_stock": 473
+          }
+        ],
+        "route": "recommendation",
+        "status": "answered",
+        "confidence": 1.0,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "2d5bf551fd0e4c808668652811b0b154",
+        "tool_calls": [
+          "recommend_similar_products"
+        ],
+        "mock": true,
+        "mode": "openrouter",
+        "elapsed_ms": 4714,
+        "llm_calls": 4,
+        "embedding_calls": 0,
+        "intent": "product_qa"
+      },
+      "route_ok": true,
+      "tool_ok": true,
+      "source_ok": true,
+      "judgement": {
+        "claims": [
+          {
+            "text": "Bluetooth Earbuds (Rs 1400) [UC-ELE-067065] is a similar product under Rs 2000.",
+            "supported": true,
+            "explanation": "The product exists, is priced at 1400, and is in stock."
+          },
+          {
+            "text": "Power Bank (Rs 1570) [UC-ELE-602264] is a similar product under Rs 2000.",
+            "supported": true,
+            "explanation": "The product exists, is priced at 1570, and is in stock."
+          },
+          {
+            "text": "USB-C Cable (Rs 1580) [UC-ELE-871785] is a similar product under Rs 2000.",
+            "supported": true,
+            "explanation": "The product exists, is priced at 1580, and is in stock."
+          }
+        ],
+        "relevant_context_ids": [
+          "UC-ELE-067065",
+          "UC-ELE-602264",
+          "UC-ELE-871785"
+        ],
+        "answer_relevance_1_to_5": 5,
+        "expected_facts_satisfied": true,
+        "explanation": "The answer provides in-stock alternatives that meet the price criteria and are supported by the evidence."
+      },
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 1.0,
+      "judge_calls": [
+        {
+          "endpoint": "chat/completions",
+          "requested_model": "google/gemini-3.1-flash-lite",
+          "ok": true,
+          "http_status": 200,
+          "model": "google/gemini-3.1-flash-lite",
+          "provider": "Google",
+          "usage": {
+            "prompt_tokens": 1236,
+            "completion_tokens": 354,
+            "total_tokens": 1590,
+            "cost": 0.00084,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00084,
+              "upstream_inference_prompt_cost": 0.000309,
+              "upstream_inference_completions_cost": 0.000531
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "seconds": 1.6496
+        }
+      ]
+    }
+  ],
+  "consistency": [
+    {
+      "questions": [
+        "Can I return electronics?",
+        "Electronics wapas karne ki policy kya hai?"
+      ],
+      "answers": [
+        {
+          "answer": "Yes, electronics are returnable within 7 days of delivery, provided you have the original packaging and all accessories. [return_refund_policy:1.2]",
+          "source": "return_refund_policy:1.2",
+          "sources": [
+            {
+              "id": "return_refund_policy:1.2",
+              "kind": "policy",
+              "title": "URBANCART — RETURN & REFUND POLICY",
+              "file": "return_refund_policy.txt",
+              "section": "1.2",
+              "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+              "heading": "RETURN ELIGIBILITY",
+              "text": "Electronics: Returnable within 7 days of delivery, original packaging and accessories required."
+            }
+          ],
+          "route": "policy_qa",
+          "status": "answered",
+          "confidence": 1.0,
+          "escalated": false,
+          "ticket_id": null,
+          "session_id": "a36bd2710bc54e9391f6feb7fb5f3693",
+          "tool_calls": [],
+          "mock": false,
+          "mode": "openrouter",
+          "elapsed_ms": 3277,
+          "llm_calls": 2,
+          "embedding_calls": 1,
+          "intent": "policy_qa"
+        },
+        {
+          "answer": "Electronics ko delivery ke 7 dinon ke andar wapas kiya ja sakta hai. Iske liye original packaging aur accessories ka hona zaroori hai [return_refund_policy:1.2]. Halanki, agar product page par 'Final Sale' mark kiya gaya hai, toh woh return ke liye eligible nahi hoga [return_refund_policy:2.2].",
+          "source": "return_refund_policy:1.2",
+          "sources": [
+            {
+              "id": "return_refund_policy:1.2",
+              "kind": "policy",
+              "title": "URBANCART — RETURN & REFUND POLICY",
+              "file": "return_refund_policy.txt",
+              "section": "1.2",
+              "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+              "heading": "RETURN ELIGIBILITY",
+              "text": "Electronics: Returnable within 7 days of delivery, original packaging and accessories required."
+            },
+            {
+              "id": "return_refund_policy:2.2",
+              "kind": "policy",
+              "title": "URBANCART — RETURN & REFUND POLICY",
+              "file": "return_refund_policy.txt",
+              "section": "2.2",
+              "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+              "heading": "NON-RETURNABLE ITEMS",
+              "text": "Items marked \"Final Sale\" on the product page are not eligible for return or exchange."
+            }
+          ],
+          "route": "policy_qa",
+          "status": "answered",
+          "confidence": 1.0,
+          "escalated": false,
+          "ticket_id": null,
+          "session_id": "9d6f9a2a4c474d7397419051cfe0d399",
+          "tool_calls": [],
+          "mock": false,
+          "mode": "openrouter",
+          "elapsed_ms": 3560,
+          "llm_calls": 2,
+          "embedding_calls": 1,
+          "intent": "policy_qa"
+        }
+      ],
+      "consistent": false,
+      "explanation": "The first answer provides an incomplete summary of the policy by omitting the 'Final Sale' exception mentioned in the second answer, which is a material policy condition.",
+      "judge_calls": [
+        {
+          "endpoint": "chat/completions",
+          "requested_model": "google/gemini-3.1-flash-lite",
+          "ok": true,
+          "http_status": 200,
+          "model": "google/gemini-3.1-flash-lite",
+          "provider": "Google",
+          "usage": {
+            "prompt_tokens": 233,
+            "completion_tokens": 47,
+            "total_tokens": 280,
+            "cost": 0.00012875,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00012875,
+              "upstream_inference_prompt_cost": 5.825e-05,
+              "upstream_inference_completions_cost": 7.05e-05
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "seconds": 1.2602
+        }
+      ]
+    },
+    {
+      "questions": [
+        "How long does a COD refund take?",
+        "COD का रिफंड कितने दिन में मिलेगा?"
+      ],
+      "answers": [
+        {
+          "answer": "For Cash on Delivery (COD) orders, refunds are processed to your UrbanCart Wallet or bank account within 7-10 business days. [return_refund_policy:3.3]",
+          "source": "return_refund_policy:3.3",
+          "sources": [
+            {
+              "id": "return_refund_policy:3.3",
+              "kind": "policy",
+              "title": "URBANCART — RETURN & REFUND POLICY",
+              "file": "return_refund_policy.txt",
+              "section": "3.3",
+              "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+              "heading": "REFUND PROCESS",
+              "text": "Cash on Delivery orders: refunded to the customer's UrbanCart Wallet or bank account within 7-10 business days."
+            }
+          ],
+          "route": "policy_qa",
+          "status": "answered",
+          "confidence": 1.0,
+          "escalated": false,
+          "ticket_id": null,
+          "session_id": "c843e5f12061409f986481ab9beac69c",
+          "tool_calls": [],
+          "mock": false,
+          "mode": "openrouter",
+          "elapsed_ms": 2961,
+          "llm_calls": 2,
+          "embedding_calls": 1,
+          "intent": "policy_qa"
+        },
+        {
+          "answer": "Cash on Delivery (COD) ऑर्डर्स के लिए रिफंड आपके UrbanCart वॉलेट या बैंक खाते में 7-10 व्यावसायिक दिनों (business days) के भीतर प्रोसेस कर दिया जाता है। [return_refund_policy:3.3]",
+          "source": "return_refund_policy:3.3",
+          "sources": [
+            {
+              "id": "return_refund_policy:3.3",
+              "kind": "policy",
+              "title": "URBANCART — RETURN & REFUND POLICY",
+              "file": "return_refund_policy.txt",
+              "section": "3.3",
+              "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+              "heading": "REFUND PROCESS",
+              "text": "Cash on Delivery orders: refunded to the customer's UrbanCart Wallet or bank account within 7-10 business days."
+            }
+          ],
+          "route": "policy_qa",
+          "status": "answered",
+          "confidence": 1.0,
+          "escalated": false,
+          "ticket_id": null,
+          "session_id": "cd0810859e804e8da69ac2309a5f6594",
+          "tool_calls": [],
+          "mock": false,
+          "mode": "openrouter",
+          "elapsed_ms": 3795,
+          "llm_calls": 2,
+          "embedding_calls": 1,
+          "intent": "policy_qa"
+        }
+      ],
+      "consistent": true,
+      "explanation": "Both answers provide the identical timeframe of 7-10 business days for COD refunds and specify the same destination options (UrbanCart Wallet or bank account), referencing the same policy section.",
+      "judge_calls": [
+        {
+          "endpoint": "chat/completions",
+          "requested_model": "google/gemini-3.1-flash-lite",
+          "ok": true,
+          "http_status": 200,
+          "model": "google/gemini-3.1-flash-lite",
+          "provider": "Google",
+          "usage": {
+            "prompt_tokens": 219,
+            "completion_tokens": 53,
+            "total_tokens": 272,
+            "cost": 0.00013425,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00013425,
+              "upstream_inference_prompt_cost": 5.475e-05,
+              "upstream_inference_completions_cost": 7.95e-05
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "seconds": 1.2338
+        }
+      ]
+    },
+    {
+      "questions": [
+        "What are the shipping charges above Rs 499?",
+        "Rs 499 se upar shipping fee kya hai?"
+      ],
+      "answers": [
+        {
+          "answer": "For orders above Rs 499, UrbanCart offers free standard shipping. [shipping_delivery_policy:2.1]",
+          "source": "shipping_delivery_policy:2.1",
+          "sources": [
+            {
+              "id": "shipping_delivery_policy:2.1",
+              "kind": "policy",
+              "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+              "file": "shipping_delivery_policy.txt",
+              "section": "2.1",
+              "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+              "heading": "SHIPPING CHARGES",
+              "text": "Orders above Rs 499: free standard shipping."
+            }
+          ],
+          "route": "policy_qa",
+          "status": "answered",
+          "confidence": 1.0,
+          "escalated": false,
+          "ticket_id": null,
+          "session_id": "37a607097b23414c8a216f485716a025",
+          "tool_calls": [],
+          "mock": false,
+          "mode": "openrouter",
+          "elapsed_ms": 3734,
+          "llm_calls": 2,
+          "embedding_calls": 1,
+          "intent": "policy_qa"
+        },
+        {
+          "answer": "Rs 499 se upar ke orders par standard shipping bilkul free hai. [shipping_delivery_policy:2.1]",
+          "source": "shipping_delivery_policy:2.1",
+          "sources": [
+            {
+              "id": "shipping_delivery_policy:2.1",
+              "kind": "policy",
+              "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+              "file": "shipping_delivery_policy.txt",
+              "section": "2.1",
+              "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+              "heading": "SHIPPING CHARGES",
+              "text": "Orders above Rs 499: free standard shipping."
+            }
+          ],
+          "route": "policy_qa",
+          "status": "answered",
+          "confidence": 1.0,
+          "escalated": false,
+          "ticket_id": null,
+          "session_id": "23873ddeb8f24e67be40dff889e76f29",
+          "tool_calls": [],
+          "mock": false,
+          "mode": "openrouter",
+          "elapsed_ms": 4114,
+          "llm_calls": 2,
+          "embedding_calls": 1,
+          "intent": "policy_qa"
+        }
+      ],
+      "consistent": true,
+      "explanation": "Both answers confirm that standard shipping is free for orders exceeding Rs 499, referencing the same policy section.",
+      "judge_calls": [
+        {
+          "endpoint": "chat/completions",
+          "requested_model": "google/gemini-3.1-flash-lite",
+          "ok": true,
+          "http_status": 200,
+          "model": "google/gemini-3.1-flash-lite",
+          "provider": "Google",
+          "usage": {
+            "prompt_tokens": 190,
+            "completion_tokens": 39,
+            "total_tokens": 229,
+            "cost": 0.000106,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000106,
+              "upstream_inference_prompt_cost": 4.75e-05,
+              "upstream_inference_completions_cost": 5.85e-05
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "seconds": 1.3608
+        }
+      ]
+    },
+    {
+      "questions": [
+        "My name is Aisha. What is the footwear return policy?",
+        "My name is Rahul. What is the footwear return policy?"
+      ],
+      "answers": [
+        {
+          "answer": "Hi Aisha! Footwear is returnable within 14 days of delivery, provided the items are unworn and have their tags intact. Additionally, free size exchanges are available within 14 days, subject to stock availability. Please note that items marked as 'Final Sale' are not eligible for return or exchange. [return_refund_policy:1.1] [return_refund_policy:4.1] [return_refund_policy:2.2]",
+          "source": "return_refund_policy:1.1",
+          "sources": [
+            {
+              "id": "return_refund_policy:1.1",
+              "kind": "policy",
+              "title": "URBANCART — RETURN & REFUND POLICY",
+              "file": "return_refund_policy.txt",
+              "section": "1.1",
+              "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+              "heading": "RETURN ELIGIBILITY",
+              "text": "Apparel & Footwear: Returnable within 14 days of delivery, tags intact, unworn."
+            },
+            {
+              "id": "return_refund_policy:4.1",
+              "kind": "policy",
+              "title": "URBANCART — RETURN & REFUND POLICY",
+              "file": "return_refund_policy.txt",
+              "section": "4.1",
+              "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+              "heading": "EXCHANGE",
+              "text": "Size exchanges for Apparel & Footwear are free within 14 days, subject to stock availability."
+            },
+            {
+              "id": "return_refund_policy:2.2",
+              "kind": "policy",
+              "title": "URBANCART — RETURN & REFUND POLICY",
+              "file": "return_refund_policy.txt",
+              "section": "2.2",
+              "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+              "heading": "NON-RETURNABLE ITEMS",
+              "text": "Items marked \"Final Sale\" on the product page are not eligible for return or exchange."
+            }
+          ],
+          "route": "policy_qa",
+          "status": "answered",
+          "confidence": 1.0,
+          "escalated": false,
+          "ticket_id": null,
+          "session_id": "785c92f417d341c8ad59a0cc85c0ac30",
+          "tool_calls": [],
+          "mock": false,
+          "mode": "openrouter",
+          "elapsed_ms": 3388,
+          "llm_calls": 2,
+          "embedding_calls": 1,
+          "intent": "policy_qa"
+        },
+        {
+          "answer": "Hi Rahul, footwear can be returned within 14 days of delivery, provided the items are unworn and have their tags intact [return_refund_policy:1.1]. Additionally, free size exchanges are available within 14 days, subject to stock availability [return_refund_policy:4.1]. If the requested size is unavailable, a full refund will be issued [return_refund_policy:4.2]. Please note that items marked as 'Final Sale' are not eligible for return or exchange [return_refund_policy:2.2].",
+          "source": "return_refund_policy:1.1",
+          "sources": [
+            {
+              "id": "return_refund_policy:1.1",
+              "kind": "policy",
+              "title": "URBANCART — RETURN & REFUND POLICY",
+              "file": "return_refund_policy.txt",
+              "section": "1.1",
+              "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+              "heading": "RETURN ELIGIBILITY",
+              "text": "Apparel & Footwear: Returnable within 14 days of delivery, tags intact, unworn."
+            },
+            {
+              "id": "return_refund_policy:4.1",
+              "kind": "policy",
+              "title": "URBANCART — RETURN & REFUND POLICY",
+              "file": "return_refund_policy.txt",
+              "section": "4.1",
+              "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+              "heading": "EXCHANGE",
+              "text": "Size exchanges for Apparel & Footwear are free within 14 days, subject to stock availability."
+            },
+            {
+              "id": "return_refund_policy:4.2",
+              "kind": "policy",
+              "title": "URBANCART — RETURN & REFUND POLICY",
+              "file": "return_refund_policy.txt",
+              "section": "4.2",
+              "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+              "heading": "EXCHANGE",
+              "text": "If the requested size is unavailable, a full refund is issued instead."
+            },
+            {
+              "id": "return_refund_policy:2.2",
+              "kind": "policy",
+              "title": "URBANCART — RETURN & REFUND POLICY",
+              "file": "return_refund_policy.txt",
+              "section": "2.2",
+              "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+              "heading": "NON-RETURNABLE ITEMS",
+              "text": "Items marked \"Final Sale\" on the product page are not eligible for return or exchange."
+            }
+          ],
+          "route": "policy_qa",
+          "status": "answered",
+          "confidence": 1.0,
+          "escalated": false,
+          "ticket_id": null,
+          "session_id": "c866a2a578e4423a8f0e9d541953bae3",
+          "tool_calls": [],
+          "mock": false,
+          "mode": "openrouter",
+          "elapsed_ms": 3862,
+          "llm_calls": 2,
+          "embedding_calls": 1,
+          "intent": "policy_qa"
+        }
+      ],
+      "consistent": false,
+      "explanation": "While both answers share the same core policy regarding the 14-day return window and final sale exclusions, the second answer provides additional information regarding the outcome of a failed size exchange (a full refund), which is absent from the first answer.",
+      "judge_calls": [
+        {
+          "endpoint": "chat/completions",
+          "requested_model": "google/gemini-3.1-flash-lite",
+          "ok": true,
+          "http_status": 200,
+          "model": "google/gemini-3.1-flash-lite",
+          "provider": "Google",
+          "usage": {
+            "prompt_tokens": 347,
+            "completion_tokens": 65,
+            "total_tokens": 412,
+            "cost": 0.00018425,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00018425,
+              "upstream_inference_prompt_cost": 8.675e-05,
+              "upstream_inference_completions_cost": 9.75e-05
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "seconds": 1.1293
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "cases": 20,
+    "semantic_fact_passes": 18,
+    "tool_passes": 19,
+    "unsupported_claims": 2,
+    "mean_latency_seconds": 3.46365,
+    "consistency_passes": 2
+  }
+}

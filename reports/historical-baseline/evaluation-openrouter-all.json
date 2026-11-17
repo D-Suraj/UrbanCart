@@ -1,0 +1,41 @@
+{
+  "mode": "openrouter",
+  "model": "google/gemini-3.1-flash-lite",
+  "embedding_model": "openai/text-embedding-3-small",
+  "splits": {
+    "development": {
+      "cases": 20,
+      "passed": 20,
+      "route_correct": 20,
+      "source_correct": 20,
+      "mean_ms": 849.1,
+      "p50_ms": 7.5,
+      "p95_ms": 2069.7
+    },
+    "held_out": {
+      "cases": 40,
+      "passed": 40,
+      "route_correct": 40,
+      "source_correct": 40,
+      "mean_ms": 1091.8,
+      "p50_ms": 1410.0,
+      "p95_ms": 2123.5
+    }
+  },
+  "retrieval": {
+    "development": {
+      "size": 9,
+      "sum": 8
+    },
+    "held_out": {
+      "size": 21,
+      "sum": 21
+    }
+  },
+  "local_provider_cost_usd": null,
+  "provider_cost": {
+    "calls": 60,
+    "calls_with_cost": 60,
+    "reported_usd": 0.006175639999999999
+  }
+}
