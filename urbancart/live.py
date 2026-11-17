@@ -19,6 +19,7 @@ class Intent(StrictModel):
     action: Literal["rag", "tools", "clarify", "refuse"]
     standalone_query: str
     language: Literal["en", "hi", "hinglish"]
+    product_names: list[str] = Field(default_factory=list)
     product_name: str | None
     category: str | None
     maximum_rupees: float | None = Field(gt=0, description="Explicit positive user budget in rupees; null when absent, never zero as a placeholder")
@@ -39,6 +40,7 @@ class Answer(StrictModel):
 
 INTENT_PROMPT = """Classify UrbanCart customer questions. Return the required JSON.
 Always fill knowledge_sources, reference_skus and tool_actions explicitly.
+Fill product_names with ALL named catalog products, especially both sides of comparisons.
 knowledge_sources lists ALL required knowledge: product for product facts, policy for rules,
 both for product-specific policy questions even without SKU. For tool-only stock/orders use [].
 For stock AND returns: action=tools, tool_actions=[check_stock_status], knowledge_sources=[product,policy].
@@ -196,9 +198,10 @@ def classify(core, request, state, usage):
 def retrieve(core, request, intent, state, usage):
     """Semantic retrieval with exact catalog constraints and linked policy exceptions."""
     query = intent.standalone_query
+    names = list(dict.fromkeys([*core.retrieval.match_names(request.query), *intent.product_names, *([intent.product_name] if intent.product_name else [])]))
     docs = []
     kinds = list(dict.fromkeys(intent.knowledge_sources)) or (["policy"] if intent.intent == "policy_qa" else ["product"])
-    if intent.intent == "policy_qa" and intent.product_name and "product" not in kinds:
+    if intent.intent == "policy_qa" and names and "product" not in kinds:
         kinds.append("product")
     if intent.intent == "policy_qa" and re.search(r"UC-[A-Z]{3}-\d{6}", query, re.I):
         kinds.append("product")
@@ -223,10 +226,10 @@ def retrieve(core, request, intent, state, usage):
         if skus:
             docs = [d for d in docs if d["kind"] != "product"]
             docs.extend(core.retrieval.by_id[s] for s in skus if s in core.retrieval.products)
-        elif intent.product_name or intent.maximum_rupees is not None or intent.category:
+        elif names or intent.maximum_rupees is not None or intent.category:
             maximum = None if intent.maximum_rupees is None else round(intent.maximum_rupees * 100) - int(intent.strict_budget)
-            ids = core.store.candidates(name=intent.product_name, category=intent.category,
-                                        maximum=maximum, limit=5)
+            ids = [sku for name in (names or [None]) for sku in core.store.candidates(
+                name=name, category=None if len(names) > 1 else intent.category, maximum=maximum, limit=5)]
             docs = [d for d in docs if d["kind"] != "product"]
             docs.extend(core.retrieval.by_id[s] for s in ids)
     # Include whole policy files associated with hits: only four short supplied documents.
@@ -244,6 +247,14 @@ def retrieve(core, request, intent, state, usage):
     elif intent.product_name and not skus:
         state.pop("sku", None)
     return list(unique.values())
+
+
+def ticket_receipt(ticket, language):
+    if language == "hi":
+        return f"डेमो सहायता टिकट: {ticket}। आपकी समस्या स्थानीय रूप से दर्ज हुई है। यह केवल अनुकरण है; वास्तविक सहायता अनुरोध नहीं भेजा गया है और जवाब का समय निर्धारित नहीं है।"
+    if language == "hinglish":
+        return f"Demo support ticket: {ticket}. Aapki problem locally record hui hai. Yeh simulation hai; real support request nahi bheji gayi aur response time tay nahi hai."
+    return f"Demo support ticket: {ticket}. Your issue was recorded locally for review. This is a simulated handoff; no real support request was sent and no response time is specified."
 
 
 def ensure_handoff(core, request, state, session_id, reason, called):
@@ -388,6 +399,19 @@ def respond_live(core, request, state, session_id, sources, called, usage):
         docs = retrieve(core, request, intent, state, usage)
         if any(d["kind"] == "product" for d in docs) and any(d["kind"] == "policy" for d in docs):
             route = "mixed"
+    if ticket:
+        sources.extend(docs)
+        state.update(confidence=1.0, last_evidence=docs, last_tool_results=results)
+        return ticket_receipt(ticket, intent.language), "escalation", "escalated", ticket
+    completed = {r["tool"] for r in results if r["result"]["status"] == "answered"}
+    pending = set(intent.tool_actions) - completed
+    if intent.action == "tools" and pending:
+        sources.extend(docs)
+        state.update(confidence=None, last_evidence=docs, last_tool_results=results)
+        message = {"hi": "अनुरोध के सभी चरण पूरे नहीं हुए। कृपया उत्पाद SKU, ऑर्डर ID या बजट स्पष्ट करके फिर पूछें।",
+                   "hinglish": "Request ke saare steps complete nahi hue. Product SKU, order ID ya budget clear karke dobara poochhein."}.get(intent.language,
+                   "I could not complete every requested action. Please clarify the product SKU, order ID or budget and retry.")
+        return message, route, "clarify", None
     payload = {"question": request.query, "standalone_query": intent.standalone_query,
                "language": intent.language, "evidence": docs, "tool_results": results}
     # LCEL composition exposes formatting, generation and validation as reusable stages.
@@ -438,8 +462,7 @@ def respond_live(core, request, state, session_id, sources, called, usage):
             route, status = "escalation", "escalated"
     if ticket:
         # Ticket receipts are server-owned: generated prose must not invent an agent SLA.
-        answer.answer = (f"Demo support ticket: {ticket}. Your issue was recorded locally for review. "
-                         "This is a simulated handoff; no real support request was sent and no response time is specified.")
+        answer.answer = ticket_receipt(ticket, intent.language)
     if any(name in called for name in ("check_stock_status", "recommend_similar_products")):
         # The server owns source freshness; do not let generated prose imply a live feed.
         answer.answer = re.sub(r"\bcurrently\b", "in the catalog snapshot", answer.answer, flags=re.I)

@@ -25,7 +25,7 @@ def execute(path, selected_ids=None, bootstrap=None):
             cell["outputs"] = []
             msg_id = client.execute("".join(cell["source"]), allow_stdin=False, stop_on_error=True)
             while True:
-                message = client.get_iopub_msg(timeout=120)
+                message = client.get_iopub_msg(timeout=900)
                 if message["parent_header"].get("msg_id") != msg_id:
                     continue
                 kind, data = message["msg_type"], message["content"]

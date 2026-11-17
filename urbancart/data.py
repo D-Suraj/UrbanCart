@@ -176,6 +176,10 @@ def prepare(raw_dir=RAW, output=PROCESSED):
         products.append(product)
     audit_table = pd.DataFrame(audit, columns=["source_row", "sku", "field", "raw", "clean", "rule"])
     audit_table.to_csv(output / "cleaning_audit.csv", index=False)
+    pd.DataFrame([{"source_row": i, "sku": raw.sku, "correction_count": impacted[i],
+                   "needs_manual_review": impacted[i] > 3}
+                  for i, raw in enumerate(catalog.itertuples(index=False), 2)]).to_csv(
+                      output / "manual_review.csv", index=False)
     pd.DataFrame(conflict, columns=["sku", "field", "source_rows", "values"]).to_csv(output / "sku_conflicts.csv", index=False)
     groups = grouped_chat(chat)
     groups.to_csv(output / "query_groups.csv", index=False)

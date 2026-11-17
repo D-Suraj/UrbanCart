@@ -52,3 +52,6 @@ functional contract; their implementation differs from the older helper/JSON exa
 ## Judge-flagged cases
 
 None in this run.
+
+
+Latest code revision (18 November): see reports/REVIEW_FIXES.md (or REVIEW_FIXES.md from this reports folder). Six review findings are addressed; prior live evaluation numbers are retained as historical measurements.

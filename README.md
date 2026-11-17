@@ -125,3 +125,6 @@ For submission, UrbanCart_Submission.ipynb is the executed walkthrough; presenta
 the three-slide deck. submission/UrbanCart_Submission_Final.zip in the GitHub repository is a
 portable copy of the complete package, including code, data, tests and evidence. The repository
 root also contains those files for direct review. No credentials or runtime databases are shipped.
+
+
+Latest code revision (18 November): see reports/REVIEW_FIXES.md (or REVIEW_FIXES.md from this reports folder). Six review findings are addressed; prior live evaluation numbers are retained as historical measurements.

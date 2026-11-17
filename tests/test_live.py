@@ -149,3 +149,27 @@ def test_required_handoff_fallback_when_model_does_not_call_tool(core, monkeypat
     called = []
     result = live.respond_live(core, Ask(query="Need human support"), {}, "s", [], called, [])
     assert result[2] == "escalated" and result[3] and called == ["escalate_to_support"]
+
+
+def test_final_review_regressions(core, monkeypatch, tmp_path):
+    import urbancart.live as live
+    import pandas as pd
+    from urbancart.data import prepare
+    docs = live.retrieve(core, Ask(query="Compare Cotton Kurti and Smart Watch"), intent(product_name="Cotton Kurti"), {}, [])
+    assert {"Cotton Kurti", "Smart Watch"}.issubset({d["title"] for d in docs})
+    assert "UC-ELE-076422" in core.retrieval.products
+    profile = prepare(output=tmp_path)
+    rows = pd.read_csv(tmp_path / "manual_review.csv")
+    assert len(rows) == profile["catalog_rows"]
+    assert rows.needs_manual_review.sum() == profile["review_rows"]
+    class Provider:
+        def tool_chat(self, *args): return {"role": "assistant", "content": "Done"}
+        def json_chat(self, *args): raise ProviderError("synthesis outage")
+    core.provider = Provider()
+    monkeypatch.setattr(live, "classify", lambda *a: intent(needs_handoff=True, action="tools", language="hi", knowledge_sources=[], product_name=None))
+    result = core.ask(Ask(query="human support"))
+    assert result.escalated and result.ticket_id in result.answer and "स्थानीय" in result.answer
+    assert "locally" in live.ticket_receipt("DEMO-1", "hinglish")
+    monkeypatch.setattr(live, "classify", lambda *a: intent(action="tools", knowledge_sources=[], product_name=None, tool_actions=["check_stock_status", "recommend_similar_products"]))
+    result = core.ask(Ask(query="stock and alternatives"))
+    assert result.status == "clarify" and result.route != "service"

@@ -104,6 +104,8 @@ audit = pd.read_csv(PROCESSED / "cleaning_audit.csv", keep_default_na=False)
 conflicts = pd.read_csv(PROCESSED / "sku_conflicts.csv", keep_default_na=False)
 display(audit.sample(6, random_state=12))
 display(conflicts.head(6))
+review = pd.read_csv(PROCESSED / "manual_review.csv")
+display(review[review.needs_manual_review].head(10))
 coverage = pd.DataFrame([
     ("Raw strict format and consistency gate", profile["raw_required_rows"], profile["catalog_rows"]),
     ("Usable required fields after normalization", profile["usable_required_rows"], profile["catalog_rows"]),

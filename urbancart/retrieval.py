@@ -32,7 +32,7 @@ def product_doc(product):
             fields.append(f"{key}: {product[key]}")
     if product["price_paise"] is not None:
         fields.append(f"price: INR {product['price_paise'] / 100:.2f}")
-    return {"id": product["sku"], "kind": "product", "title": product["name"],
+    return {"id": product["sku"], "kind": "product", "title": product["name"] or product["sku"],
             "file": "urbancart_product_catalog_raw.csv", "rows": product["source_rows"],
             "text": "; ".join(fields)}
 
@@ -45,7 +45,7 @@ class Retrieval:
     def __init__(self, settings, provider=None):
         self.settings = settings
         self.provider = provider
-        self.products = {p["sku"]: p for p in read_products() if p["name"]}
+        self.products = {p["sku"]: p for p in read_products()}
         self.policies = policy_documents()
         self.docs = {"product": [product_doc(p) for p in self.products.values()], "policy": self.policies}
         self.by_id = {doc["id"]: doc for docs in self.docs.values() for doc in docs}
@@ -55,7 +55,7 @@ class Retrieval:
             matrix = model.fit_transform([render_doc(doc) for doc in docs])
             self.lexical[kind] = model, matrix
         self.vector = {}
-        self.names = sorted({p["name"] for p in self.products.values()}, key=lambda name: (-len(name), name))
+        self.names = sorted({p["name"] for p in self.products.values() if p["name"]}, key=lambda name: (-len(name), name))
 
     def index(self):
         import chromadb

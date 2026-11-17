@@ -70,3 +70,6 @@ The native OpenRouter agent loop and SQLite ticket storage remain explicit imple
 adaptations of the skeleton's behaviour. The old helper API and JSON queue are not represented
 as verbatim implementations. The supplied business architecture (router, RAG, tools, escalation,
 REST service and demo) is preserved. Source data and latency targets remain measured limitations.
+
+
+Latest code revision (18 November): see reports/REVIEW_FIXES.md (or REVIEW_FIXES.md from this reports folder). Six review findings are addressed; prior live evaluation numbers are retained as historical measurements.

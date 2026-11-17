@@ -56,3 +56,8 @@ the completed report records the checkpoint filename and separate completion sou
 Q54 originally promised help "shortly" without evidence. The final deterministic simulated-ticket
 receipt removes that promise. Its live retest passes with zero unsupported claims; the original
 full-run failure remains in the reported totals. After this change, tests/test_live.py: 10 passed.
+
+
+18 November review fixes: existing full suite 21 passed; expanded live regression suite 11 passed, including the new six-finding regression. No fresh 60-case accuracy claim is made.
+
+Updated notebook: all 12 code cells executed successfully after rebuilding the interrupted derived index. Runner now allows 900 seconds per output wait for initial indexing.
