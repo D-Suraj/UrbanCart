@@ -61,7 +61,7 @@ def test_agent_uses_model_tool_call_and_synthesizes(core):
     assert route == "stock_lookup" and status == "answered"
     assert called == ["check_stock_status"] and "451" in answer
     assert "not a live inventory check" in answer
-    assert core.provider.stages == ["classification", "generation"]
+    assert core.provider.stages == ["classification"]
 
 
 def test_session_customer_switch_clears_history(core):
@@ -173,3 +173,15 @@ def test_final_review_regressions(core, monkeypatch, tmp_path):
     monkeypatch.setattr(live, "classify", lambda *a: intent(action="tools", knowledge_sources=[], product_name=None, tool_actions=["check_stock_status", "recommend_similar_products"]))
     result = core.ask(Ask(query="stock and alternatives"))
     assert result.status == "clarify" and result.route != "service"
+
+
+def test_discount_repair_uses_only_valid_price_pair():
+    from types import SimpleNamespace
+    from urbancart.data import clean_row
+    row = dict(product_name="Test", category="electronics", brand="X", price="800", mrp="1000", discount_pct="-11", rating="4", stock_quantity="5", return_window_days="7", seller_id="S", description="Test item")
+    cleaned, flags = clean_row(SimpleNamespace(**row))
+    assert cleaned["discount_pct"] == 20
+    assert flags["discount_pct"] == "derived_from_verified_price_and_mrp"
+    row["price"] = ""
+    cleaned, _ = clean_row(SimpleNamespace(**row))
+    assert cleaned["price_paise"] is None and cleaned["discount_pct"] is None

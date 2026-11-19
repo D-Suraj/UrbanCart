@@ -1,3 +1,5 @@
+Latest 19 November measurements: see reports/DQ_LATENCY_FOLLOWUP.md. Strict DQ is now 49.14%; >90% DQ and <3s latency remain unmet. Earlier numbers below are historical.
+
 # UrbanCart Ask AI Assistant
 
 The main workflow implements the supplied assignment's LLM classification, RAG generation,

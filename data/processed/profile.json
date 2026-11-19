@@ -110,9 +110,10 @@
     "return_days:catalog_policy_conflict": 2762,
     "description:description_name_mismatch": 4074,
     "stock:invalid_or_unreliable": 152,
-    "discount_pct:invalid_or_unreliable": 465,
-    "discount_pct:discount_inconsistent": 246,
-    "return_days:invalid_or_unreliable": 190
+    "discount_pct:invalid_or_unreliable": 308,
+    "discount_pct:derived_from_verified_price_and_mrp": 390,
+    "return_days:invalid_or_unreliable": 190,
+    "discount_pct:discount_inconsistent": 13
   },
   "negative_stock": 152,
   "invalid_rating": 238,
@@ -126,7 +127,7 @@
     "brand": 3632,
     "price_paise": 2948,
     "mrp_paise": 4383,
-    "discount_pct": 3721,
+    "discount_pct": 4051,
     "rating": 4767,
     "stock": 4695,
     "return_days": 4557,

@@ -206,7 +206,11 @@ def retrieve(core, request, intent, state, usage):
     if intent.intent == "policy_qa" and re.search(r"UC-[A-Z]{3}-\d{6}", query, re.I):
         kinds.append("product")
     for kind in kinds:
-        docs.extend(core.retrieval.search(query, kind, usage=usage))
+        # Exact catalog filters replace semantic hits below; avoid a discarded embedding call.
+        exact_product = (names or intent.maximum_rupees is not None or intent.category or
+                         re.search(r"UC-[A-Z]{3}-\d{6}", request.query, re.I) or intent.reference_skus)
+        if kind != "product" or not exact_product:
+            docs.extend(core.retrieval.search(query, kind, usage=usage))
         if kind == "policy":
             # Lexical evidence supplements semantic retrieval on this small corpus; it does
             # not select the answer. This helps retain return clauses in mixed COD questions.
@@ -412,6 +416,17 @@ def respond_live(core, request, state, session_id, sources, called, usage):
                    "hinglish": "Request ke saare steps complete nahi hue. Product SKU, order ID ya budget clear karke dobara poochhein."}.get(intent.language,
                    "I could not complete every requested action. Please clarify the product SKU, order ID or budget and retry.")
         return message, route, "clarify", None
+    if (intent.action == "tools" and not intent.knowledge_sources and len(results) == 1
+            and results[0]["tool"] == "check_stock_status"
+            and results[0]["result"]["status"] == "answered" and intent.language == "en"):
+        result = results[0]["result"]
+        sources.extend(docs)
+        state.update(confidence=1.0, last_evidence=docs, last_tool_results=results)
+        receipt = result["stock"] + " This is a dataset snapshot, not a live inventory check."
+        if result.get("pincode"):
+            receipt += " Pincode serviceability is not available in the supplied data."
+        receipt += " " + " ".join(f"[{d['id']}]" for d in docs)
+        return receipt, route, "answered", None
     payload = {"question": request.query, "standalone_query": intent.standalone_query,
                "language": intent.language, "evidence": docs, "tool_results": results}
     # LCEL composition exposes formatting, generation and validation as reusable stages.

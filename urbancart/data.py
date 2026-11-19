@@ -104,9 +104,12 @@ def clean_row(raw):
         flags["mrp_paise"] = "price_pair_conflict"
         flags["discount_pct"] = "price_pair_conflict"
         row["price_paise"] = row["mrp_paise"] = row["discount_pct"] = None
-    if row["price_paise"] and row["mrp_paise"] and row["discount_pct"] is not None:
-        computed = 100 * (1 - row["price_paise"] / row["mrp_paise"])
-        if abs(computed - row["discount_pct"]) > 1:
+    if row["price_paise"] and row["mrp_paise"]:
+        computed = round(100 * (1 - row["price_paise"] / row["mrp_paise"]), 4)
+        if 0 <= computed <= 80 and (row["discount_pct"] is None or abs(computed - row["discount_pct"]) > 1):
+            flags["discount_pct"] = "derived_from_verified_price_and_mrp"
+            row["discount_pct"] = computed
+        elif row["discount_pct"] is not None and abs(computed - row["discount_pct"]) > 1:
             flags["discount_pct"] = "discount_inconsistent"
             row["discount_pct"] = None
     expected = WINDOWS.get(row["category"])

@@ -18,12 +18,12 @@
   },
   "resolved_skus": {
     "records": 4996,
-    "clean_records": 2165,
-    "dq_score_pct": 43.33466773418735,
+    "clean_records": 2455,
+    "dq_score_pct": 49.13931144915933,
     "failed_or_unverifiable_by_rule": {
       "required_fields": 2323,
       "price_positive": 2048,
-      "discount_range": 1275,
+      "discount_range": 945,
       "rating_range": 229,
       "stock_nonnegative": 301,
       "mrp_gte_price": 2048,

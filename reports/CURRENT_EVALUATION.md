@@ -1,3 +1,5 @@
+Latest 19 November measurements: see DQ_LATENCY_FOLLOWUP.md. Strict DQ is now 49.14%; >90% DQ and <3s latency remain unmet. Earlier numbers below are historical.
+
 # Current full verification
 
 Fresh complete 60-case live run: [llm-v2-all-20261117T182527Z.json](llm-v2-all-20261117T182527Z.json). Original answers, failures,

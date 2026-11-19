@@ -1,0 +1,1349 @@
+{
+  "pipeline": "llm-v2",
+  "created_utc": "20261119T150110Z",
+  "model": "google/gemini-3.1-flash-lite",
+  "judge_model": "google/gemini-3.1-flash-lite",
+  "split": "regression",
+  "limitations": "Same-model judge is fallible; check claims manually. Prior curated cases were visible during earlier development.",
+  "cases": [
+    {
+      "id": "Q01",
+      "question": "Can I return electronics?",
+      "expected": "Electronics can be returned within 7 days of delivery, with original packaging and accessories. Final Sale items excluded.",
+      "reply": {
+        "answer": "Electronics are returnable within 7 days of delivery, provided you have the original packaging and accessories [return_refund_policy:1.2]. Please note that items marked as \"Final Sale\" are not eligible for return or exchange [return_refund_policy:2.2].",
+        "source": "return_refund_policy:1.2",
+        "sources": [
+          {
+            "id": "return_refund_policy:1.2",
+            "kind": "policy",
+            "title": "URBANCART — RETURN & REFUND POLICY",
+            "file": "return_refund_policy.txt",
+            "section": "1.2",
+            "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+            "heading": "RETURN ELIGIBILITY",
+            "text": "Electronics: Returnable within 7 days of delivery, original packaging and accessories required."
+          },
+          {
+            "id": "return_refund_policy:2.2",
+            "kind": "policy",
+            "title": "URBANCART — RETURN & REFUND POLICY",
+            "file": "return_refund_policy.txt",
+            "section": "2.2",
+            "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+            "heading": "NON-RETURNABLE ITEMS",
+            "text": "Items marked \"Final Sale\" on the product page are not eligible for return or exchange."
+          }
+        ],
+        "route": "policy_qa",
+        "status": "answered",
+        "confidence": 1.0,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "036c475a2c144c2396fb9a49a050cda4",
+        "tool_calls": [],
+        "mock": false,
+        "mode": "openrouter",
+        "elapsed_ms": 6607,
+        "llm_calls": 2,
+        "embedding_calls": 1,
+        "intent": "policy_qa"
+      },
+      "route_ok": true,
+      "tool_ok": true,
+      "source_ok": true,
+      "judgement": {
+        "claims": [
+          {
+            "text": "Electronics are returnable within 7 days of delivery, provided you have the original packaging and accessories.",
+            "supported": true,
+            "explanation": "This is directly supported by section 1.2 of the return_refund_policy."
+          },
+          {
+            "text": "Items marked as \"Final Sale\" are not eligible for return or exchange.",
+            "supported": true,
+            "explanation": "This is directly supported by section 2.2 of the return_refund_policy."
+          }
+        ],
+        "relevant_context_ids": [
+          "return_refund_policy:1.2",
+          "return_refund_policy:2.2"
+        ],
+        "answer_relevance_1_to_5": 5,
+        "expected_facts_satisfied": true,
+        "explanation": "The answer accurately reflects the return policy for electronics and correctly identifies the exclusion for Final Sale items."
+      },
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.1,
+      "judge_calls": [
+        {
+          "endpoint": "chat/completions",
+          "requested_model": "google/gemini-3.1-flash-lite",
+          "ok": true,
+          "http_status": 200,
+          "model": "google/gemini-3.1-flash-lite",
+          "provider": "Google",
+          "usage": {
+            "prompt_tokens": 2799,
+            "completion_tokens": 225,
+            "total_tokens": 3024,
+            "cost": 0.00103725,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00103725,
+              "upstream_inference_prompt_cost": 0.00069975,
+              "upstream_inference_completions_cost": 0.0003375
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "seconds": 1.5892
+        }
+      ],
+      "application_trace": {
+        "at": "2026-11-19T15:01:17.259579+00:00",
+        "route": "policy_qa",
+        "status": "answered",
+        "mode": "openrouter",
+        "source_ids": [
+          "return_refund_policy:1.2",
+          "return_refund_policy:2.2"
+        ],
+        "tools": [],
+        "elapsed_ms": 6607,
+        "calls": [
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.1-flash-lite",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.1-flash-lite",
+            "provider": "Google",
+            "usage": {
+              "prompt_tokens": 1911,
+              "completion_tokens": 134,
+              "total_tokens": 2045,
+              "cost": 0.00067875,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.00067875,
+                "upstream_inference_prompt_cost": 0.00047775,
+                "upstream_inference_completions_cost": 0.000201
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 3.2728
+          },
+          {
+            "endpoint": "embeddings",
+            "requested_model": "openai/text-embedding-3-small",
+            "ok": true,
+            "http_status": 200,
+            "model": "text-embedding-3-small",
+            "provider": "OpenAI",
+            "usage": {
+              "prompt_tokens": 8,
+              "total_tokens": 8,
+              "cost": 1.6e-07,
+              "is_byok": false,
+              "cost_details": {
+                "upstream_inference_cost": 1.6e-07,
+                "upstream_inference_prompt_cost": 1.6e-07,
+                "upstream_inference_completions_cost": 0
+              }
+            },
+            "seconds": 0.7159
+          },
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.1-flash-lite",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.1-flash-lite",
+            "provider": "Google",
+            "usage": {
+              "prompt_tokens": 2871,
+              "completion_tokens": 121,
+              "total_tokens": 2992,
+              "cost": 0.00089925,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.00089925,
+                "upstream_inference_prompt_cost": 0.00071775,
+                "upstream_inference_completions_cost": 0.0001815
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 2.5158
+          }
+        ],
+        "pipeline": "llm-v2",
+        "intent": "policy_qa",
+        "confidence": 1.0,
+        "failure": null
+      },
+      "retrieval_probe": {
+        "expected": "return_refund_policy:1.2",
+        "ids": [
+          "return_refund_policy:1.2",
+          "return_refund_policy:1.3",
+          "return_refund_policy:1.1",
+          "return_refund_policy:2.1",
+          "return_refund_policy:1.4"
+        ],
+        "hit_at_5": true,
+        "calls": [
+          {
+            "endpoint": "embeddings",
+            "requested_model": "openai/text-embedding-3-small",
+            "ok": true,
+            "http_status": 200,
+            "model": "text-embedding-3-small",
+            "provider": "OpenAI",
+            "usage": {
+              "prompt_tokens": 5,
+              "total_tokens": 5,
+              "cost": 1e-07,
+              "is_byok": false,
+              "cost_details": {
+                "upstream_inference_cost": 1e-07,
+                "upstream_inference_prompt_cost": 1e-07,
+                "upstream_inference_completions_cost": 0
+              }
+            },
+            "seconds": 0.9489
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q10",
+      "question": "What's the weather?",
+      "expected": "Decline weather assistance and offer UrbanCart shopping/support assistance.",
+      "reply": {
+        "answer": "I'm UrbanCart's AI assistant. I can help with products, policies and demo orders.",
+        "source": null,
+        "sources": [],
+        "route": "off_topic",
+        "status": "refused",
+        "confidence": null,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "931975e505604306bf668f3d418d53f0",
+        "tool_calls": [],
+        "mock": false,
+        "mode": "openrouter",
+        "elapsed_ms": 1694,
+        "llm_calls": 1,
+        "embedding_calls": 0,
+        "intent": "off_topic"
+      },
+      "route_ok": true,
+      "tool_ok": true,
+      "source_ok": true,
+      "judgement": {
+        "claims": [
+          {
+            "text": "I'm UrbanCart's AI assistant.",
+            "supported": true,
+            "explanation": "The assistant correctly identifies its role."
+          },
+          {
+            "text": "I can help with products, policies and demo orders.",
+            "supported": true,
+            "explanation": "This aligns with the defined application scope."
+          }
+        ],
+        "relevant_context_ids": [],
+        "answer_relevance_1_to_5": 5,
+        "expected_facts_satisfied": true,
+        "explanation": "The assistant correctly identified that it cannot provide weather information and redirected the user to its supported functions (products, policies, and demo orders)."
+      },
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": null,
+      "judge_calls": [
+        {
+          "endpoint": "chat/completions",
+          "requested_model": "google/gemini-3.1-flash-lite",
+          "ok": true,
+          "http_status": 200,
+          "model": "google/gemini-3.1-flash-lite",
+          "provider": "Google",
+          "usage": {
+            "prompt_tokens": 686,
+            "completion_tokens": 169,
+            "total_tokens": 855,
+            "cost": 0.000425,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000425,
+              "upstream_inference_prompt_cost": 0.0001715,
+              "upstream_inference_completions_cost": 0.0002535
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "seconds": 2.4505
+        }
+      ],
+      "application_trace": {
+        "at": "2026-11-19T15:01:21.510555+00:00",
+        "route": "off_topic",
+        "status": "refused",
+        "mode": "openrouter",
+        "source_ids": [],
+        "tools": [],
+        "elapsed_ms": 1694,
+        "calls": [
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.1-flash-lite",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.1-flash-lite",
+            "provider": "Google",
+            "usage": {
+              "prompt_tokens": 1912,
+              "completion_tokens": 158,
+              "total_tokens": 2070,
+              "cost": 0.000715,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.000715,
+                "upstream_inference_prompt_cost": 0.000478,
+                "upstream_inference_completions_cost": 0.000237
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 1.6581
+          }
+        ],
+        "pipeline": "llm-v2",
+        "intent": "off_topic",
+        "confidence": null,
+        "failure": null
+      }
+    },
+    {
+      "id": "Q20",
+      "question": "Suggest similar products to UC-ELE-891071 under Rs 2000",
+      "expected": "Call recommend_similar_products using UC-ELE-891071 and maximum strictly below INR 2000; return only in-stock same-category alternatives within budget or explain no matches.",
+      "reply": {
+        "answer": "Catalog snapshot; this is not a live inventory check.\n\nFor the LED Monitor (UC-ELE-891071), similar electronics products available under Rs 2000 include the Bluetooth Earbuds (UC-ELE-067065) priced at INR 1400.00, the Power Bank (UC-ELE-602264) priced at INR 1570.00, and the USB-C Cable (UC-ELE-871785) priced at INR 1580.00. [UC-ELE-891071] [UC-ELE-067065] [UC-ELE-602264] [UC-ELE-871785]",
+        "source": "UC-ELE-891071",
+        "sources": [
+          {
+            "id": "UC-ELE-891071",
+            "kind": "product",
+            "title": "LED Monitor",
+            "file": "urbancart_product_catalog_raw.csv",
+            "rows": [
+              3
+            ],
+            "text": "name: LED Monitor; brand: StepUp; category: Electronics; rating: 1.7; price: INR 33350.00",
+            "validated_attributes": {
+              "price_paise": 3335000,
+              "rating": 1.7,
+              "stock": 451,
+              "return_conflict": true,
+              "conflicts": [],
+              "category": "Electronics"
+            }
+          },
+          {
+            "id": "UC-ELE-067065",
+            "kind": "product",
+            "title": "Bluetooth Earbuds",
+            "file": "urbancart_product_catalog_raw.csv",
+            "rows": [
+              4730
+            ],
+            "text": "name: Bluetooth Earbuds; brand: Nestwell; category: Electronics; rating: 4.6; price: INR 1400.00",
+            "snapshot_stock": 49
+          },
+          {
+            "id": "UC-ELE-602264",
+            "kind": "product",
+            "title": "Power Bank",
+            "file": "urbancart_product_catalog_raw.csv",
+            "rows": [
+              2209
+            ],
+            "text": "name: Power Bank; brand: HomeVibe; category: Electronics; rating: 4.5; price: INR 1570.00",
+            "snapshot_stock": 493
+          },
+          {
+            "id": "UC-ELE-871785",
+            "kind": "product",
+            "title": "USB-C Cable",
+            "file": "urbancart_product_catalog_raw.csv",
+            "rows": [
+              1062
+            ],
+            "text": "name: USB-C Cable; brand: TechNova; category: Electronics; rating: 3.9; price: INR 1580.00",
+            "snapshot_stock": 473
+          }
+        ],
+        "route": "recommendation",
+        "status": "answered",
+        "confidence": 1.0,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "ac208ecb27a24dabacb2c62d2ae89283",
+        "tool_calls": [
+          "recommend_similar_products"
+        ],
+        "mock": true,
+        "mode": "openrouter",
+        "elapsed_ms": 4148,
+        "llm_calls": 3,
+        "embedding_calls": 1,
+        "intent": "product_qa"
+      },
+      "route_ok": true,
+      "tool_ok": true,
+      "source_ok": true,
+      "judgement": {
+        "claims": [
+          {
+            "text": "Bluetooth Earbuds (UC-ELE-067065) are priced at INR 1400.00.",
+            "supported": true,
+            "explanation": "The price matches the evidence provided for UC-ELE-067065."
+          },
+          {
+            "text": "Power Bank (UC-ELE-602264) is priced at INR 1570.00.",
+            "supported": true,
+            "explanation": "The price matches the evidence provided for UC-ELE-602264."
+          },
+          {
+            "text": "USB-C Cable (UC-ELE-871785) is priced at INR 1580.00.",
+            "supported": true,
+            "explanation": "The price matches the evidence provided for UC-ELE-871785."
+          }
+        ],
+        "relevant_context_ids": [
+          "UC-ELE-891071",
+          "UC-ELE-067065",
+          "UC-ELE-602264",
+          "UC-ELE-871785"
+        ],
+        "answer_relevance_1_to_5": 5,
+        "expected_facts_satisfied": true,
+        "explanation": "The model correctly executed the tool to find products in the same category (Electronics) under the specified budget and presented them accurately."
+      },
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 1.0,
+      "judge_calls": [
+        {
+          "endpoint": "chat/completions",
+          "requested_model": "google/gemini-3.1-flash-lite",
+          "ok": true,
+          "http_status": 200,
+          "model": "google/gemini-3.1-flash-lite",
+          "provider": "Google",
+          "usage": {
+            "prompt_tokens": 1667,
+            "completion_tokens": 353,
+            "total_tokens": 2020,
+            "cost": 0.00094625,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00094625,
+              "upstream_inference_prompt_cost": 0.00041675,
+              "upstream_inference_completions_cost": 0.0005295
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "seconds": 4.015
+        }
+      ],
+      "application_trace": {
+        "at": "2026-11-19T15:01:28.134778+00:00",
+        "route": "recommendation",
+        "status": "answered",
+        "mode": "openrouter",
+        "source_ids": [
+          "UC-ELE-891071",
+          "UC-ELE-067065",
+          "UC-ELE-602264",
+          "UC-ELE-871785"
+        ],
+        "tools": [
+          "recommend_similar_products"
+        ],
+        "elapsed_ms": 4148,
+        "calls": [
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.1-flash-lite",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.1-flash-lite",
+            "provider": "Google",
+            "usage": {
+              "prompt_tokens": 1928,
+              "completion_tokens": 169,
+              "total_tokens": 2097,
+              "cost": 0.0007355,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.0007355,
+                "upstream_inference_prompt_cost": 0.000482,
+                "upstream_inference_completions_cost": 0.0002535
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 1.1912
+          },
+          {
+            "endpoint": "embeddings",
+            "requested_model": "openai/text-embedding-3-small",
+            "ok": true,
+            "http_status": 200,
+            "model": "text-embedding-3-small",
+            "provider": "OpenAI",
+            "usage": {
+              "prompt_tokens": 15,
+              "total_tokens": 15,
+              "cost": 3e-07,
+              "is_byok": false,
+              "cost_details": {
+                "upstream_inference_cost": 3e-07,
+                "upstream_inference_prompt_cost": 3e-07,
+                "upstream_inference_completions_cost": 0
+              }
+            },
+            "seconds": 0.5977
+          },
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.1-flash-lite",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.1-flash-lite",
+            "provider": "Google",
+            "usage": {
+              "prompt_tokens": 756,
+              "completion_tokens": 43,
+              "total_tokens": 799,
+              "cost": 0.0002535,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.0002535,
+                "upstream_inference_prompt_cost": 0.000189,
+                "upstream_inference_completions_cost": 6.45e-05
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 0.9317
+          },
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.1-flash-lite",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.1-flash-lite",
+            "provider": "Google",
+            "usage": {
+              "prompt_tokens": 1610,
+              "completion_tokens": 205,
+              "total_tokens": 1815,
+              "cost": 0.00071,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.00071,
+                "upstream_inference_prompt_cost": 0.0004025,
+                "upstream_inference_completions_cost": 0.0003075
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 1.3679
+          }
+        ],
+        "pipeline": "llm-v2",
+        "intent": "product_qa",
+        "confidence": 1.0,
+        "failure": null
+      }
+    },
+    {
+      "id": "Q31",
+      "question": "Rural delivery time kya hai?",
+      "expected": "7-10 business days",
+      "reply": {
+        "answer": "Rural areas mein delivery ke liye 7-10 business days ka samay lagta hai. [shipping_delivery_policy:1.3]",
+        "source": "shipping_delivery_policy:1.3",
+        "sources": [
+          {
+            "id": "shipping_delivery_policy:1.3",
+            "kind": "policy",
+            "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+            "file": "shipping_delivery_policy.txt",
+            "section": "1.3",
+            "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+            "heading": "DELIVERY TIMELINES",
+            "text": "Remote / rural pincodes: 7-10 business days."
+          }
+        ],
+        "route": "policy_qa",
+        "status": "answered",
+        "confidence": 1.0,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "d0100b954fd5495c90f6a4fe17b59aac",
+        "tool_calls": [],
+        "mock": false,
+        "mode": "openrouter",
+        "elapsed_ms": 3133,
+        "llm_calls": 2,
+        "embedding_calls": 1,
+        "intent": "policy_qa"
+      },
+      "route_ok": true,
+      "tool_ok": true,
+      "source_ok": true,
+      "judgement": {
+        "claims": [
+          {
+            "text": "Rural areas mein delivery ke liye 7-10 business days ka samay lagta hai.",
+            "supported": true,
+            "explanation": "The claim accurately reflects the delivery timeline for rural pincodes as stated in the shipping policy."
+          }
+        ],
+        "relevant_context_ids": [
+          "shipping_delivery_policy:1.3"
+        ],
+        "answer_relevance_1_to_5": 5,
+        "expected_facts_satisfied": true,
+        "explanation": "The answer correctly identifies the delivery timeline for rural areas and cites the appropriate policy section."
+      },
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.1,
+      "judge_calls": [
+        {
+          "endpoint": "chat/completions",
+          "requested_model": "google/gemini-3.1-flash-lite",
+          "ok": true,
+          "http_status": 200,
+          "model": "google/gemini-3.1-flash-lite",
+          "provider": "Google",
+          "usage": {
+            "prompt_tokens": 1704,
+            "completion_tokens": 152,
+            "total_tokens": 1856,
+            "cost": 0.000654,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000654,
+              "upstream_inference_prompt_cost": 0.000426,
+              "upstream_inference_completions_cost": 0.000228
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "seconds": 1.6092
+        }
+      ],
+      "application_trace": {
+        "at": "2026-11-19T15:01:35.308702+00:00",
+        "route": "policy_qa",
+        "status": "answered",
+        "mode": "openrouter",
+        "source_ids": [
+          "shipping_delivery_policy:1.3"
+        ],
+        "tools": [],
+        "elapsed_ms": 3133,
+        "calls": [
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.1-flash-lite",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.1-flash-lite",
+            "provider": "Google",
+            "usage": {
+              "prompt_tokens": 1912,
+              "completion_tokens": 135,
+              "total_tokens": 2047,
+              "cost": 0.0006805,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.0006805,
+                "upstream_inference_prompt_cost": 0.000478,
+                "upstream_inference_completions_cost": 0.0002025
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 1.39
+          },
+          {
+            "endpoint": "embeddings",
+            "requested_model": "openai/text-embedding-3-small",
+            "ok": true,
+            "http_status": 200,
+            "model": "text-embedding-3-small",
+            "provider": "OpenAI",
+            "usage": {
+              "prompt_tokens": 9,
+              "total_tokens": 9,
+              "cost": 1.8e-07,
+              "is_byok": false,
+              "cost_details": {
+                "upstream_inference_cost": 1.8e-07,
+                "upstream_inference_prompt_cost": 1.8e-07,
+                "upstream_inference_completions_cost": 0
+              }
+            },
+            "seconds": 0.6088
+          },
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.1-flash-lite",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.1-flash-lite",
+            "provider": "Google",
+            "usage": {
+              "prompt_tokens": 1821,
+              "completion_tokens": 69,
+              "total_tokens": 1890,
+              "cost": 0.00055875,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.00055875,
+                "upstream_inference_prompt_cost": 0.00045525,
+                "upstream_inference_completions_cost": 0.0001035
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 1.0776
+          }
+        ],
+        "pipeline": "llm-v2",
+        "intent": "policy_qa",
+        "confidence": 1.0,
+        "failure": null
+      },
+      "retrieval_probe": {
+        "expected": "shipping_delivery_policy:1.3",
+        "ids": [
+          "shipping_delivery_policy:1.3",
+          "shipping_delivery_policy:1.1",
+          "shipping_delivery_policy:1.2",
+          "shipping_delivery_policy:3.1",
+          "shipping_delivery_policy:3.2"
+        ],
+        "hit_at_5": true,
+        "calls": [
+          {
+            "endpoint": "embeddings",
+            "requested_model": "openai/text-embedding-3-small",
+            "ok": true,
+            "http_status": 200,
+            "model": "text-embedding-3-small",
+            "provider": "OpenAI",
+            "usage": {
+              "prompt_tokens": 8,
+              "total_tokens": 8,
+              "cost": 1.6e-07,
+              "is_byok": false,
+              "cost_details": {
+                "upstream_inference_cost": 1.6e-07,
+                "upstream_inference_prompt_cost": 1.6e-07,
+                "upstream_inference_completions_cost": 0
+              }
+            },
+            "seconds": 0.6791
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q40",
+      "question": "Is product UC-ELE-916693 available in stock?",
+      "expected": "283 units",
+      "reply": {
+        "answer": "Catalog snapshot; this is not a live inventory check.\n\nYes, the Wireless Mouse (UC-ELE-916693) is in the catalog snapshot in stock with 283 units available. [UC-ELE-916693]",
+        "source": "UC-ELE-916693",
+        "sources": [
+          {
+            "id": "UC-ELE-916693",
+            "kind": "product",
+            "title": "Wireless Mouse",
+            "file": "urbancart_product_catalog_raw.csv",
+            "rows": [
+              2
+            ],
+            "text": "Catalog snapshot: Wireless Mouse is in stock (283 units).",
+            "validated_attributes": {
+              "price_paise": null,
+              "rating": null,
+              "stock": 283,
+              "return_conflict": true,
+              "conflicts": [],
+              "category": "Electronics"
+            }
+          }
+        ],
+        "route": "stock_lookup",
+        "status": "answered",
+        "confidence": 1.0,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "14e161d53d41463da845985225013b98",
+        "tool_calls": [
+          "check_stock_status"
+        ],
+        "mock": true,
+        "mode": "openrouter",
+        "elapsed_ms": 5728,
+        "llm_calls": 3,
+        "embedding_calls": 1,
+        "intent": "product_qa"
+      },
+      "route_ok": true,
+      "tool_ok": true,
+      "source_ok": true,
+      "judgement": {
+        "claims": [
+          {
+            "text": "The Wireless Mouse (UC-ELE-916693) is in the catalog snapshot in stock with 283 units available.",
+            "supported": true,
+            "explanation": "The evidence confirms the product is in stock with 283 units available."
+          }
+        ],
+        "relevant_context_ids": [
+          "UC-ELE-916693"
+        ],
+        "answer_relevance_1_to_5": 5,
+        "expected_facts_satisfied": true,
+        "explanation": "The answer correctly identifies the stock level and includes the necessary disclaimer that the information is based on a catalog snapshot rather than live inventory."
+      },
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 1.0,
+      "judge_calls": [
+        {
+          "endpoint": "chat/completions",
+          "requested_model": "google/gemini-3.1-flash-lite",
+          "ok": true,
+          "http_status": 200,
+          "model": "google/gemini-3.1-flash-lite",
+          "provider": "Google",
+          "usage": {
+            "prompt_tokens": 887,
+            "completion_tokens": 170,
+            "total_tokens": 1057,
+            "cost": 0.00047675,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00047675,
+              "upstream_inference_prompt_cost": 0.00022175,
+              "upstream_inference_completions_cost": 0.000255
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "seconds": 1.4298
+        }
+      ],
+      "application_trace": {
+        "at": "2026-11-19T15:01:43.361131+00:00",
+        "route": "stock_lookup",
+        "status": "answered",
+        "mode": "openrouter",
+        "source_ids": [
+          "UC-ELE-916693"
+        ],
+        "tools": [
+          "check_stock_status"
+        ],
+        "elapsed_ms": 5728,
+        "calls": [
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.1-flash-lite",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.1-flash-lite",
+            "provider": "Google",
+            "usage": {
+              "prompt_tokens": 1922,
+              "completion_tokens": 159,
+              "total_tokens": 2081,
+              "cost": 0.000719,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.000719,
+                "upstream_inference_prompt_cost": 0.0004805,
+                "upstream_inference_completions_cost": 0.0002385
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 2.3455
+          },
+          {
+            "endpoint": "embeddings",
+            "requested_model": "openai/text-embedding-3-small",
+            "ok": true,
+            "http_status": 200,
+            "model": "text-embedding-3-small",
+            "provider": "OpenAI",
+            "usage": {
+              "prompt_tokens": 12,
+              "total_tokens": 12,
+              "cost": 2.4e-07,
+              "is_byok": false,
+              "cost_details": {
+                "upstream_inference_cost": 2.4e-07,
+                "upstream_inference_prompt_cost": 2.4e-07,
+                "upstream_inference_completions_cost": 0
+              }
+            },
+            "seconds": 1.1083
+          },
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.1-flash-lite",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.1-flash-lite",
+            "provider": "Google",
+            "usage": {
+              "prompt_tokens": 715,
+              "completion_tokens": 33,
+              "total_tokens": 748,
+              "cost": 0.00022825,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.00022825,
+                "upstream_inference_prompt_cost": 0.00017875,
+                "upstream_inference_completions_cost": 4.95e-05
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 1.0827
+          },
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.1-flash-lite",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.1-flash-lite",
+            "provider": "Google",
+            "usage": {
+              "prompt_tokens": 979,
+              "completion_tokens": 79,
+              "total_tokens": 1058,
+              "cost": 0.00036325,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.00036325,
+                "upstream_inference_prompt_cost": 0.00024475,
+                "upstream_inference_completions_cost": 0.0001185
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 1.1298
+          }
+        ],
+        "pipeline": "llm-v2",
+        "intent": "product_qa",
+        "confidence": 1.0,
+        "failure": null
+      }
+    },
+    {
+      "id": "Q50",
+      "question": "Suggest similar to UC-ELE-916693",
+      "expected": "maximum budget",
+      "reply": {
+        "answer": "I could not complete every requested action. Please clarify the product SKU, order ID or budget and retry.",
+        "source": "UC-ELE-916693",
+        "sources": [
+          {
+            "id": "UC-ELE-916693",
+            "kind": "product",
+            "title": "Wireless Mouse",
+            "file": "urbancart_product_catalog_raw.csv",
+            "rows": [
+              2
+            ],
+            "text": "name: Wireless Mouse; brand: Zaffira; category: Electronics",
+            "validated_attributes": {
+              "price_paise": null,
+              "rating": null,
+              "stock": 283,
+              "return_conflict": true,
+              "conflicts": [],
+              "category": "Electronics"
+            }
+          }
+        ],
+        "route": "recommendation",
+        "status": "clarify",
+        "confidence": null,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "46fa1e07c7f54884a8f158d54943d0e4",
+        "tool_calls": [
+          "recommend_similar_products"
+        ],
+        "mock": true,
+        "mode": "openrouter",
+        "elapsed_ms": 3967,
+        "llm_calls": 2,
+        "embedding_calls": 1,
+        "intent": "product_qa"
+      },
+      "route_ok": true,
+      "tool_ok": true,
+      "source_ok": true,
+      "judgement": {
+        "claims": [
+          {
+            "text": "I could not complete every requested action.",
+            "supported": true,
+            "explanation": "The tool failed to return recommendations due to missing price data."
+          },
+          {
+            "text": "Please clarify the product SKU, order ID or budget and retry.",
+            "supported": true,
+            "explanation": "The tool explicitly requested the budget to proceed with recommendations."
+          }
+        ],
+        "relevant_context_ids": [
+          "UC-ELE-916693"
+        ],
+        "answer_relevance_1_to_5": 5,
+        "expected_facts_satisfied": true,
+        "explanation": "The answer correctly identifies the need for clarification as requested by the tool and the expected facts, specifically regarding the budget."
+      },
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 1.0,
+      "judge_calls": [
+        {
+          "endpoint": "chat/completions",
+          "requested_model": "google/gemini-3.1-flash-lite",
+          "ok": true,
+          "http_status": 200,
+          "model": "google/gemini-3.1-flash-lite",
+          "provider": "Google",
+          "usage": {
+            "prompt_tokens": 834,
+            "completion_tokens": 190,
+            "total_tokens": 1024,
+            "cost": 0.0004935,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0004935,
+              "upstream_inference_prompt_cost": 0.0002085,
+              "upstream_inference_completions_cost": 0.000285
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "seconds": 1.5007
+        }
+      ],
+      "application_trace": {
+        "at": "2026-11-19T15:01:48.778005+00:00",
+        "route": "recommendation",
+        "status": "clarify",
+        "mode": "openrouter",
+        "source_ids": [
+          "UC-ELE-916693"
+        ],
+        "tools": [
+          "recommend_similar_products"
+        ],
+        "elapsed_ms": 3967,
+        "calls": [
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.1-flash-lite",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.1-flash-lite",
+            "provider": "Google",
+            "usage": {
+              "prompt_tokens": 1920,
+              "completion_tokens": 157,
+              "total_tokens": 2077,
+              "cost": 0.0007155,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.0007155,
+                "upstream_inference_prompt_cost": 0.00048,
+                "upstream_inference_completions_cost": 0.0002355
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 1.5145
+          },
+          {
+            "endpoint": "embeddings",
+            "requested_model": "openai/text-embedding-3-small",
+            "ok": true,
+            "http_status": 200,
+            "model": "text-embedding-3-small",
+            "provider": "OpenAI",
+            "usage": {
+              "prompt_tokens": 10,
+              "total_tokens": 10,
+              "cost": 2e-07,
+              "is_byok": false,
+              "cost_details": {
+                "upstream_inference_cost": 2e-07,
+                "upstream_inference_prompt_cost": 2e-07,
+                "upstream_inference_completions_cost": 0
+              }
+            },
+            "seconds": 0.6291
+          },
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.1-flash-lite",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.1-flash-lite",
+            "provider": "Google",
+            "usage": {
+              "prompt_tokens": 712,
+              "completion_tokens": 40,
+              "total_tokens": 752,
+              "cost": 0.000238,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.000238,
+                "upstream_inference_prompt_cost": 0.000178,
+                "upstream_inference_completions_cost": 6e-05
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 1.7856
+          }
+        ],
+        "pipeline": "llm-v2",
+        "intent": "product_qa",
+        "confidence": null,
+        "failure": null
+      }
+    }
+  ],
+  "consistency": [],
+  "source_hashes": {
+    "api.py": "fb8e4f053ad084ec63a3b69bc15be2aad8c54b6dc5ab46f849db806303acb718",
+    "assessment.py": "6ad9b2ed220798b748835aba2b06e55ab86e422ea6542d2bfb6b5667108b18bd",
+    "benchmark.py": "550ebf64b6d810f11db25d3aa677aa7651d4b30b3cca4643c038f65484533a24",
+    "config.py": "d6501e5da29691ff9291a9d45c0a6ae5f29707f2d117d88e803a24b80a8096ad",
+    "data.py": "019206019cd3e4817c909bb31ec6b68b06a4696d77b81ffc0a215eeab9f5ba19",
+    "evaluation.py": "e325e67f8c3bd4dbdb23657474b2b8682ed04019e63a67603df5f13695273b59",
+    "live.py": "624e58c920d770ac3e02a09e7c0bcae62d53dde5d71d401e866692a76fde9272",
+    "models.py": "7e805b7bde572ed39847c47c60ecae0d462e07330fa1918f8b1cebf655a3fdc3",
+    "quality.py": "252374a2564efdfbc0b095bf8cc1076484a74d734b786ba388148b0087f278fe",
+    "retrieval.py": "da374077c422520cd7754241ed7861d2975f8ec800c1cb692ba1ea576919b7bc",
+    "service.py": "0e08815a712b3c63f5e333cd26e3cc5fa402a14f2c478b6f46029379858c80ef",
+    "store.py": "f18fa61acbfbab8801cc80abb9cae9432b62d7c9f1ecd27fa11caa08d2098c72",
+    "__init__.py": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+  },
+  "summary": {
+    "cases": 6,
+    "semantic_fact_passes": 6,
+    "tool_passes": 6,
+    "unsupported_claims": 0,
+    "mean_latency_seconds": 4.212833333333333,
+    "consistency_passes": 0
+  }
+}

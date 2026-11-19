@@ -1,3 +1,5 @@
+Latest 19 November measurements: see DQ_LATENCY_FOLLOWUP.md. Strict DQ is now 49.14%; >90% DQ and <3s latency remain unmet. Earlier numbers below are historical.
+
 # Supplied skeleton audit — corrected LLM workflow
 
 Source: supplied Learnbay UrbanCart notebook and reviewed induction recording. Models and
