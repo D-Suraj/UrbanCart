@@ -205,7 +205,6 @@ def prepare(raw_dir=RAW, output=PROCESSED):
                       output / "manual_review.csv", index=False)
     pd.DataFrame(conflict, columns=["sku", "field", "source_rows", "values"]).to_csv(output / "sku_conflicts.csv", index=False)
     groups = grouped_chat(chat)
-    groups.to_csv(output / "query_groups.csv", index=False)
     dump(output / "products.json", products)
     resolved = chat.resolved_by_bot_currently.str.casefold().eq("true")
     segmented = {}
@@ -238,7 +237,6 @@ def prepare(raw_dir=RAW, output=PROCESSED):
         "normalized_query_groups": len(groups), "label_conflict_groups": int(groups.label_conflict.sum()),
         "chat_resolved": int(resolved.sum()), "chat_segments": segmented,
     }
-    dump(output / "profile.json", summary)
     return summary
 
 

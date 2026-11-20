@@ -66,7 +66,6 @@ assignment's GenAI demonstration. The notebook explicitly selects live mode and 
 
 ```powershell
 .\.venv\Scripts\python.exe -m pytest -q
-.\.venv\Scripts\python.exe -m urbancart.evaluation --local
 .\.venv\Scripts\python.exe -m urbancart.assessment --split development --consistency
 .\.venv\Scripts\python.exe -m urbancart.assessment --split held_out
 .\.venv\Scripts\python.exe -m jupyter lab UrbanCart_Submission.ipynb
@@ -88,6 +87,12 @@ starting Jupyter to rerun the 60 evaluation queries and consistency pairs with l
 The packaging script validates
 those outputs and creates the ZIP. Credentials, private files and runtime data are excluded.
 Runtime turns.jsonl traces include pipeline=llm-v2, provider requests and failure diagnostics.
+
+The assignment specifies the notebook stages, working demo, evaluation, and presentation.
+This folder layout keeps their supporting files together. `urbancart/` contains the shared app
+and evaluation code, `data/` holds source data and cleaning outputs, and `evaluation/`
+with `reports/` holds the test cases and recorded results. `presentation/` holds the final deck,
+`scripts/` rebuilds, executes, or packages the notebook, and `tests/` verifies the app.
 
 ## API
 
