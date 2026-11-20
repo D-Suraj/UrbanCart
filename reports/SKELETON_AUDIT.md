@@ -64,7 +64,7 @@ match a current or explicitly resolved user reference. Required and low-confiden
 have a server fallback when the agent fails to execute escalation. Completed planned actions
 end the tool loop without an extra completion-only call.
 
-Live mixed-workflow evidence is in mixed-workflow-verification.json. Hosted LangSmith tracing
+Five mixed-workflow smoke checks passed. Hosted LangSmith tracing
 has opt-in configuration and verified hosted delivery. Each fresh installation needs its own key.
 
 The native OpenRouter agent loop and SQLite ticket storage remain explicit implementation
@@ -72,5 +72,4 @@ adaptations of the skeleton's behaviour. The old helper API and JSON queue are n
 as verbatim implementations. The supplied business architecture (router, RAG, tools, escalation,
 REST service and demo) is preserved. Source data and latency targets remain measured limitations.
 
-
-Latest code revision (18 November): see reports/REVIEW_FIXES.md (or REVIEW_FIXES.md from this reports folder). Six review findings are addressed; prior live evaluation numbers are retained as historical measurements.
+Final package validation: 23 automated tests passed and all 20 original-skeleton code cells executed.

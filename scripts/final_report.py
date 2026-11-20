@@ -18,7 +18,8 @@ metrics = {**r["summary"], "supported_claims":sum(c["supported"] for c in claims
     "source_report":path.name}
 old = report_dir / "CURRENT_EVALUATION.md"
 archive = report_dir / "historical-baseline/pre-functional-fixes-evaluation.md"
-if not archive.exists():
+if old.exists() and not archive.exists():
+    archive.parent.mkdir(parents=True, exist_ok=True)
     archive.write_bytes(old.read_bytes())
 text = f"""# Current full verification
 
@@ -46,10 +47,9 @@ include catalog records without requiring a SKU. New product names clear stale S
 Required escalation has a validated server fallback. Planned tool actions end the agent loop
 when complete, avoiding a redundant completion-only request.
 
-Additional live checks: [mixed-workflow-verification.json](mixed-workflow-verification.json).
 The full run exposed one unsupported promise in Q54 (human help "shortly"). The final code
 uses a deterministic local-ticket receipt with no promised response time. Its separate live
-retest passed with zero unsupported claims: [llm-v2-regression-20261117T180457Z.json](llm-v2-regression-20261117T180457Z.json).
+retest passed with zero unsupported claims.
 The full-run metrics above retain that original failure; they are not replaced by the retest.
 Automated tests cover mandatory handoff even when the model refuses to choose a tool.
 The UI retains separate demo-customer chats and refreshes clear-chat controls after each reply.

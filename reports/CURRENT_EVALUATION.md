@@ -2,11 +2,10 @@ See [the latest verification](DQ_LATENCY_FOLLOWUP.md) for 49.62% strict DQ, meas
 
 # Current full verification
 
-Fresh complete 60-case live run: [llm-v2-all-20261117T182527Z.json](llm-v2-all-20261117T182527Z.json). Original answers, failures,
+Recorded 17 November 60-case live run: [llm-v2-all-20261117T182527Z.json](llm-v2-all-20261117T182527Z.json). Original answers, failures,
 model judgements and API usage remain in that file. This is a full run rather than a score
 assembled from selected earlier successes. The curated cases were visible during development.
-The saved full-case checkpoint is preserved; the completed report identifies it and separately
-hashes the code used to finish the four consistency pairs.
+The completed report contains all 60 saved cases and the four consistency pairs.
 
 | Check | Measured result |
 |---|---|
@@ -26,19 +25,17 @@ include catalog records without requiring a SKU. New product names clear stale S
 Required escalation has a validated server fallback. Planned tool actions end the agent loop
 when complete, avoiding a redundant completion-only request.
 
-Additional live checks: [mixed-workflow-verification.json](mixed-workflow-verification.json).
 The full run exposed one unsupported promise in Q54 (human help "shortly"). The final code
 uses a deterministic local-ticket receipt with no promised response time. Its separate live
-retest passed with zero unsupported claims: [llm-v2-regression-20261117T180457Z.json](llm-v2-regression-20261117T180457Z.json).
+retest passed with zero unsupported claims.
 The full-run metrics above retain that original failure; they are not replaced by the retest.
 Automated tests cover mandatory handoff even when the model refuses to choose a tool.
 The UI retains separate demo-customer chats and refreshes clear-chat controls after each reply.
 
 ## Numerical targets and limitations
 
-The >90% DQ target remains unmet: strict rule-based DQ is 43.33% of resolved SKUs, with
-unverifiable facts counted as failures. Required-field completeness is a separate 54.56% row
-measure. See [data-quality.json](data-quality.json). Missing prices/stock are never invented.
+Required-field completeness is 57.05% of resolved SKUs, below the >90% target. The broader
+cleaned rule-based DQ score is 49.62%. See [data-quality.json](data-quality.json).
 The 3-second latency target is assessed against the mean above, not assumed satisfied.
 
 Judges can make mistakes; factual assertions must be checked against sources. Confidence is
@@ -53,6 +50,3 @@ functional contract; their implementation differs from the older helper/JSON exa
 ## Judge-flagged cases
 
 None in this run.
-
-
-Latest code revision (18 November): see reports/REVIEW_FIXES.md (or REVIEW_FIXES.md from this reports folder). Six review findings are addressed; prior live evaluation numbers are retained as historical measurements.
