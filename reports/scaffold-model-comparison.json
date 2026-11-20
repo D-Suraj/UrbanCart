@@ -1,0 +1,4323 @@
+{
+  "created_utc": "2026-11-20T16:01:11.506816+00:00",
+  "note": "One pass per model; development probe, not a final benchmark. No answer cache.",
+  "cases": [
+    {
+      "model": "google/gemini-3.1-flash-lite",
+      "id": "Q01",
+      "question": "Can I return electronics?",
+      "reply": {
+        "answer": "Yes, electronics are returnable within 7 days of delivery, provided you have the original packaging and accessories [return_refund_policy:1.2]. Please note that items marked as \"Final Sale\" are not eligible for return or exchange [return_refund_policy:2.2].",
+        "source": "return_refund_policy:1.2",
+        "sources": [
+          {
+            "id": "return_refund_policy:1.2",
+            "kind": "policy",
+            "title": "URBANCART — RETURN & REFUND POLICY",
+            "file": "return_refund_policy.txt",
+            "section": "1.2",
+            "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+            "heading": "RETURN ELIGIBILITY",
+            "text": "Electronics: Returnable within 7 days of delivery, original packaging and accessories required."
+          },
+          {
+            "id": "return_refund_policy:2.2",
+            "kind": "policy",
+            "title": "URBANCART — RETURN & REFUND POLICY",
+            "file": "return_refund_policy.txt",
+            "section": "2.2",
+            "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+            "heading": "NON-RETURNABLE ITEMS",
+            "text": "Items marked \"Final Sale\" on the product page are not eligible for return or exchange."
+          }
+        ],
+        "route": "policy_qa",
+        "status": "answered",
+        "confidence": 1.0,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "905aeaa93ae14b0c85ac75d109e222fd",
+        "tool_calls": [],
+        "mock": false,
+        "mode": "openrouter",
+        "elapsed_ms": 6403,
+        "llm_calls": 2,
+        "embedding_calls": 1,
+        "intent": "policy_qa"
+      },
+      "expected": "Electronics can be returned within 7 days of delivery, with original packaging and accessories. Final Sale items excluded.",
+      "trace": {
+        "at": "2026-11-20T15:43:21.278959+00:00",
+        "route": "policy_qa",
+        "status": "answered",
+        "mode": "openrouter",
+        "source_ids": [
+          "return_refund_policy:1.2",
+          "return_refund_policy:2.2"
+        ],
+        "tools": [],
+        "elapsed_ms": 6403,
+        "calls": [
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.1-flash-lite",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.1-flash-lite",
+            "provider": "Google",
+            "usage": {
+              "prompt_tokens": 1911,
+              "completion_tokens": 134,
+              "total_tokens": 2045,
+              "cost": 0.00067875,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.00067875,
+                "upstream_inference_prompt_cost": 0.00047775,
+                "upstream_inference_completions_cost": 0.000201
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 2.5492
+          },
+          {
+            "endpoint": "embeddings",
+            "requested_model": "openai/text-embedding-3-small",
+            "ok": true,
+            "http_status": 200,
+            "model": "text-embedding-3-small",
+            "provider": "OpenAI",
+            "usage": {
+              "prompt_tokens": 8,
+              "total_tokens": 8,
+              "cost": 1.6e-07,
+              "is_byok": false,
+              "cost_details": {
+                "upstream_inference_cost": 1.6e-07,
+                "upstream_inference_prompt_cost": 1.6e-07,
+                "upstream_inference_completions_cost": 0
+              }
+            },
+            "seconds": 0.8078
+          },
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.1-flash-lite",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.1-flash-lite",
+            "provider": "Google",
+            "usage": {
+              "prompt_tokens": 2892,
+              "completion_tokens": 123,
+              "total_tokens": 3015,
+              "cost": 0.0009075,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.0009075,
+                "upstream_inference_prompt_cost": 0.000723,
+                "upstream_inference_completions_cost": 0.0001845
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 1.2033
+          }
+        ],
+        "pipeline": "llm-v2",
+        "intent": "policy_qa",
+        "confidence": 1.0,
+        "failure": null
+      },
+      "evidence": [
+        {
+          "id": "return_refund_policy:1.2",
+          "kind": "policy",
+          "title": "URBANCART — RETURN & REFUND POLICY",
+          "file": "return_refund_policy.txt",
+          "section": "1.2",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+          "heading": "RETURN ELIGIBILITY",
+          "text": "Electronics: Returnable within 7 days of delivery, original packaging and accessories required."
+        },
+        {
+          "id": "return_refund_policy:1.3",
+          "kind": "policy",
+          "title": "URBANCART — RETURN & REFUND POLICY",
+          "file": "return_refund_policy.txt",
+          "section": "1.3",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+          "heading": "RETURN ELIGIBILITY",
+          "text": "Home & Kitchen: Returnable within 10 days of delivery if unused and in original packaging."
+        },
+        {
+          "id": "return_refund_policy:2.1",
+          "kind": "policy",
+          "title": "URBANCART — RETURN & REFUND POLICY",
+          "file": "return_refund_policy.txt",
+          "section": "2.1",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+          "heading": "NON-RETURNABLE ITEMS",
+          "text": "Innerwear, cosmetics with broken seals, and customized products cannot be returned."
+        },
+        {
+          "id": "warranty_policy:1.1",
+          "kind": "policy",
+          "title": "URBANCART — WARRANTY POLICY",
+          "file": "warranty_policy.txt",
+          "section": "1.1",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience",
+          "heading": "WARRANTY COVERAGE",
+          "text": "Electronics carry a manufacturer warranty ranging from 6 months to 24 months."
+        },
+        {
+          "id": "return_refund_policy:1.1",
+          "kind": "policy",
+          "title": "URBANCART — RETURN & REFUND POLICY",
+          "file": "return_refund_policy.txt",
+          "section": "1.1",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+          "heading": "RETURN ELIGIBILITY",
+          "text": "Apparel & Footwear: Returnable within 14 days of delivery, tags intact, unworn."
+        },
+        {
+          "id": "return_refund_policy:1.4",
+          "kind": "policy",
+          "title": "URBANCART — RETURN & REFUND POLICY",
+          "file": "return_refund_policy.txt",
+          "section": "1.4",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+          "heading": "RETURN ELIGIBILITY",
+          "text": "Beauty & Personal Care: Non-returnable once the seal is opened, for hygiene reasons."
+        },
+        {
+          "id": "return_refund_policy:2.2",
+          "kind": "policy",
+          "title": "URBANCART — RETURN & REFUND POLICY",
+          "file": "return_refund_policy.txt",
+          "section": "2.2",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+          "heading": "NON-RETURNABLE ITEMS",
+          "text": "Items marked \"Final Sale\" on the product page are not eligible for return or exchange."
+        },
+        {
+          "id": "return_refund_policy:3.1",
+          "kind": "policy",
+          "title": "URBANCART — RETURN & REFUND POLICY",
+          "file": "return_refund_policy.txt",
+          "section": "3.1",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+          "heading": "REFUND PROCESS",
+          "text": "Refunds are initiated within 24 hours of the returned item passing quality check."
+        },
+        {
+          "id": "return_refund_policy:3.2",
+          "kind": "policy",
+          "title": "URBANCART — RETURN & REFUND POLICY",
+          "file": "return_refund_policy.txt",
+          "section": "3.2",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+          "heading": "REFUND PROCESS",
+          "text": "Prepaid orders: refunded to the original payment method within 5-7 business days."
+        },
+        {
+          "id": "return_refund_policy:3.3",
+          "kind": "policy",
+          "title": "URBANCART — RETURN & REFUND POLICY",
+          "file": "return_refund_policy.txt",
+          "section": "3.3",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+          "heading": "REFUND PROCESS",
+          "text": "Cash on Delivery orders: refunded to the customer's UrbanCart Wallet or bank account within 7-10 business days."
+        },
+        {
+          "id": "return_refund_policy:3.4",
+          "kind": "policy",
+          "title": "URBANCART — RETURN & REFUND POLICY",
+          "file": "return_refund_policy.txt",
+          "section": "3.4",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+          "heading": "REFUND PROCESS",
+          "text": "Shipping charges are non-refundable unless the item was defective or wrong."
+        },
+        {
+          "id": "return_refund_policy:4.1",
+          "kind": "policy",
+          "title": "URBANCART — RETURN & REFUND POLICY",
+          "file": "return_refund_policy.txt",
+          "section": "4.1",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+          "heading": "EXCHANGE",
+          "text": "Size exchanges for Apparel & Footwear are free within 14 days, subject to stock availability."
+        },
+        {
+          "id": "return_refund_policy:4.2",
+          "kind": "policy",
+          "title": "URBANCART — RETURN & REFUND POLICY",
+          "file": "return_refund_policy.txt",
+          "section": "4.2",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+          "heading": "EXCHANGE",
+          "text": "If the requested size is unavailable, a full refund is issued instead."
+        },
+        {
+          "id": "warranty_policy:1.2",
+          "kind": "policy",
+          "title": "URBANCART — WARRANTY POLICY",
+          "file": "warranty_policy.txt",
+          "section": "1.2",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience",
+          "heading": "WARRANTY COVERAGE",
+          "text": "The warranty period starts from the date of delivery."
+        },
+        {
+          "id": "warranty_policy:1.3",
+          "kind": "policy",
+          "title": "URBANCART — WARRANTY POLICY",
+          "file": "warranty_policy.txt",
+          "section": "1.3",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience",
+          "heading": "WARRANTY COVERAGE",
+          "text": "Warranty covers manufacturing defects only, not physical or liquid damage."
+        },
+        {
+          "id": "warranty_policy:2.1",
+          "kind": "policy",
+          "title": "URBANCART — WARRANTY POLICY",
+          "file": "warranty_policy.txt",
+          "section": "2.1",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience",
+          "heading": "WARRANTY CLAIMS",
+          "text": "To claim warranty, the customer must provide the order ID and a description of the defect."
+        },
+        {
+          "id": "warranty_policy:2.2",
+          "kind": "policy",
+          "title": "URBANCART — WARRANTY POLICY",
+          "file": "warranty_policy.txt",
+          "section": "2.2",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience",
+          "heading": "WARRANTY CLAIMS",
+          "text": "Claims are routed to the manufacturer's authorized service center."
+        },
+        {
+          "id": "warranty_policy:2.3",
+          "kind": "policy",
+          "title": "URBANCART — WARRANTY POLICY",
+          "file": "warranty_policy.txt",
+          "section": "2.3",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience",
+          "heading": "WARRANTY CLAIMS",
+          "text": "Turnaround for warranty repair/replacement is typically 10-15 business days."
+        },
+        {
+          "id": "warranty_policy:3.1",
+          "kind": "policy",
+          "title": "URBANCART — WARRANTY POLICY",
+          "file": "warranty_policy.txt",
+          "section": "3.1",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience",
+          "heading": "EXCLUSIONS",
+          "text": "Damage due to misuse, unauthorized repair, or normal wear and tear is not covered."
+        },
+        {
+          "id": "warranty_policy:3.2",
+          "kind": "policy",
+          "title": "URBANCART — WARRANTY POLICY",
+          "file": "warranty_policy.txt",
+          "section": "3.2",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience",
+          "heading": "EXCLUSIONS",
+          "text": "Consumable parts (batteries beyond 6 months, cables) may have limited coverage."
+        }
+      ],
+      "model_seconds": 3.7525,
+      "embedding_seconds": 0.8078
+    },
+    {
+      "model": "google/gemini-3.1-flash-lite",
+      "id": "Q05",
+      "question": "Is SKU UC-ELE-891071 in stock?",
+      "reply": {
+        "answer": "Catalog snapshot; this is not a live inventory check.\n\nYes, the LED Monitor (SKU UC-ELE-891071) is in the catalog snapshot in stock with 451 units available [UC-ELE-891071].",
+        "source": "UC-ELE-891071",
+        "sources": [
+          {
+            "id": "UC-ELE-891071",
+            "kind": "product",
+            "title": "LED Monitor",
+            "file": "urbancart_product_catalog_raw.csv",
+            "rows": [
+              3
+            ],
+            "imputed_fields": {},
+            "text": "Catalog snapshot: LED Monitor is in stock (451 units).",
+            "validated_attributes": {
+              "price_paise": 3335000,
+              "rating": 1.7,
+              "stock": 451,
+              "return_conflict": true,
+              "conflicts": [],
+              "category": "Electronics"
+            }
+          }
+        ],
+        "route": "stock_lookup",
+        "status": "answered",
+        "confidence": 1.0,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "a07d55861d9740438dd29a43a05382f3",
+        "tool_calls": [
+          "check_stock_status"
+        ],
+        "mock": true,
+        "mode": "openrouter",
+        "elapsed_ms": 3677,
+        "llm_calls": 3,
+        "embedding_calls": 0,
+        "intent": "product_qa"
+      },
+      "expected": "Call check_stock_status and report catalog snapshot stock of 451 units for UC-ELE-891071. Do not claim live inventory.",
+      "trace": {
+        "at": "2026-11-20T15:43:24.965573+00:00",
+        "route": "stock_lookup",
+        "status": "answered",
+        "mode": "openrouter",
+        "source_ids": [
+          "UC-ELE-891071"
+        ],
+        "tools": [
+          "check_stock_status"
+        ],
+        "elapsed_ms": 3677,
+        "calls": [
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.1-flash-lite",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.1-flash-lite",
+            "provider": "Google",
+            "usage": {
+              "prompt_tokens": 1921,
+              "completion_tokens": 157,
+              "total_tokens": 2078,
+              "cost": 0.00071575,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.00071575,
+                "upstream_inference_prompt_cost": 0.00048025,
+                "upstream_inference_completions_cost": 0.0002355
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 1.3149
+          },
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.1-flash-lite",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.1-flash-lite",
+            "provider": "Google",
+            "usage": {
+              "prompt_tokens": 749,
+              "completion_tokens": 40,
+              "total_tokens": 789,
+              "cost": 0.00024725,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.00024725,
+                "upstream_inference_prompt_cost": 0.00018725,
+                "upstream_inference_completions_cost": 6e-05
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 1.1311
+          },
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.1-flash-lite",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.1-flash-lite",
+            "provider": "Google",
+            "usage": {
+              "prompt_tokens": 1020,
+              "completion_tokens": 87,
+              "total_tokens": 1107,
+              "cost": 0.0003855,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.0003855,
+                "upstream_inference_prompt_cost": 0.000255,
+                "upstream_inference_completions_cost": 0.0001305
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 1.1695
+          }
+        ],
+        "pipeline": "llm-v2",
+        "intent": "product_qa",
+        "confidence": 1.0,
+        "failure": null
+      },
+      "evidence": [
+        {
+          "id": "UC-ELE-891071",
+          "kind": "product",
+          "title": "LED Monitor",
+          "file": "urbancart_product_catalog_raw.csv",
+          "rows": [
+            3
+          ],
+          "imputed_fields": {},
+          "text": "Catalog snapshot: LED Monitor is in stock (451 units).",
+          "validated_attributes": {
+            "price_paise": 3335000,
+            "rating": 1.7,
+            "stock": 451,
+            "return_conflict": true,
+            "conflicts": [],
+            "category": "Electronics"
+          }
+        }
+      ],
+      "model_seconds": 3.6155,
+      "embedding_seconds": 0
+    },
+    {
+      "model": "google/gemini-3.1-flash-lite",
+      "id": "Q10",
+      "question": "What's the weather?",
+      "reply": {
+        "answer": "I'm UrbanCart's AI assistant. I can help with products, policies and demo orders.",
+        "source": null,
+        "sources": [],
+        "route": "off_topic",
+        "status": "refused",
+        "confidence": null,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "d4b6e04f3cc4492ebab8a8fa935b37fb",
+        "tool_calls": [],
+        "mock": false,
+        "mode": "openrouter",
+        "elapsed_ms": 1747,
+        "llm_calls": 1,
+        "embedding_calls": 0,
+        "intent": "off_topic"
+      },
+      "expected": "Decline weather assistance and offer UrbanCart shopping/support assistance.",
+      "trace": {
+        "at": "2026-11-20T15:43:26.724659+00:00",
+        "route": "off_topic",
+        "status": "refused",
+        "mode": "openrouter",
+        "source_ids": [],
+        "tools": [],
+        "elapsed_ms": 1747,
+        "calls": [
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.1-flash-lite",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.1-flash-lite",
+            "provider": "Google",
+            "usage": {
+              "prompt_tokens": 1912,
+              "completion_tokens": 130,
+              "total_tokens": 2042,
+              "cost": 0.000673,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.000673,
+                "upstream_inference_prompt_cost": 0.000478,
+                "upstream_inference_completions_cost": 0.000195
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 1.7135
+          }
+        ],
+        "pipeline": "llm-v2",
+        "intent": "off_topic",
+        "confidence": null,
+        "failure": null
+      },
+      "evidence": [],
+      "model_seconds": 1.7135,
+      "embedding_seconds": 0
+    },
+    {
+      "model": "google/gemini-3.1-flash-lite",
+      "id": "Q20",
+      "question": "Suggest similar products to UC-ELE-891071 under Rs 2000",
+      "reply": {
+        "answer": "Catalog snapshot; this is not a live inventory check.\n\nI found the following similar electronic products under Rs 2000: Bluetooth Earbuds (Nestwell) at Rs 1400 [UC-ELE-067065], Power Bank (HomeVibe) at Rs 1570 [UC-ELE-602264], and USB-C Cable (TechNova) at Rs 1580 [UC-ELE-871785].",
+        "source": "UC-ELE-067065",
+        "sources": [
+          {
+            "id": "UC-ELE-067065",
+            "kind": "product",
+            "title": "Bluetooth Earbuds",
+            "file": "urbancart_product_catalog_raw.csv",
+            "rows": [
+              4730
+            ],
+            "imputed_fields": {},
+            "text": "name: Bluetooth Earbuds; brand: Nestwell; category: Electronics; rating: 4.6; price: INR 1400.00",
+            "snapshot_stock": 49
+          },
+          {
+            "id": "UC-ELE-602264",
+            "kind": "product",
+            "title": "Power Bank",
+            "file": "urbancart_product_catalog_raw.csv",
+            "rows": [
+              2209
+            ],
+            "imputed_fields": {},
+            "text": "name: Power Bank; brand: HomeVibe; category: Electronics; rating: 4.5; price: INR 1570.00",
+            "snapshot_stock": 493
+          },
+          {
+            "id": "UC-ELE-871785",
+            "kind": "product",
+            "title": "USB-C Cable",
+            "file": "urbancart_product_catalog_raw.csv",
+            "rows": [
+              1062
+            ],
+            "imputed_fields": {},
+            "text": "name: USB-C Cable; brand: TechNova; category: Electronics; rating: 3.9; price: INR 1580.00",
+            "snapshot_stock": 473
+          }
+        ],
+        "route": "recommendation",
+        "status": "answered",
+        "confidence": 1.0,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "d8659935348749bf932a820906602aaf",
+        "tool_calls": [
+          "recommend_similar_products"
+        ],
+        "mock": true,
+        "mode": "openrouter",
+        "elapsed_ms": 4398,
+        "llm_calls": 3,
+        "embedding_calls": 1,
+        "intent": "product_qa"
+      },
+      "expected": "Call recommend_similar_products using UC-ELE-891071 and maximum strictly below INR 2000; return only in-stock same-category alternatives within budget or explain no matches.",
+      "trace": {
+        "at": "2026-11-20T15:43:31.130149+00:00",
+        "route": "recommendation",
+        "status": "answered",
+        "mode": "openrouter",
+        "source_ids": [
+          "UC-ELE-067065",
+          "UC-ELE-602264",
+          "UC-ELE-871785"
+        ],
+        "tools": [
+          "recommend_similar_products"
+        ],
+        "elapsed_ms": 4398,
+        "calls": [
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.1-flash-lite",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.1-flash-lite",
+            "provider": "Google",
+            "usage": {
+              "prompt_tokens": 1928,
+              "completion_tokens": 171,
+              "total_tokens": 2099,
+              "cost": 0.0007385,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.0007385,
+                "upstream_inference_prompt_cost": 0.000482,
+                "upstream_inference_completions_cost": 0.0002565
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 1.2711
+          },
+          {
+            "endpoint": "embeddings",
+            "requested_model": "openai/text-embedding-3-small",
+            "ok": true,
+            "http_status": 200,
+            "model": "text-embedding-3-small",
+            "provider": "OpenAI",
+            "usage": {
+              "prompt_tokens": 16,
+              "total_tokens": 16,
+              "cost": 3.2e-07,
+              "is_byok": false,
+              "cost_details": {
+                "upstream_inference_cost": 3.2e-07,
+                "upstream_inference_prompt_cost": 3.2e-07,
+                "upstream_inference_completions_cost": 0
+              }
+            },
+            "seconds": 0.6362
+          },
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.1-flash-lite",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.1-flash-lite",
+            "provider": "Google",
+            "usage": {
+              "prompt_tokens": 3947,
+              "completion_tokens": 43,
+              "total_tokens": 3990,
+              "cost": 0.00105125,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.00105125,
+                "upstream_inference_prompt_cost": 0.00098675,
+                "upstream_inference_completions_cost": 6.45e-05
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 0.7036
+          },
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.1-flash-lite",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.1-flash-lite",
+            "provider": "Google",
+            "usage": {
+              "prompt_tokens": 4863,
+              "completion_tokens": 174,
+              "total_tokens": 5037,
+              "cost": 0.00147675,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.00147675,
+                "upstream_inference_prompt_cost": 0.00121575,
+                "upstream_inference_completions_cost": 0.000261
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 1.6629
+          }
+        ],
+        "pipeline": "llm-v2",
+        "intent": "product_qa",
+        "confidence": 1.0,
+        "failure": null
+      },
+      "evidence": [
+        {
+          "id": "shipping_delivery_policy:2.3",
+          "kind": "policy",
+          "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+          "file": "shipping_delivery_policy.txt",
+          "section": "2.3",
+          "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+          "heading": "SHIPPING CHARGES",
+          "text": "Express delivery (where available) costs an extra Rs 99."
+        },
+        {
+          "id": "payment_cod_policy:2.1",
+          "kind": "policy",
+          "title": "URBANCART — PAYMENT & CASH ON DELIVERY POLICY",
+          "file": "payment_cod_policy.txt",
+          "section": "2.1",
+          "version": "Version: Q2 2024 | Approved by: Payments & Risk",
+          "heading": "CASH ON DELIVERY (COD)",
+          "text": "COD is available on orders up to Rs 20000."
+        },
+        {
+          "id": "payment_cod_policy:1.2",
+          "kind": "policy",
+          "title": "URBANCART — PAYMENT & CASH ON DELIVERY POLICY",
+          "file": "payment_cod_policy.txt",
+          "section": "1.2",
+          "version": "Version: Q2 2024 | Approved by: Payments & Risk",
+          "heading": "ACCEPTED PAYMENT METHODS",
+          "text": "EMI is available on orders above Rs 3000 with select banks."
+        },
+        {
+          "id": "shipping_delivery_policy:2.1",
+          "kind": "policy",
+          "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+          "file": "shipping_delivery_policy.txt",
+          "section": "2.1",
+          "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+          "heading": "SHIPPING CHARGES",
+          "text": "Orders above Rs 499: free standard shipping."
+        },
+        {
+          "id": "shipping_delivery_policy:2.2",
+          "kind": "policy",
+          "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+          "file": "shipping_delivery_policy.txt",
+          "section": "2.2",
+          "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+          "heading": "SHIPPING CHARGES",
+          "text": "Orders below Rs 499: a flat shipping fee of Rs 40 applies."
+        },
+        {
+          "id": "return_refund_policy:2.1",
+          "kind": "policy",
+          "title": "URBANCART — RETURN & REFUND POLICY",
+          "file": "return_refund_policy.txt",
+          "section": "2.1",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+          "heading": "NON-RETURNABLE ITEMS",
+          "text": "Innerwear, cosmetics with broken seals, and customized products cannot be returned."
+        },
+        {
+          "id": "return_refund_policy:2.2",
+          "kind": "policy",
+          "title": "URBANCART — RETURN & REFUND POLICY",
+          "file": "return_refund_policy.txt",
+          "section": "2.2",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+          "heading": "NON-RETURNABLE ITEMS",
+          "text": "Items marked \"Final Sale\" on the product page are not eligible for return or exchange."
+        },
+        {
+          "id": "return_refund_policy:3.2",
+          "kind": "policy",
+          "title": "URBANCART — RETURN & REFUND POLICY",
+          "file": "return_refund_policy.txt",
+          "section": "3.2",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+          "heading": "REFUND PROCESS",
+          "text": "Prepaid orders: refunded to the original payment method within 5-7 business days."
+        },
+        {
+          "id": "return_refund_policy:4.1",
+          "kind": "policy",
+          "title": "URBANCART — RETURN & REFUND POLICY",
+          "file": "return_refund_policy.txt",
+          "section": "4.1",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+          "heading": "EXCHANGE",
+          "text": "Size exchanges for Apparel & Footwear are free within 14 days, subject to stock availability."
+        },
+        {
+          "id": "UC-ELE-891071",
+          "kind": "product",
+          "title": "LED Monitor",
+          "file": "urbancart_product_catalog_raw.csv",
+          "rows": [
+            3
+          ],
+          "imputed_fields": {},
+          "text": "name: LED Monitor; brand: StepUp; category: Electronics; rating: 1.7; price: INR 33350.00",
+          "validated_attributes": {
+            "price_paise": 3335000,
+            "rating": 1.7,
+            "stock": 451,
+            "return_conflict": true,
+            "conflicts": [],
+            "category": "Electronics"
+          }
+        },
+        {
+          "id": "payment_cod_policy:1.1",
+          "kind": "policy",
+          "title": "URBANCART — PAYMENT & CASH ON DELIVERY POLICY",
+          "file": "payment_cod_policy.txt",
+          "section": "1.1",
+          "version": "Version: Q2 2024 | Approved by: Payments & Risk",
+          "heading": "ACCEPTED PAYMENT METHODS",
+          "text": "UPI, credit/debit cards, net banking, UrbanCart Wallet, and Cash on Delivery (COD)."
+        },
+        {
+          "id": "payment_cod_policy:2.2",
+          "kind": "policy",
+          "title": "URBANCART — PAYMENT & CASH ON DELIVERY POLICY",
+          "file": "payment_cod_policy.txt",
+          "section": "2.2",
+          "version": "Version: Q2 2024 | Approved by: Payments & Risk",
+          "heading": "CASH ON DELIVERY (COD)",
+          "text": "COD may not be available for certain pincodes or high-value items."
+        },
+        {
+          "id": "payment_cod_policy:2.3",
+          "kind": "policy",
+          "title": "URBANCART — PAYMENT & CASH ON DELIVERY POLICY",
+          "file": "payment_cod_policy.txt",
+          "section": "2.3",
+          "version": "Version: Q2 2024 | Approved by: Payments & Risk",
+          "heading": "CASH ON DELIVERY (COD)",
+          "text": "A nominal COD handling fee of Rs 20 may apply on some orders."
+        },
+        {
+          "id": "payment_cod_policy:3.1",
+          "kind": "policy",
+          "title": "URBANCART — PAYMENT & CASH ON DELIVERY POLICY",
+          "file": "payment_cod_policy.txt",
+          "section": "3.1",
+          "version": "Version: Q2 2024 | Approved by: Payments & Risk",
+          "heading": "PAYMENT SECURITY",
+          "text": "UrbanCart never stores full card details; payments are processed via PCI-DSS compliant gateways."
+        },
+        {
+          "id": "payment_cod_policy:3.2",
+          "kind": "policy",
+          "title": "URBANCART — PAYMENT & CASH ON DELIVERY POLICY",
+          "file": "payment_cod_policy.txt",
+          "section": "3.2",
+          "version": "Version: Q2 2024 | Approved by: Payments & Risk",
+          "heading": "PAYMENT SECURITY",
+          "text": "UrbanCart will never ask for your OTP, PIN, or full card number over chat or call."
+        },
+        {
+          "id": "payment_cod_policy:4.1",
+          "kind": "policy",
+          "title": "URBANCART — PAYMENT & CASH ON DELIVERY POLICY",
+          "file": "payment_cod_policy.txt",
+          "section": "4.1",
+          "version": "Version: Q2 2024 | Approved by: Payments & Risk",
+          "heading": "FAILED / DUPLICATE PAYMENTS",
+          "text": "If money is debited but the order is not confirmed, it is auto-refunded within 5-7 business days."
+        },
+        {
+          "id": "return_refund_policy:1.1",
+          "kind": "policy",
+          "title": "URBANCART — RETURN & REFUND POLICY",
+          "file": "return_refund_policy.txt",
+          "section": "1.1",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+          "heading": "RETURN ELIGIBILITY",
+          "text": "Apparel & Footwear: Returnable within 14 days of delivery, tags intact, unworn."
+        },
+        {
+          "id": "return_refund_policy:1.2",
+          "kind": "policy",
+          "title": "URBANCART — RETURN & REFUND POLICY",
+          "file": "return_refund_policy.txt",
+          "section": "1.2",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+          "heading": "RETURN ELIGIBILITY",
+          "text": "Electronics: Returnable within 7 days of delivery, original packaging and accessories required."
+        },
+        {
+          "id": "return_refund_policy:1.3",
+          "kind": "policy",
+          "title": "URBANCART — RETURN & REFUND POLICY",
+          "file": "return_refund_policy.txt",
+          "section": "1.3",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+          "heading": "RETURN ELIGIBILITY",
+          "text": "Home & Kitchen: Returnable within 10 days of delivery if unused and in original packaging."
+        },
+        {
+          "id": "return_refund_policy:1.4",
+          "kind": "policy",
+          "title": "URBANCART — RETURN & REFUND POLICY",
+          "file": "return_refund_policy.txt",
+          "section": "1.4",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+          "heading": "RETURN ELIGIBILITY",
+          "text": "Beauty & Personal Care: Non-returnable once the seal is opened, for hygiene reasons."
+        },
+        {
+          "id": "return_refund_policy:3.1",
+          "kind": "policy",
+          "title": "URBANCART — RETURN & REFUND POLICY",
+          "file": "return_refund_policy.txt",
+          "section": "3.1",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+          "heading": "REFUND PROCESS",
+          "text": "Refunds are initiated within 24 hours of the returned item passing quality check."
+        },
+        {
+          "id": "return_refund_policy:3.3",
+          "kind": "policy",
+          "title": "URBANCART — RETURN & REFUND POLICY",
+          "file": "return_refund_policy.txt",
+          "section": "3.3",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+          "heading": "REFUND PROCESS",
+          "text": "Cash on Delivery orders: refunded to the customer's UrbanCart Wallet or bank account within 7-10 business days."
+        },
+        {
+          "id": "return_refund_policy:3.4",
+          "kind": "policy",
+          "title": "URBANCART — RETURN & REFUND POLICY",
+          "file": "return_refund_policy.txt",
+          "section": "3.4",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+          "heading": "REFUND PROCESS",
+          "text": "Shipping charges are non-refundable unless the item was defective or wrong."
+        },
+        {
+          "id": "return_refund_policy:4.2",
+          "kind": "policy",
+          "title": "URBANCART — RETURN & REFUND POLICY",
+          "file": "return_refund_policy.txt",
+          "section": "4.2",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+          "heading": "EXCHANGE",
+          "text": "If the requested size is unavailable, a full refund is issued instead."
+        },
+        {
+          "id": "shipping_delivery_policy:1.1",
+          "kind": "policy",
+          "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+          "file": "shipping_delivery_policy.txt",
+          "section": "1.1",
+          "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+          "heading": "DELIVERY TIMELINES",
+          "text": "Metro cities: 2-4 business days."
+        },
+        {
+          "id": "shipping_delivery_policy:1.2",
+          "kind": "policy",
+          "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+          "file": "shipping_delivery_policy.txt",
+          "section": "1.2",
+          "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+          "heading": "DELIVERY TIMELINES",
+          "text": "Non-metro cities: 4-7 business days."
+        },
+        {
+          "id": "shipping_delivery_policy:1.3",
+          "kind": "policy",
+          "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+          "file": "shipping_delivery_policy.txt",
+          "section": "1.3",
+          "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+          "heading": "DELIVERY TIMELINES",
+          "text": "Remote / rural pincodes: 7-10 business days."
+        },
+        {
+          "id": "shipping_delivery_policy:3.1",
+          "kind": "policy",
+          "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+          "file": "shipping_delivery_policy.txt",
+          "section": "3.1",
+          "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+          "heading": "SERVICEABILITY",
+          "text": "Delivery availability depends on the pincode entered at checkout."
+        },
+        {
+          "id": "shipping_delivery_policy:3.2",
+          "kind": "policy",
+          "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+          "file": "shipping_delivery_policy.txt",
+          "section": "3.2",
+          "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+          "heading": "SERVICEABILITY",
+          "text": "Some remote pincodes may not be serviceable for Cash on Delivery."
+        },
+        {
+          "id": "shipping_delivery_policy:4.1",
+          "kind": "policy",
+          "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+          "file": "shipping_delivery_policy.txt",
+          "section": "4.1",
+          "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+          "heading": "ORDER TRACKING",
+          "text": "A tracking link is shared via SMS and app notification once the order is shipped."
+        },
+        {
+          "id": "shipping_delivery_policy:4.2",
+          "kind": "policy",
+          "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+          "file": "shipping_delivery_policy.txt",
+          "section": "4.2",
+          "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+          "heading": "ORDER TRACKING",
+          "text": "Orders not delivered within 15 days of purchase are eligible for a full refund."
+        },
+        {
+          "id": "UC-ELE-067065",
+          "kind": "product",
+          "title": "Bluetooth Earbuds",
+          "file": "urbancart_product_catalog_raw.csv",
+          "rows": [
+            4730
+          ],
+          "imputed_fields": {},
+          "text": "name: Bluetooth Earbuds; brand: Nestwell; category: Electronics; rating: 4.6; price: INR 1400.00",
+          "snapshot_stock": 49
+        },
+        {
+          "id": "UC-ELE-602264",
+          "kind": "product",
+          "title": "Power Bank",
+          "file": "urbancart_product_catalog_raw.csv",
+          "rows": [
+            2209
+          ],
+          "imputed_fields": {},
+          "text": "name: Power Bank; brand: HomeVibe; category: Electronics; rating: 4.5; price: INR 1570.00",
+          "snapshot_stock": 493
+        },
+        {
+          "id": "UC-ELE-871785",
+          "kind": "product",
+          "title": "USB-C Cable",
+          "file": "urbancart_product_catalog_raw.csv",
+          "rows": [
+            1062
+          ],
+          "imputed_fields": {},
+          "text": "name: USB-C Cable; brand: TechNova; category: Electronics; rating: 3.9; price: INR 1580.00",
+          "snapshot_stock": 473
+        }
+      ],
+      "model_seconds": 3.6376,
+      "embedding_seconds": 0.6362
+    },
+    {
+      "model": "google/gemini-3.1-flash-lite",
+      "id": "Q31",
+      "question": "Rural delivery time kya hai?",
+      "reply": {
+        "answer": "Rural areas mein delivery ka time 7-10 business days hai [shipping_delivery_policy:1.3].",
+        "source": "shipping_delivery_policy:1.3",
+        "sources": [
+          {
+            "id": "shipping_delivery_policy:1.3",
+            "kind": "policy",
+            "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+            "file": "shipping_delivery_policy.txt",
+            "section": "1.3",
+            "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+            "heading": "DELIVERY TIMELINES",
+            "text": "Remote / rural pincodes: 7-10 business days."
+          }
+        ],
+        "route": "policy_qa",
+        "status": "answered",
+        "confidence": 1.0,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "465b74bfb6d9460ebf17bb27653c9170",
+        "tool_calls": [],
+        "mock": false,
+        "mode": "openrouter",
+        "elapsed_ms": 3889,
+        "llm_calls": 2,
+        "embedding_calls": 1,
+        "intent": "policy_qa"
+      },
+      "expected": "7-10 business days",
+      "trace": {
+        "at": "2026-11-20T15:43:35.034359+00:00",
+        "route": "policy_qa",
+        "status": "answered",
+        "mode": "openrouter",
+        "source_ids": [
+          "shipping_delivery_policy:1.3"
+        ],
+        "tools": [],
+        "elapsed_ms": 3889,
+        "calls": [
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.1-flash-lite",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.1-flash-lite",
+            "provider": "Google",
+            "usage": {
+              "prompt_tokens": 1912,
+              "completion_tokens": 135,
+              "total_tokens": 2047,
+              "cost": 0.0006805,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.0006805,
+                "upstream_inference_prompt_cost": 0.000478,
+                "upstream_inference_completions_cost": 0.0002025
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 1.1993
+          },
+          {
+            "endpoint": "embeddings",
+            "requested_model": "openai/text-embedding-3-small",
+            "ok": true,
+            "http_status": 200,
+            "model": "text-embedding-3-small",
+            "provider": "OpenAI",
+            "usage": {
+              "prompt_tokens": 9,
+              "total_tokens": 9,
+              "cost": 1.8e-07,
+              "is_byok": false,
+              "cost_details": {
+                "upstream_inference_cost": 1.8e-07,
+                "upstream_inference_prompt_cost": 1.8e-07,
+                "upstream_inference_completions_cost": 0
+              }
+            },
+            "seconds": 0.9566
+          },
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.1-flash-lite",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.1-flash-lite",
+            "provider": "Google",
+            "usage": {
+              "prompt_tokens": 1842,
+              "completion_tokens": 75,
+              "total_tokens": 1917,
+              "cost": 0.000573,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.000573,
+                "upstream_inference_prompt_cost": 0.0004605,
+                "upstream_inference_completions_cost": 0.0001125
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 1.268
+          }
+        ],
+        "pipeline": "llm-v2",
+        "intent": "policy_qa",
+        "confidence": 1.0,
+        "failure": null
+      },
+      "evidence": [
+        {
+          "id": "shipping_delivery_policy:1.3",
+          "kind": "policy",
+          "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+          "file": "shipping_delivery_policy.txt",
+          "section": "1.3",
+          "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+          "heading": "DELIVERY TIMELINES",
+          "text": "Remote / rural pincodes: 7-10 business days."
+        },
+        {
+          "id": "shipping_delivery_policy:1.2",
+          "kind": "policy",
+          "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+          "file": "shipping_delivery_policy.txt",
+          "section": "1.2",
+          "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+          "heading": "DELIVERY TIMELINES",
+          "text": "Non-metro cities: 4-7 business days."
+        },
+        {
+          "id": "shipping_delivery_policy:1.1",
+          "kind": "policy",
+          "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+          "file": "shipping_delivery_policy.txt",
+          "section": "1.1",
+          "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+          "heading": "DELIVERY TIMELINES",
+          "text": "Metro cities: 2-4 business days."
+        },
+        {
+          "id": "shipping_delivery_policy:3.1",
+          "kind": "policy",
+          "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+          "file": "shipping_delivery_policy.txt",
+          "section": "3.1",
+          "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+          "heading": "SERVICEABILITY",
+          "text": "Delivery availability depends on the pincode entered at checkout."
+        },
+        {
+          "id": "shipping_delivery_policy:3.2",
+          "kind": "policy",
+          "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+          "file": "shipping_delivery_policy.txt",
+          "section": "3.2",
+          "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+          "heading": "SERVICEABILITY",
+          "text": "Some remote pincodes may not be serviceable for Cash on Delivery."
+        },
+        {
+          "id": "shipping_delivery_policy:4.2",
+          "kind": "policy",
+          "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+          "file": "shipping_delivery_policy.txt",
+          "section": "4.2",
+          "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+          "heading": "ORDER TRACKING",
+          "text": "Orders not delivered within 15 days of purchase are eligible for a full refund."
+        },
+        {
+          "id": "shipping_delivery_policy:2.1",
+          "kind": "policy",
+          "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+          "file": "shipping_delivery_policy.txt",
+          "section": "2.1",
+          "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+          "heading": "SHIPPING CHARGES",
+          "text": "Orders above Rs 499: free standard shipping."
+        },
+        {
+          "id": "shipping_delivery_policy:2.2",
+          "kind": "policy",
+          "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+          "file": "shipping_delivery_policy.txt",
+          "section": "2.2",
+          "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+          "heading": "SHIPPING CHARGES",
+          "text": "Orders below Rs 499: a flat shipping fee of Rs 40 applies."
+        },
+        {
+          "id": "shipping_delivery_policy:2.3",
+          "kind": "policy",
+          "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+          "file": "shipping_delivery_policy.txt",
+          "section": "2.3",
+          "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+          "heading": "SHIPPING CHARGES",
+          "text": "Express delivery (where available) costs an extra Rs 99."
+        },
+        {
+          "id": "shipping_delivery_policy:4.1",
+          "kind": "policy",
+          "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+          "file": "shipping_delivery_policy.txt",
+          "section": "4.1",
+          "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+          "heading": "ORDER TRACKING",
+          "text": "A tracking link is shared via SMS and app notification once the order is shipped."
+        }
+      ],
+      "model_seconds": 2.4673,
+      "embedding_seconds": 0.9566
+    },
+    {
+      "model": "google/gemini-3.1-flash-lite",
+      "id": "Q40",
+      "question": "Is product UC-ELE-916693 available in stock?",
+      "reply": {
+        "answer": "Catalog snapshot; this is not a live inventory check.\n\nYes, the Wireless Mouse (UC-ELE-916693) is in the catalog snapshot in stock with 283 units available. [UC-ELE-916693]",
+        "source": "UC-ELE-916693",
+        "sources": [
+          {
+            "id": "UC-ELE-916693",
+            "kind": "product",
+            "title": "Wireless Mouse",
+            "file": "urbancart_product_catalog_raw.csv",
+            "rows": [
+              2
+            ],
+            "imputed_fields": {},
+            "text": "Catalog snapshot: Wireless Mouse is in stock (283 units).",
+            "validated_attributes": {
+              "price_paise": null,
+              "rating": null,
+              "stock": 283,
+              "return_conflict": true,
+              "conflicts": [],
+              "category": "Electronics"
+            }
+          }
+        ],
+        "route": "stock_lookup",
+        "status": "answered",
+        "confidence": 1.0,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "8375bc5187a24724a91ada3dd63f9249",
+        "tool_calls": [
+          "check_stock_status"
+        ],
+        "mock": true,
+        "mode": "openrouter",
+        "elapsed_ms": 4586,
+        "llm_calls": 3,
+        "embedding_calls": 1,
+        "intent": "product_qa"
+      },
+      "expected": "283 units",
+      "trace": {
+        "at": "2026-11-20T15:43:39.634157+00:00",
+        "route": "stock_lookup",
+        "status": "answered",
+        "mode": "openrouter",
+        "source_ids": [
+          "UC-ELE-916693"
+        ],
+        "tools": [
+          "check_stock_status"
+        ],
+        "elapsed_ms": 4586,
+        "calls": [
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.1-flash-lite",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.1-flash-lite",
+            "provider": "Google",
+            "usage": {
+              "prompt_tokens": 1922,
+              "completion_tokens": 162,
+              "total_tokens": 2084,
+              "cost": 0.0007235,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.0007235,
+                "upstream_inference_prompt_cost": 0.0004805,
+                "upstream_inference_completions_cost": 0.000243
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 1.2802
+          },
+          {
+            "endpoint": "embeddings",
+            "requested_model": "openai/text-embedding-3-small",
+            "ok": true,
+            "http_status": 200,
+            "model": "text-embedding-3-small",
+            "provider": "OpenAI",
+            "usage": {
+              "prompt_tokens": 12,
+              "total_tokens": 12,
+              "cost": 2.4e-07,
+              "is_byok": false,
+              "cost_details": {
+                "upstream_inference_cost": 2.4e-07,
+                "upstream_inference_prompt_cost": 2.4e-07,
+                "upstream_inference_completions_cost": 0
+              }
+            },
+            "seconds": 0.7042
+          },
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.1-flash-lite",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.1-flash-lite",
+            "provider": "Google",
+            "usage": {
+              "prompt_tokens": 3906,
+              "completion_tokens": 33,
+              "total_tokens": 3939,
+              "cost": 0.001026,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.001026,
+                "upstream_inference_prompt_cost": 0.0009765,
+                "upstream_inference_completions_cost": 4.95e-05
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 1.2065
+          },
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.1-flash-lite",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.1-flash-lite",
+            "provider": "Google",
+            "usage": {
+              "prompt_tokens": 4191,
+              "completion_tokens": 73,
+              "total_tokens": 4264,
+              "cost": 0.00115725,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.00115725,
+                "upstream_inference_prompt_cost": 0.00104775,
+                "upstream_inference_completions_cost": 0.0001095
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 1.1695
+          }
+        ],
+        "pipeline": "llm-v2",
+        "intent": "product_qa",
+        "confidence": 1.0,
+        "failure": null
+      },
+      "evidence": [
+        {
+          "id": "shipping_delivery_policy:3.1",
+          "kind": "policy",
+          "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+          "file": "shipping_delivery_policy.txt",
+          "section": "3.1",
+          "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+          "heading": "SERVICEABILITY",
+          "text": "Delivery availability depends on the pincode entered at checkout."
+        },
+        {
+          "id": "shipping_delivery_policy:1.3",
+          "kind": "policy",
+          "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+          "file": "shipping_delivery_policy.txt",
+          "section": "1.3",
+          "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+          "heading": "DELIVERY TIMELINES",
+          "text": "Remote / rural pincodes: 7-10 business days."
+        },
+        {
+          "id": "shipping_delivery_policy:2.3",
+          "kind": "policy",
+          "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+          "file": "shipping_delivery_policy.txt",
+          "section": "2.3",
+          "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+          "heading": "SHIPPING CHARGES",
+          "text": "Express delivery (where available) costs an extra Rs 99."
+        },
+        {
+          "id": "shipping_delivery_policy:4.1",
+          "kind": "policy",
+          "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+          "file": "shipping_delivery_policy.txt",
+          "section": "4.1",
+          "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+          "heading": "ORDER TRACKING",
+          "text": "A tracking link is shared via SMS and app notification once the order is shipped."
+        },
+        {
+          "id": "return_refund_policy:1.2",
+          "kind": "policy",
+          "title": "URBANCART — RETURN & REFUND POLICY",
+          "file": "return_refund_policy.txt",
+          "section": "1.2",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+          "heading": "RETURN ELIGIBILITY",
+          "text": "Electronics: Returnable within 7 days of delivery, original packaging and accessories required."
+        },
+        {
+          "id": "return_refund_policy:2.2",
+          "kind": "policy",
+          "title": "URBANCART — RETURN & REFUND POLICY",
+          "file": "return_refund_policy.txt",
+          "section": "2.2",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+          "heading": "NON-RETURNABLE ITEMS",
+          "text": "Items marked \"Final Sale\" on the product page are not eligible for return or exchange."
+        },
+        {
+          "id": "return_refund_policy:4.1",
+          "kind": "policy",
+          "title": "URBANCART — RETURN & REFUND POLICY",
+          "file": "return_refund_policy.txt",
+          "section": "4.1",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+          "heading": "EXCHANGE",
+          "text": "Size exchanges for Apparel & Footwear are free within 14 days, subject to stock availability."
+        },
+        {
+          "id": "payment_cod_policy:2.1",
+          "kind": "policy",
+          "title": "URBANCART — PAYMENT & CASH ON DELIVERY POLICY",
+          "file": "payment_cod_policy.txt",
+          "section": "2.1",
+          "version": "Version: Q2 2024 | Approved by: Payments & Risk",
+          "heading": "CASH ON DELIVERY (COD)",
+          "text": "COD is available on orders up to Rs 20000."
+        },
+        {
+          "id": "payment_cod_policy:1.2",
+          "kind": "policy",
+          "title": "URBANCART — PAYMENT & CASH ON DELIVERY POLICY",
+          "file": "payment_cod_policy.txt",
+          "section": "1.2",
+          "version": "Version: Q2 2024 | Approved by: Payments & Risk",
+          "heading": "ACCEPTED PAYMENT METHODS",
+          "text": "EMI is available on orders above Rs 3000 with select banks."
+        },
+        {
+          "id": "return_refund_policy:2.1",
+          "kind": "policy",
+          "title": "URBANCART — RETURN & REFUND POLICY",
+          "file": "return_refund_policy.txt",
+          "section": "2.1",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+          "heading": "NON-RETURNABLE ITEMS",
+          "text": "Innerwear, cosmetics with broken seals, and customized products cannot be returned."
+        },
+        {
+          "id": "UC-ELE-916693",
+          "kind": "product",
+          "title": "Wireless Mouse",
+          "file": "urbancart_product_catalog_raw.csv",
+          "rows": [
+            2
+          ],
+          "imputed_fields": {},
+          "text": "Catalog snapshot: Wireless Mouse is in stock (283 units).",
+          "validated_attributes": {
+            "price_paise": null,
+            "rating": null,
+            "stock": 283,
+            "return_conflict": true,
+            "conflicts": [],
+            "category": "Electronics"
+          }
+        },
+        {
+          "id": "payment_cod_policy:1.1",
+          "kind": "policy",
+          "title": "URBANCART — PAYMENT & CASH ON DELIVERY POLICY",
+          "file": "payment_cod_policy.txt",
+          "section": "1.1",
+          "version": "Version: Q2 2024 | Approved by: Payments & Risk",
+          "heading": "ACCEPTED PAYMENT METHODS",
+          "text": "UPI, credit/debit cards, net banking, UrbanCart Wallet, and Cash on Delivery (COD)."
+        },
+        {
+          "id": "payment_cod_policy:2.2",
+          "kind": "policy",
+          "title": "URBANCART — PAYMENT & CASH ON DELIVERY POLICY",
+          "file": "payment_cod_policy.txt",
+          "section": "2.2",
+          "version": "Version: Q2 2024 | Approved by: Payments & Risk",
+          "heading": "CASH ON DELIVERY (COD)",
+          "text": "COD may not be available for certain pincodes or high-value items."
+        },
+        {
+          "id": "payment_cod_policy:2.3",
+          "kind": "policy",
+          "title": "URBANCART — PAYMENT & CASH ON DELIVERY POLICY",
+          "file": "payment_cod_policy.txt",
+          "section": "2.3",
+          "version": "Version: Q2 2024 | Approved by: Payments & Risk",
+          "heading": "CASH ON DELIVERY (COD)",
+          "text": "A nominal COD handling fee of Rs 20 may apply on some orders."
+        },
+        {
+          "id": "payment_cod_policy:3.1",
+          "kind": "policy",
+          "title": "URBANCART — PAYMENT & CASH ON DELIVERY POLICY",
+          "file": "payment_cod_policy.txt",
+          "section": "3.1",
+          "version": "Version: Q2 2024 | Approved by: Payments & Risk",
+          "heading": "PAYMENT SECURITY",
+          "text": "UrbanCart never stores full card details; payments are processed via PCI-DSS compliant gateways."
+        },
+        {
+          "id": "payment_cod_policy:3.2",
+          "kind": "policy",
+          "title": "URBANCART — PAYMENT & CASH ON DELIVERY POLICY",
+          "file": "payment_cod_policy.txt",
+          "section": "3.2",
+          "version": "Version: Q2 2024 | Approved by: Payments & Risk",
+          "heading": "PAYMENT SECURITY",
+          "text": "UrbanCart will never ask for your OTP, PIN, or full card number over chat or call."
+        },
+        {
+          "id": "payment_cod_policy:4.1",
+          "kind": "policy",
+          "title": "URBANCART — PAYMENT & CASH ON DELIVERY POLICY",
+          "file": "payment_cod_policy.txt",
+          "section": "4.1",
+          "version": "Version: Q2 2024 | Approved by: Payments & Risk",
+          "heading": "FAILED / DUPLICATE PAYMENTS",
+          "text": "If money is debited but the order is not confirmed, it is auto-refunded within 5-7 business days."
+        },
+        {
+          "id": "return_refund_policy:1.1",
+          "kind": "policy",
+          "title": "URBANCART — RETURN & REFUND POLICY",
+          "file": "return_refund_policy.txt",
+          "section": "1.1",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+          "heading": "RETURN ELIGIBILITY",
+          "text": "Apparel & Footwear: Returnable within 14 days of delivery, tags intact, unworn."
+        },
+        {
+          "id": "return_refund_policy:1.3",
+          "kind": "policy",
+          "title": "URBANCART — RETURN & REFUND POLICY",
+          "file": "return_refund_policy.txt",
+          "section": "1.3",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+          "heading": "RETURN ELIGIBILITY",
+          "text": "Home & Kitchen: Returnable within 10 days of delivery if unused and in original packaging."
+        },
+        {
+          "id": "return_refund_policy:1.4",
+          "kind": "policy",
+          "title": "URBANCART — RETURN & REFUND POLICY",
+          "file": "return_refund_policy.txt",
+          "section": "1.4",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+          "heading": "RETURN ELIGIBILITY",
+          "text": "Beauty & Personal Care: Non-returnable once the seal is opened, for hygiene reasons."
+        },
+        {
+          "id": "return_refund_policy:3.1",
+          "kind": "policy",
+          "title": "URBANCART — RETURN & REFUND POLICY",
+          "file": "return_refund_policy.txt",
+          "section": "3.1",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+          "heading": "REFUND PROCESS",
+          "text": "Refunds are initiated within 24 hours of the returned item passing quality check."
+        },
+        {
+          "id": "return_refund_policy:3.2",
+          "kind": "policy",
+          "title": "URBANCART — RETURN & REFUND POLICY",
+          "file": "return_refund_policy.txt",
+          "section": "3.2",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+          "heading": "REFUND PROCESS",
+          "text": "Prepaid orders: refunded to the original payment method within 5-7 business days."
+        },
+        {
+          "id": "return_refund_policy:3.3",
+          "kind": "policy",
+          "title": "URBANCART — RETURN & REFUND POLICY",
+          "file": "return_refund_policy.txt",
+          "section": "3.3",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+          "heading": "REFUND PROCESS",
+          "text": "Cash on Delivery orders: refunded to the customer's UrbanCart Wallet or bank account within 7-10 business days."
+        },
+        {
+          "id": "return_refund_policy:3.4",
+          "kind": "policy",
+          "title": "URBANCART — RETURN & REFUND POLICY",
+          "file": "return_refund_policy.txt",
+          "section": "3.4",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+          "heading": "REFUND PROCESS",
+          "text": "Shipping charges are non-refundable unless the item was defective or wrong."
+        },
+        {
+          "id": "return_refund_policy:4.2",
+          "kind": "policy",
+          "title": "URBANCART — RETURN & REFUND POLICY",
+          "file": "return_refund_policy.txt",
+          "section": "4.2",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+          "heading": "EXCHANGE",
+          "text": "If the requested size is unavailable, a full refund is issued instead."
+        },
+        {
+          "id": "shipping_delivery_policy:1.1",
+          "kind": "policy",
+          "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+          "file": "shipping_delivery_policy.txt",
+          "section": "1.1",
+          "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+          "heading": "DELIVERY TIMELINES",
+          "text": "Metro cities: 2-4 business days."
+        },
+        {
+          "id": "shipping_delivery_policy:1.2",
+          "kind": "policy",
+          "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+          "file": "shipping_delivery_policy.txt",
+          "section": "1.2",
+          "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+          "heading": "DELIVERY TIMELINES",
+          "text": "Non-metro cities: 4-7 business days."
+        },
+        {
+          "id": "shipping_delivery_policy:2.1",
+          "kind": "policy",
+          "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+          "file": "shipping_delivery_policy.txt",
+          "section": "2.1",
+          "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+          "heading": "SHIPPING CHARGES",
+          "text": "Orders above Rs 499: free standard shipping."
+        },
+        {
+          "id": "shipping_delivery_policy:2.2",
+          "kind": "policy",
+          "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+          "file": "shipping_delivery_policy.txt",
+          "section": "2.2",
+          "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+          "heading": "SHIPPING CHARGES",
+          "text": "Orders below Rs 499: a flat shipping fee of Rs 40 applies."
+        },
+        {
+          "id": "shipping_delivery_policy:3.2",
+          "kind": "policy",
+          "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+          "file": "shipping_delivery_policy.txt",
+          "section": "3.2",
+          "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+          "heading": "SERVICEABILITY",
+          "text": "Some remote pincodes may not be serviceable for Cash on Delivery."
+        },
+        {
+          "id": "shipping_delivery_policy:4.2",
+          "kind": "policy",
+          "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+          "file": "shipping_delivery_policy.txt",
+          "section": "4.2",
+          "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+          "heading": "ORDER TRACKING",
+          "text": "Orders not delivered within 15 days of purchase are eligible for a full refund."
+        }
+      ],
+      "model_seconds": 3.6562,
+      "embedding_seconds": 0.7042
+    },
+    {
+      "model": "google/gemini-3.1-flash-lite",
+      "id": "Q50",
+      "question": "Suggest similar to UC-ELE-916693",
+      "reply": {
+        "answer": "I could not complete every requested action. Please clarify the product SKU, order ID or budget and retry.",
+        "source": "UC-ELE-916693",
+        "sources": [
+          {
+            "id": "UC-ELE-916693",
+            "kind": "product",
+            "title": "Wireless Mouse",
+            "file": "urbancart_product_catalog_raw.csv",
+            "rows": [
+              2
+            ],
+            "imputed_fields": {},
+            "text": "name: Wireless Mouse; brand: Zaffira; category: Electronics",
+            "validated_attributes": {
+              "price_paise": null,
+              "rating": null,
+              "stock": 283,
+              "return_conflict": true,
+              "conflicts": [],
+              "category": "Electronics"
+            }
+          }
+        ],
+        "route": "recommendation",
+        "status": "clarify",
+        "confidence": null,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "fa3b1401723c498383ac1e6a882f39ed",
+        "tool_calls": [
+          "recommend_similar_products"
+        ],
+        "mock": true,
+        "mode": "openrouter",
+        "elapsed_ms": 2478,
+        "llm_calls": 2,
+        "embedding_calls": 0,
+        "intent": "product_qa"
+      },
+      "expected": "maximum budget",
+      "trace": {
+        "at": "2026-11-20T15:43:42.131161+00:00",
+        "route": "recommendation",
+        "status": "clarify",
+        "mode": "openrouter",
+        "source_ids": [
+          "UC-ELE-916693"
+        ],
+        "tools": [
+          "recommend_similar_products"
+        ],
+        "elapsed_ms": 2478,
+        "calls": [
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.1-flash-lite",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.1-flash-lite",
+            "provider": "Google",
+            "usage": {
+              "prompt_tokens": 1920,
+              "completion_tokens": 157,
+              "total_tokens": 2077,
+              "cost": 0.0007155,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.0007155,
+                "upstream_inference_prompt_cost": 0.00048,
+                "upstream_inference_completions_cost": 0.0002355
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 1.3492
+          },
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.1-flash-lite",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.1-flash-lite",
+            "provider": "Google",
+            "usage": {
+              "prompt_tokens": 719,
+              "completion_tokens": 40,
+              "total_tokens": 759,
+              "cost": 0.00023975,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.00023975,
+                "upstream_inference_prompt_cost": 0.00017975,
+                "upstream_inference_completions_cost": 6e-05
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 1.0691
+          }
+        ],
+        "pipeline": "llm-v2",
+        "intent": "product_qa",
+        "confidence": null,
+        "failure": null
+      },
+      "evidence": [
+        {
+          "id": "UC-ELE-916693",
+          "kind": "product",
+          "title": "Wireless Mouse",
+          "file": "urbancart_product_catalog_raw.csv",
+          "rows": [
+            2
+          ],
+          "imputed_fields": {},
+          "text": "name: Wireless Mouse; brand: Zaffira; category: Electronics",
+          "validated_attributes": {
+            "price_paise": null,
+            "rating": null,
+            "stock": 283,
+            "return_conflict": true,
+            "conflicts": [],
+            "category": "Electronics"
+          }
+        }
+      ],
+      "model_seconds": 2.4183,
+      "embedding_seconds": 0
+    },
+    {
+      "model": "google/gemini-3.1-flash-lite",
+      "id": "Q54",
+      "question": "I need a human agent for this issue",
+      "reply": {
+        "answer": "Demo support ticket: DEMO-6145EE0E2D. Your issue was recorded locally for review. This is a simulated handoff; no real support request was sent and no response time is specified.",
+        "source": "DEMO-6145EE0E2D",
+        "sources": [
+          {
+            "id": "DEMO-6145EE0E2D",
+            "kind": "mock_ticket",
+            "title": "Local simulated support ticket",
+            "text": "{\"status\": \"escalated\", \"ticket_id\": \"DEMO-6145EE0E2D\", \"simulated\": true, \"reason\": \"User requested a human agent.\", \"summary\": \"The user requested a human agent for assistance.\", \"expected_response_time\": \"Not specified; local demonstration only.\"}"
+          }
+        ],
+        "route": "escalation",
+        "status": "escalated",
+        "confidence": 1.0,
+        "escalated": true,
+        "ticket_id": "DEMO-6145EE0E2D",
+        "session_id": "9f29bf601390482f9abf0993d02daa85",
+        "tool_calls": [
+          "escalate_to_support"
+        ],
+        "mock": true,
+        "mode": "openrouter",
+        "elapsed_ms": 3371,
+        "llm_calls": 2,
+        "embedding_calls": 0,
+        "intent": "order_lookup"
+      },
+      "expected": "recorded locally",
+      "trace": {
+        "at": "2026-11-20T15:43:45.518445+00:00",
+        "route": "escalation",
+        "status": "escalated",
+        "mode": "openrouter",
+        "source_ids": [
+          "DEMO-6145EE0E2D"
+        ],
+        "tools": [
+          "escalate_to_support"
+        ],
+        "elapsed_ms": 3371,
+        "calls": [
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.1-flash-lite",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.1-flash-lite",
+            "provider": "Google",
+            "usage": {
+              "prompt_tokens": 1915,
+              "completion_tokens": 138,
+              "total_tokens": 2053,
+              "cost": 0.00068575,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.00068575,
+                "upstream_inference_prompt_cost": 0.00047875,
+                "upstream_inference_completions_cost": 0.000207
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 2.2016
+          },
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.1-flash-lite",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.1-flash-lite",
+            "provider": "Google",
+            "usage": {
+              "prompt_tokens": 585,
+              "completion_tokens": 40,
+              "total_tokens": 625,
+              "cost": 0.00020625,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.00020625,
+                "upstream_inference_prompt_cost": 0.00014625,
+                "upstream_inference_completions_cost": 6e-05
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 0,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 1.1135
+          }
+        ],
+        "pipeline": "llm-v2",
+        "intent": "order_lookup",
+        "confidence": 1.0,
+        "failure": null
+      },
+      "evidence": [
+        {
+          "id": "DEMO-6145EE0E2D",
+          "kind": "mock_ticket",
+          "title": "Local simulated support ticket",
+          "text": "{\"status\": \"escalated\", \"ticket_id\": \"DEMO-6145EE0E2D\", \"simulated\": true, \"reason\": \"User requested a human agent.\", \"summary\": \"The user requested a human agent for assistance.\", \"expected_response_time\": \"Not specified; local demonstration only.\"}"
+        }
+      ],
+      "model_seconds": 3.3151,
+      "embedding_seconds": 0
+    },
+    {
+      "model": "qwen/qwen3.5-plus-20260420",
+      "id": "Q01",
+      "question": "Can I return electronics?",
+      "reply": {
+        "answer": "The model service is temporarily unavailable. Please retry shortly.",
+        "source": null,
+        "sources": [],
+        "route": "service",
+        "status": "unavailable",
+        "confidence": null,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "ab70d3b4747e4d6bb8089f65f4bfcf33",
+        "tool_calls": [],
+        "mock": false,
+        "mode": "openrouter",
+        "elapsed_ms": 31732,
+        "llm_calls": 2,
+        "embedding_calls": 1,
+        "intent": "policy_qa"
+      },
+      "expected": "Electronics can be returned within 7 days of delivery, with original packaging and accessories. Final Sale items excluded.",
+      "trace": {
+        "at": "2026-11-20T15:44:17.287572+00:00",
+        "route": "service",
+        "status": "unavailable",
+        "mode": "openrouter",
+        "source_ids": [],
+        "tools": [],
+        "elapsed_ms": 31732,
+        "calls": [
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "qwen/qwen3.5-plus-20260420",
+            "ok": true,
+            "http_status": 200,
+            "model": "qwen/qwen3.5-plus-20260420",
+            "provider": "Alibaba",
+            "usage": {
+              "prompt_tokens": 1203,
+              "completion_tokens": 1354,
+              "total_tokens": 2557,
+              "cost": 0.0027981,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.0027981,
+                "upstream_inference_prompt_cost": 0.0003609,
+                "upstream_inference_completions_cost": 0.0024372
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 1233,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 12.2945
+          },
+          {
+            "endpoint": "embeddings",
+            "requested_model": "openai/text-embedding-3-small",
+            "ok": true,
+            "http_status": 200,
+            "model": "text-embedding-3-small",
+            "provider": "OpenAI",
+            "usage": {
+              "prompt_tokens": 3,
+              "total_tokens": 3,
+              "cost": 6e-08,
+              "is_byok": false,
+              "cost_details": {
+                "upstream_inference_cost": 6e-08,
+                "upstream_inference_prompt_cost": 6e-08,
+                "upstream_inference_completions_cost": 0
+              }
+            },
+            "seconds": 0.617
+          },
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "qwen/qwen3.5-plus-20260420",
+            "ok": true,
+            "http_status": 200,
+            "model": "qwen/qwen3.5-plus-20260420",
+            "provider": "Alibaba",
+            "usage": {
+              "prompt_tokens": 2721,
+              "completion_tokens": 2200,
+              "total_tokens": 4921,
+              "cost": 0.0047763,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.0047763,
+                "upstream_inference_prompt_cost": 0.0008163,
+                "upstream_inference_completions_cost": 0.00396
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 2085,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 18.5779
+          }
+        ],
+        "pipeline": "llm-v2",
+        "intent": "policy_qa",
+        "confidence": null,
+        "failure": "Model provider returned invalid structured output."
+      },
+      "evidence": [],
+      "model_seconds": 30.8724,
+      "embedding_seconds": 0.617
+    },
+    {
+      "model": "qwen/qwen3.5-plus-20260420",
+      "id": "Q05",
+      "question": "Is SKU UC-ELE-891071 in stock?",
+      "reply": {
+        "answer": "The model service is temporarily unavailable. Please retry shortly.",
+        "source": null,
+        "sources": [],
+        "route": "service",
+        "status": "unavailable",
+        "confidence": null,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "b6c8de4961b040269fffb744624e0e69",
+        "tool_calls": [],
+        "mock": false,
+        "mode": "openrouter",
+        "elapsed_ms": 20359,
+        "llm_calls": 1,
+        "embedding_calls": 0,
+        "intent": null
+      },
+      "expected": "Call check_stock_status and report catalog snapshot stock of 451 units for UC-ELE-891071. Do not claim live inventory.",
+      "trace": {
+        "at": "2026-11-20T15:44:37.683427+00:00",
+        "route": "service",
+        "status": "unavailable",
+        "mode": "openrouter",
+        "source_ids": [],
+        "tools": [],
+        "elapsed_ms": 20359,
+        "calls": [
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "qwen/qwen3.5-plus-20260420",
+            "ok": true,
+            "http_status": 200,
+            "model": "qwen/qwen3.5-plus-20260420",
+            "provider": "Alibaba",
+            "usage": {
+              "prompt_tokens": 1213,
+              "completion_tokens": 2200,
+              "total_tokens": 3413,
+              "cost": 0.0043239,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.0043239,
+                "upstream_inference_prompt_cost": 0.0003639,
+                "upstream_inference_completions_cost": 0.00396
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 2127,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 20.3245
+          }
+        ],
+        "pipeline": "llm-v2",
+        "intent": null,
+        "confidence": null,
+        "failure": "Model provider returned invalid structured output."
+      },
+      "evidence": [],
+      "model_seconds": 20.3245,
+      "embedding_seconds": 0
+    },
+    {
+      "model": "qwen/qwen3.5-plus-20260420",
+      "id": "Q10",
+      "question": "What's the weather?",
+      "reply": {
+        "answer": "I'm UrbanCart's AI assistant. I can help with products, policies and demo orders.",
+        "source": null,
+        "sources": [],
+        "route": "off_topic",
+        "status": "refused",
+        "confidence": null,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "d0799f8700a147b4bd83c3d04e2cc38a",
+        "tool_calls": [],
+        "mock": false,
+        "mode": "openrouter",
+        "elapsed_ms": 12456,
+        "llm_calls": 1,
+        "embedding_calls": 0,
+        "intent": "off_topic"
+      },
+      "expected": "Decline weather assistance and offer UrbanCart shopping/support assistance.",
+      "trace": {
+        "at": "2026-11-20T15:44:50.151973+00:00",
+        "route": "off_topic",
+        "status": "refused",
+        "mode": "openrouter",
+        "source_ids": [],
+        "tools": [],
+        "elapsed_ms": 12456,
+        "calls": [
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "qwen/qwen3.5-plus-20260420",
+            "ok": true,
+            "http_status": 200,
+            "model": "qwen/qwen3.5-plus-20260420",
+            "provider": "Alibaba",
+            "usage": {
+              "prompt_tokens": 1203,
+              "completion_tokens": 1232,
+              "total_tokens": 2435,
+              "cost": 0.0025785,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.0025785,
+                "upstream_inference_prompt_cost": 0.0003609,
+                "upstream_inference_completions_cost": 0.0022176
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 1114,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 12.3884
+          }
+        ],
+        "pipeline": "llm-v2",
+        "intent": "off_topic",
+        "confidence": null,
+        "failure": null
+      },
+      "evidence": [],
+      "model_seconds": 12.3884,
+      "embedding_seconds": 0
+    },
+    {
+      "model": "qwen/qwen3.5-plus-20260420",
+      "id": "Q20",
+      "question": "Suggest similar products to UC-ELE-891071 under Rs 2000",
+      "reply": {
+        "answer": "The model service is temporarily unavailable. Please retry shortly.",
+        "source": null,
+        "sources": [],
+        "route": "service",
+        "status": "unavailable",
+        "confidence": null,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "c57bf16b3b7b4d538377b3707dbb5a4c",
+        "tool_calls": [],
+        "mock": false,
+        "mode": "openrouter",
+        "elapsed_ms": 20823,
+        "llm_calls": 1,
+        "embedding_calls": 0,
+        "intent": null
+      },
+      "expected": "Call recommend_similar_products using UC-ELE-891071 and maximum strictly below INR 2000; return only in-stock same-category alternatives within budget or explain no matches.",
+      "trace": {
+        "at": "2026-11-20T15:45:10.997169+00:00",
+        "route": "service",
+        "status": "unavailable",
+        "mode": "openrouter",
+        "source_ids": [],
+        "tools": [],
+        "elapsed_ms": 20823,
+        "calls": [
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "qwen/qwen3.5-plus-20260420",
+            "ok": true,
+            "http_status": 200,
+            "model": "qwen/qwen3.5-plus-20260420",
+            "provider": "Alibaba",
+            "usage": {
+              "prompt_tokens": 1221,
+              "completion_tokens": 2202,
+              "total_tokens": 3423,
+              "cost": 0.0043299,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.0043299,
+                "upstream_inference_prompt_cost": 0.0003663,
+                "upstream_inference_completions_cost": 0.0039636
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 2200,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 20.7985
+          }
+        ],
+        "pipeline": "llm-v2",
+        "intent": null,
+        "confidence": null,
+        "failure": "Model provider returned invalid structured output."
+      },
+      "evidence": [],
+      "model_seconds": 20.7985,
+      "embedding_seconds": 0
+    },
+    {
+      "model": "qwen/qwen3.5-plus-20260420",
+      "id": "Q31",
+      "question": "Rural delivery time kya hai?",
+      "reply": {
+        "answer": "The model service is temporarily unavailable. Please retry shortly.",
+        "source": null,
+        "sources": [],
+        "route": "service",
+        "status": "unavailable",
+        "confidence": null,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "38d8309a4d4542cb9c324c380382fd09",
+        "tool_calls": [],
+        "mock": false,
+        "mode": "openrouter",
+        "elapsed_ms": 44805,
+        "llm_calls": 3,
+        "embedding_calls": 1,
+        "intent": "policy_qa"
+      },
+      "expected": "7-10 business days",
+      "trace": {
+        "at": "2026-11-20T15:45:55.821664+00:00",
+        "route": "service",
+        "status": "unavailable",
+        "mode": "openrouter",
+        "source_ids": [],
+        "tools": [],
+        "elapsed_ms": 44805,
+        "calls": [
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "qwen/qwen3.5-plus-20260420",
+            "ok": true,
+            "http_status": 200,
+            "model": "qwen/qwen3.5-plus-20260420",
+            "provider": "Alibaba",
+            "usage": {
+              "prompt_tokens": 1206,
+              "completion_tokens": 1235,
+              "total_tokens": 2441,
+              "cost": 0.0025848,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.0025848,
+                "upstream_inference_prompt_cost": 0.0003618,
+                "upstream_inference_completions_cost": 0.002223
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 1108,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 11.7447
+          },
+          {
+            "endpoint": "embeddings",
+            "requested_model": "openai/text-embedding-3-small",
+            "ok": true,
+            "http_status": 200,
+            "model": "text-embedding-3-small",
+            "provider": "OpenAI",
+            "usage": {
+              "prompt_tokens": 4,
+              "total_tokens": 4,
+              "cost": 8e-08,
+              "is_byok": false,
+              "cost_details": {
+                "upstream_inference_cost": 8e-08,
+                "upstream_inference_prompt_cost": 8e-08,
+                "upstream_inference_completions_cost": 0
+              }
+            },
+            "seconds": 0.6226
+          },
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "qwen/qwen3.5-plus-20260420",
+            "ok": true,
+            "http_status": 200,
+            "model": "qwen/qwen3.5-plus-20260420",
+            "provider": "Alibaba",
+            "usage": {
+              "prompt_tokens": 1661,
+              "completion_tokens": 1656,
+              "total_tokens": 3317,
+              "cost": 0.0034791,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.0034791,
+                "upstream_inference_prompt_cost": 0.0004983,
+                "upstream_inference_completions_cost": 0.0029808
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 1552,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 15.5648
+          },
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "qwen/qwen3.5-plus-20260420",
+            "ok": true,
+            "http_status": 200,
+            "model": "qwen/qwen3.5-plus-20260420",
+            "provider": "Alibaba",
+            "usage": {
+              "prompt_tokens": 1676,
+              "completion_tokens": 1927,
+              "total_tokens": 3603,
+              "cost": 0.0039714,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.0039714,
+                "upstream_inference_prompt_cost": 0.0005028,
+                "upstream_inference_completions_cost": 0.0034686
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 1799,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 16.8087
+          }
+        ],
+        "pipeline": "llm-v2",
+        "intent": "policy_qa",
+        "confidence": null,
+        "failure": "Model output failed schema validation."
+      },
+      "evidence": [],
+      "model_seconds": 44.1182,
+      "embedding_seconds": 0.6226
+    },
+    {
+      "model": "qwen/qwen3.5-plus-20260420",
+      "id": "Q40",
+      "question": "Is product UC-ELE-916693 available in stock?",
+      "reply": {
+        "answer": "I could not complete every requested action. Please clarify the product SKU, order ID or budget and retry.",
+        "source": null,
+        "sources": [],
+        "route": "product_qa",
+        "status": "clarify",
+        "confidence": null,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "36b406c38ad445feab56a020b1df57e4",
+        "tool_calls": [],
+        "mock": false,
+        "mode": "openrouter",
+        "elapsed_ms": 28390,
+        "llm_calls": 2,
+        "embedding_calls": 0,
+        "intent": "product_qa"
+      },
+      "expected": "283 units",
+      "trace": {
+        "at": "2026-11-20T15:46:24.224175+00:00",
+        "route": "product_qa",
+        "status": "clarify",
+        "mode": "openrouter",
+        "source_ids": [],
+        "tools": [],
+        "elapsed_ms": 28390,
+        "calls": [
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "qwen/qwen3.5-plus-20260420",
+            "ok": true,
+            "http_status": 200,
+            "model": "qwen/qwen3.5-plus-20260420",
+            "provider": "Alibaba",
+            "usage": {
+              "prompt_tokens": 1214,
+              "completion_tokens": 1728,
+              "total_tokens": 2942,
+              "cost": 0.0034746,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.0034746,
+                "upstream_inference_prompt_cost": 0.0003642,
+                "upstream_inference_completions_cost": 0.0031104
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 1572,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 15.4323
+          },
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "qwen/qwen3.5-plus-20260420",
+            "ok": true,
+            "http_status": 200,
+            "model": "qwen/qwen3.5-plus-20260420",
+            "provider": "Alibaba",
+            "usage": {
+              "prompt_tokens": 1065,
+              "completion_tokens": 1402,
+              "total_tokens": 2467,
+              "cost": 0.0028431,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.0028431,
+                "upstream_inference_prompt_cost": 0.0003195,
+                "upstream_inference_completions_cost": 0.0025236
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 1400,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 12.9254
+          }
+        ],
+        "pipeline": "llm-v2",
+        "intent": "product_qa",
+        "confidence": null,
+        "failure": null
+      },
+      "evidence": [],
+      "model_seconds": 28.3577,
+      "embedding_seconds": 0
+    },
+    {
+      "model": "qwen/qwen3.5-plus-20260420",
+      "id": "Q50",
+      "question": "Suggest similar to UC-ELE-916693",
+      "reply": {
+        "answer": "The model service is temporarily unavailable. Please retry shortly.",
+        "source": null,
+        "sources": [],
+        "route": "service",
+        "status": "unavailable",
+        "confidence": null,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "36f7a4b3714b401392dd6ac3c78d9f3d",
+        "tool_calls": [],
+        "mock": false,
+        "mode": "openrouter",
+        "elapsed_ms": 808785,
+        "llm_calls": 1,
+        "embedding_calls": 0,
+        "intent": null
+      },
+      "expected": "maximum budget",
+      "trace": {
+        "at": "2026-11-20T15:59:42.564187+00:00",
+        "route": "service",
+        "status": "unavailable",
+        "mode": "openrouter",
+        "source_ids": [],
+        "tools": [],
+        "elapsed_ms": 808785,
+        "calls": [
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "qwen/qwen3.5-plus-20260420",
+            "ok": false,
+            "seconds": 808.5188
+          }
+        ],
+        "pipeline": "llm-v2",
+        "intent": null,
+        "confidence": null,
+        "failure": "The model provider could not complete the request."
+      },
+      "evidence": [],
+      "model_seconds": 808.5188,
+      "embedding_seconds": 0
+    },
+    {
+      "model": "qwen/qwen3.5-plus-20260420",
+      "id": "Q54",
+      "question": "I need a human agent for this issue",
+      "reply": {
+        "answer": "The model service is temporarily unavailable. Please retry shortly.",
+        "source": null,
+        "sources": [],
+        "route": "service",
+        "status": "unavailable",
+        "confidence": null,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "8ecd2260efa94ebb986fc862a830b310",
+        "tool_calls": [],
+        "mock": false,
+        "mode": "openrouter",
+        "elapsed_ms": 22085,
+        "llm_calls": 1,
+        "embedding_calls": 0,
+        "intent": null
+      },
+      "expected": "recorded locally",
+      "trace": {
+        "at": "2026-11-20T16:00:04.670694+00:00",
+        "route": "service",
+        "status": "unavailable",
+        "mode": "openrouter",
+        "source_ids": [],
+        "tools": [],
+        "elapsed_ms": 22085,
+        "calls": [
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "qwen/qwen3.5-plus-20260420",
+            "ok": true,
+            "http_status": 200,
+            "model": "qwen/qwen3.5-plus-20260420",
+            "provider": "Alibaba",
+            "usage": {
+              "prompt_tokens": 1207,
+              "completion_tokens": 2202,
+              "total_tokens": 3409,
+              "cost": 0.0043257,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.0043257,
+                "upstream_inference_prompt_cost": 0.0003621,
+                "upstream_inference_completions_cost": 0.0039636
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 2200,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 22.0725
+          }
+        ],
+        "pipeline": "llm-v2",
+        "intent": null,
+        "confidence": null,
+        "failure": "Model provider returned invalid structured output."
+      },
+      "evidence": [],
+      "model_seconds": 22.0725,
+      "embedding_seconds": 0
+    },
+    {
+      "model": "google/gemini-3.6-flash",
+      "id": "Q01",
+      "question": "Can I return electronics?",
+      "reply": {
+        "answer": "Yes, electronics are returnable within 7 days of delivery, provided they include their original packaging and accessories [return_refund_policy:1.2]. However, items marked \"Final Sale\" on the product page are not eligible for return or exchange [return_refund_policy:2.2].",
+        "source": "return_refund_policy:1.2",
+        "sources": [
+          {
+            "id": "return_refund_policy:1.2",
+            "kind": "policy",
+            "title": "URBANCART — RETURN & REFUND POLICY",
+            "file": "return_refund_policy.txt",
+            "section": "1.2",
+            "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+            "heading": "RETURN ELIGIBILITY",
+            "text": "Electronics: Returnable within 7 days of delivery, original packaging and accessories required."
+          },
+          {
+            "id": "return_refund_policy:2.2",
+            "kind": "policy",
+            "title": "URBANCART — RETURN & REFUND POLICY",
+            "file": "return_refund_policy.txt",
+            "section": "2.2",
+            "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+            "heading": "NON-RETURNABLE ITEMS",
+            "text": "Items marked \"Final Sale\" on the product page are not eligible for return or exchange."
+          }
+        ],
+        "route": "policy_qa",
+        "status": "answered",
+        "confidence": 1.0,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "7630d95ca68b4bd2bfbb244e47c8ed86",
+        "tool_calls": [],
+        "mock": false,
+        "mode": "openrouter",
+        "elapsed_ms": 9055,
+        "llm_calls": 2,
+        "embedding_calls": 1,
+        "intent": "policy_qa"
+      },
+      "expected": "Electronics can be returned within 7 days of delivery, with original packaging and accessories. Final Sale items excluded.",
+      "trace": {
+        "at": "2026-11-20T16:00:13.745709+00:00",
+        "route": "policy_qa",
+        "status": "answered",
+        "mode": "openrouter",
+        "source_ids": [
+          "return_refund_policy:1.2",
+          "return_refund_policy:2.2"
+        ],
+        "tools": [],
+        "elapsed_ms": 9055,
+        "calls": [
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.6-flash",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.6-flash",
+            "provider": "Google AI Studio",
+            "usage": {
+              "prompt_tokens": 1226,
+              "completion_tokens": 442,
+              "total_tokens": 1668,
+              "cost": 0.002577,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.002577,
+                "upstream_inference_prompt_cost": 0.0009195,
+                "upstream_inference_completions_cost": 0.0016575
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 362,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 3.8108
+          },
+          {
+            "endpoint": "embeddings",
+            "requested_model": "openai/text-embedding-3-small",
+            "ok": true,
+            "http_status": 200,
+            "model": "text-embedding-3-small",
+            "provider": "OpenAI",
+            "usage": {
+              "prompt_tokens": 3,
+              "total_tokens": 3,
+              "cost": 6e-08,
+              "is_byok": false,
+              "cost_details": {
+                "upstream_inference_cost": 6e-08,
+                "upstream_inference_prompt_cost": 6e-08,
+                "upstream_inference_completions_cost": 0
+              }
+            },
+            "seconds": 0.9169
+          },
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.6-flash",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.6-flash",
+            "provider": "Google AI Studio",
+            "usage": {
+              "prompt_tokens": 2715,
+              "completion_tokens": 722,
+              "total_tokens": 3437,
+              "cost": 0.00474375,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.00474375,
+                "upstream_inference_prompt_cost": 0.00203625,
+                "upstream_inference_completions_cost": 0.0027075
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 624,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 4.1077
+          }
+        ],
+        "pipeline": "llm-v2",
+        "intent": "policy_qa",
+        "confidence": 1.0,
+        "failure": null
+      },
+      "evidence": [
+        {
+          "id": "return_refund_policy:1.2",
+          "kind": "policy",
+          "title": "URBANCART — RETURN & REFUND POLICY",
+          "file": "return_refund_policy.txt",
+          "section": "1.2",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+          "heading": "RETURN ELIGIBILITY",
+          "text": "Electronics: Returnable within 7 days of delivery, original packaging and accessories required."
+        },
+        {
+          "id": "return_refund_policy:2.2",
+          "kind": "policy",
+          "title": "URBANCART — RETURN & REFUND POLICY",
+          "file": "return_refund_policy.txt",
+          "section": "2.2",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+          "heading": "NON-RETURNABLE ITEMS",
+          "text": "Items marked \"Final Sale\" on the product page are not eligible for return or exchange."
+        },
+        {
+          "id": "return_refund_policy:2.1",
+          "kind": "policy",
+          "title": "URBANCART — RETURN & REFUND POLICY",
+          "file": "return_refund_policy.txt",
+          "section": "2.1",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+          "heading": "NON-RETURNABLE ITEMS",
+          "text": "Innerwear, cosmetics with broken seals, and customized products cannot be returned."
+        },
+        {
+          "id": "return_refund_policy:1.3",
+          "kind": "policy",
+          "title": "URBANCART — RETURN & REFUND POLICY",
+          "file": "return_refund_policy.txt",
+          "section": "1.3",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+          "heading": "RETURN ELIGIBILITY",
+          "text": "Home & Kitchen: Returnable within 10 days of delivery if unused and in original packaging."
+        },
+        {
+          "id": "return_refund_policy:1.1",
+          "kind": "policy",
+          "title": "URBANCART — RETURN & REFUND POLICY",
+          "file": "return_refund_policy.txt",
+          "section": "1.1",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+          "heading": "RETURN ELIGIBILITY",
+          "text": "Apparel & Footwear: Returnable within 14 days of delivery, tags intact, unworn."
+        },
+        {
+          "id": "warranty_policy:1.1",
+          "kind": "policy",
+          "title": "URBANCART — WARRANTY POLICY",
+          "file": "warranty_policy.txt",
+          "section": "1.1",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience",
+          "heading": "WARRANTY COVERAGE",
+          "text": "Electronics carry a manufacturer warranty ranging from 6 months to 24 months."
+        },
+        {
+          "id": "return_refund_policy:1.4",
+          "kind": "policy",
+          "title": "URBANCART — RETURN & REFUND POLICY",
+          "file": "return_refund_policy.txt",
+          "section": "1.4",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+          "heading": "RETURN ELIGIBILITY",
+          "text": "Beauty & Personal Care: Non-returnable once the seal is opened, for hygiene reasons."
+        },
+        {
+          "id": "return_refund_policy:3.1",
+          "kind": "policy",
+          "title": "URBANCART — RETURN & REFUND POLICY",
+          "file": "return_refund_policy.txt",
+          "section": "3.1",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+          "heading": "REFUND PROCESS",
+          "text": "Refunds are initiated within 24 hours of the returned item passing quality check."
+        },
+        {
+          "id": "return_refund_policy:3.2",
+          "kind": "policy",
+          "title": "URBANCART — RETURN & REFUND POLICY",
+          "file": "return_refund_policy.txt",
+          "section": "3.2",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+          "heading": "REFUND PROCESS",
+          "text": "Prepaid orders: refunded to the original payment method within 5-7 business days."
+        },
+        {
+          "id": "return_refund_policy:3.3",
+          "kind": "policy",
+          "title": "URBANCART — RETURN & REFUND POLICY",
+          "file": "return_refund_policy.txt",
+          "section": "3.3",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+          "heading": "REFUND PROCESS",
+          "text": "Cash on Delivery orders: refunded to the customer's UrbanCart Wallet or bank account within 7-10 business days."
+        },
+        {
+          "id": "return_refund_policy:3.4",
+          "kind": "policy",
+          "title": "URBANCART — RETURN & REFUND POLICY",
+          "file": "return_refund_policy.txt",
+          "section": "3.4",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+          "heading": "REFUND PROCESS",
+          "text": "Shipping charges are non-refundable unless the item was defective or wrong."
+        },
+        {
+          "id": "return_refund_policy:4.1",
+          "kind": "policy",
+          "title": "URBANCART — RETURN & REFUND POLICY",
+          "file": "return_refund_policy.txt",
+          "section": "4.1",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+          "heading": "EXCHANGE",
+          "text": "Size exchanges for Apparel & Footwear are free within 14 days, subject to stock availability."
+        },
+        {
+          "id": "return_refund_policy:4.2",
+          "kind": "policy",
+          "title": "URBANCART — RETURN & REFUND POLICY",
+          "file": "return_refund_policy.txt",
+          "section": "4.2",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience & Legal",
+          "heading": "EXCHANGE",
+          "text": "If the requested size is unavailable, a full refund is issued instead."
+        },
+        {
+          "id": "warranty_policy:1.2",
+          "kind": "policy",
+          "title": "URBANCART — WARRANTY POLICY",
+          "file": "warranty_policy.txt",
+          "section": "1.2",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience",
+          "heading": "WARRANTY COVERAGE",
+          "text": "The warranty period starts from the date of delivery."
+        },
+        {
+          "id": "warranty_policy:1.3",
+          "kind": "policy",
+          "title": "URBANCART — WARRANTY POLICY",
+          "file": "warranty_policy.txt",
+          "section": "1.3",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience",
+          "heading": "WARRANTY COVERAGE",
+          "text": "Warranty covers manufacturing defects only, not physical or liquid damage."
+        },
+        {
+          "id": "warranty_policy:2.1",
+          "kind": "policy",
+          "title": "URBANCART — WARRANTY POLICY",
+          "file": "warranty_policy.txt",
+          "section": "2.1",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience",
+          "heading": "WARRANTY CLAIMS",
+          "text": "To claim warranty, the customer must provide the order ID and a description of the defect."
+        },
+        {
+          "id": "warranty_policy:2.2",
+          "kind": "policy",
+          "title": "URBANCART — WARRANTY POLICY",
+          "file": "warranty_policy.txt",
+          "section": "2.2",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience",
+          "heading": "WARRANTY CLAIMS",
+          "text": "Claims are routed to the manufacturer's authorized service center."
+        },
+        {
+          "id": "warranty_policy:2.3",
+          "kind": "policy",
+          "title": "URBANCART — WARRANTY POLICY",
+          "file": "warranty_policy.txt",
+          "section": "2.3",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience",
+          "heading": "WARRANTY CLAIMS",
+          "text": "Turnaround for warranty repair/replacement is typically 10-15 business days."
+        },
+        {
+          "id": "warranty_policy:3.1",
+          "kind": "policy",
+          "title": "URBANCART — WARRANTY POLICY",
+          "file": "warranty_policy.txt",
+          "section": "3.1",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience",
+          "heading": "EXCLUSIONS",
+          "text": "Damage due to misuse, unauthorized repair, or normal wear and tear is not covered."
+        },
+        {
+          "id": "warranty_policy:3.2",
+          "kind": "policy",
+          "title": "URBANCART — WARRANTY POLICY",
+          "file": "warranty_policy.txt",
+          "section": "3.2",
+          "version": "Version: Q2 2024 | Approved by: Customer Experience",
+          "heading": "EXCLUSIONS",
+          "text": "Consumable parts (batteries beyond 6 months, cables) may have limited coverage."
+        }
+      ],
+      "model_seconds": 7.9185,
+      "embedding_seconds": 0.9169
+    },
+    {
+      "model": "google/gemini-3.6-flash",
+      "id": "Q05",
+      "question": "Is SKU UC-ELE-891071 in stock?",
+      "reply": {
+        "answer": "Catalog snapshot: LED Monitor is in stock (451 units). This is a dataset snapshot, not a live inventory check. [UC-ELE-891071]",
+        "source": "UC-ELE-891071",
+        "sources": [
+          {
+            "id": "UC-ELE-891071",
+            "kind": "product",
+            "title": "LED Monitor",
+            "file": "urbancart_product_catalog_raw.csv",
+            "rows": [
+              3
+            ],
+            "imputed_fields": {},
+            "text": "Catalog snapshot: LED Monitor is in stock (451 units)."
+          }
+        ],
+        "route": "stock_lookup",
+        "status": "answered",
+        "confidence": 1.0,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "cbd246f3069646e2a009210e19d84779",
+        "tool_calls": [
+          "check_stock_status"
+        ],
+        "mock": true,
+        "mode": "openrouter",
+        "elapsed_ms": 6528,
+        "llm_calls": 2,
+        "embedding_calls": 0,
+        "intent": "product_qa"
+      },
+      "expected": "Call check_stock_status and report catalog snapshot stock of 451 units for UC-ELE-891071. Do not claim live inventory.",
+      "trace": {
+        "at": "2026-11-20T16:00:20.295899+00:00",
+        "route": "stock_lookup",
+        "status": "answered",
+        "mode": "openrouter",
+        "source_ids": [
+          "UC-ELE-891071"
+        ],
+        "tools": [
+          "check_stock_status"
+        ],
+        "elapsed_ms": 6528,
+        "calls": [
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.6-flash",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.6-flash",
+            "provider": "Google AI Studio",
+            "usage": {
+              "prompt_tokens": 1236,
+              "completion_tokens": 404,
+              "total_tokens": 1640,
+              "cost": 0.002442,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.002442,
+                "upstream_inference_prompt_cost": 0.000927,
+                "upstream_inference_completions_cost": 0.001515
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 298,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 3.2103
+          },
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.6-flash",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.6-flash",
+            "provider": "Google AI Studio",
+            "usage": {
+              "prompt_tokens": 792,
+              "completion_tokens": 463,
+              "total_tokens": 1255,
+              "cost": 0.00233025,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.00233025,
+                "upstream_inference_prompt_cost": 0.000594,
+                "upstream_inference_completions_cost": 0.00173625
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 430,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 3.2402
+          }
+        ],
+        "pipeline": "llm-v2",
+        "intent": "product_qa",
+        "confidence": 1.0,
+        "failure": null
+      },
+      "evidence": [
+        {
+          "id": "UC-ELE-891071",
+          "kind": "product",
+          "title": "LED Monitor",
+          "file": "urbancart_product_catalog_raw.csv",
+          "rows": [
+            3
+          ],
+          "imputed_fields": {},
+          "text": "Catalog snapshot: LED Monitor is in stock (451 units)."
+        }
+      ],
+      "model_seconds": 6.4505,
+      "embedding_seconds": 0
+    },
+    {
+      "model": "google/gemini-3.6-flash",
+      "id": "Q10",
+      "question": "What's the weather?",
+      "reply": {
+        "answer": "I'm UrbanCart's AI assistant. I can help with products, policies and demo orders.",
+        "source": null,
+        "sources": [],
+        "route": "off_topic",
+        "status": "refused",
+        "confidence": null,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "e4d3738883a04908b264015d75c75098",
+        "tool_calls": [],
+        "mock": false,
+        "mode": "openrouter",
+        "elapsed_ms": 4974,
+        "llm_calls": 1,
+        "embedding_calls": 0,
+        "intent": "off_topic"
+      },
+      "expected": "Decline weather assistance and offer UrbanCart shopping/support assistance.",
+      "trace": {
+        "at": "2026-11-20T16:00:25.296435+00:00",
+        "route": "off_topic",
+        "status": "refused",
+        "mode": "openrouter",
+        "source_ids": [],
+        "tools": [],
+        "elapsed_ms": 4974,
+        "calls": [
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.6-flash",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.6-flash",
+            "provider": "Google AI Studio",
+            "usage": {
+              "prompt_tokens": 1227,
+              "completion_tokens": 816,
+              "total_tokens": 2043,
+              "cost": 0.00398025,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.00398025,
+                "upstream_inference_prompt_cost": 0.00092025,
+                "upstream_inference_completions_cost": 0.00306
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 687,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 4.9443
+          }
+        ],
+        "pipeline": "llm-v2",
+        "intent": "off_topic",
+        "confidence": null,
+        "failure": null
+      },
+      "evidence": [],
+      "model_seconds": 4.9443,
+      "embedding_seconds": 0
+    },
+    {
+      "model": "google/gemini-3.6-flash",
+      "id": "Q20",
+      "question": "Suggest similar products to UC-ELE-891071 under Rs 2000",
+      "reply": {
+        "answer": "Catalog snapshot; this is not a live inventory check.\n\nHere are products similar to UC-ELE-891071 under Rs 2000: 1. Bluetooth Earbuds by Nestwell priced at INR 1400.00 with a rating of 4.6 [UC-ELE-067065]. 2. Power Bank by HomeVibe priced at INR 1570.00 with a rating of 4.5 [UC-ELE-602264]. 3. USB-C Cable by TechNova priced at INR 1580.00 with a rating of 3.9 [UC-ELE-871785].",
+        "source": "UC-ELE-067065",
+        "sources": [
+          {
+            "id": "UC-ELE-067065",
+            "kind": "product",
+            "title": "Bluetooth Earbuds",
+            "file": "urbancart_product_catalog_raw.csv",
+            "rows": [
+              4730
+            ],
+            "imputed_fields": {},
+            "text": "name: Bluetooth Earbuds; brand: Nestwell; category: Electronics; rating: 4.6; price: INR 1400.00",
+            "snapshot_stock": 49
+          },
+          {
+            "id": "UC-ELE-602264",
+            "kind": "product",
+            "title": "Power Bank",
+            "file": "urbancart_product_catalog_raw.csv",
+            "rows": [
+              2209
+            ],
+            "imputed_fields": {},
+            "text": "name: Power Bank; brand: HomeVibe; category: Electronics; rating: 4.5; price: INR 1570.00",
+            "snapshot_stock": 493
+          },
+          {
+            "id": "UC-ELE-871785",
+            "kind": "product",
+            "title": "USB-C Cable",
+            "file": "urbancart_product_catalog_raw.csv",
+            "rows": [
+              1062
+            ],
+            "imputed_fields": {},
+            "text": "name: USB-C Cable; brand: TechNova; category: Electronics; rating: 3.9; price: INR 1580.00",
+            "snapshot_stock": 473
+          }
+        ],
+        "route": "recommendation",
+        "status": "answered",
+        "confidence": 1.0,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "2037e1c39047498caaaa745ea3027053",
+        "tool_calls": [
+          "recommend_similar_products"
+        ],
+        "mock": true,
+        "mode": "openrouter",
+        "elapsed_ms": 14795,
+        "llm_calls": 3,
+        "embedding_calls": 0,
+        "intent": "product_qa"
+      },
+      "expected": "Call recommend_similar_products using UC-ELE-891071 and maximum strictly below INR 2000; return only in-stock same-category alternatives within budget or explain no matches.",
+      "trace": {
+        "at": "2026-11-20T16:00:40.113870+00:00",
+        "route": "recommendation",
+        "status": "answered",
+        "mode": "openrouter",
+        "source_ids": [
+          "UC-ELE-067065",
+          "UC-ELE-602264",
+          "UC-ELE-871785"
+        ],
+        "tools": [
+          "recommend_similar_products"
+        ],
+        "elapsed_ms": 14795,
+        "calls": [
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.6-flash",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.6-flash",
+            "provider": "Google AI Studio",
+            "usage": {
+              "prompt_tokens": 1243,
+              "completion_tokens": 1143,
+              "total_tokens": 2386,
+              "cost": 0.0052185,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.0052185,
+                "upstream_inference_prompt_cost": 0.00093225,
+                "upstream_inference_completions_cost": 0.00428625
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 965,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 6.348
+          },
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.6-flash",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.6-flash",
+            "provider": "Google AI Studio",
+            "usage": {
+              "prompt_tokens": 806,
+              "completion_tokens": 333,
+              "total_tokens": 1139,
+              "cost": 0.00185325,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.00185325,
+                "upstream_inference_prompt_cost": 0.0006045,
+                "upstream_inference_completions_cost": 0.00124875
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 290,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 2.5795
+          },
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.6-flash",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.6-flash",
+            "provider": "Google AI Studio",
+            "usage": {
+              "prompt_tokens": 1357,
+              "completion_tokens": 1062,
+              "total_tokens": 2419,
+              "cost": 0.00500025,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.00500025,
+                "upstream_inference_prompt_cost": 0.00101775,
+                "upstream_inference_completions_cost": 0.0039825
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 858,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 5.8328
+          }
+        ],
+        "pipeline": "llm-v2",
+        "intent": "product_qa",
+        "confidence": 1.0,
+        "failure": null
+      },
+      "evidence": [
+        {
+          "id": "UC-ELE-067065",
+          "kind": "product",
+          "title": "Bluetooth Earbuds",
+          "file": "urbancart_product_catalog_raw.csv",
+          "rows": [
+            4730
+          ],
+          "imputed_fields": {},
+          "text": "name: Bluetooth Earbuds; brand: Nestwell; category: Electronics; rating: 4.6; price: INR 1400.00",
+          "snapshot_stock": 49
+        },
+        {
+          "id": "UC-ELE-602264",
+          "kind": "product",
+          "title": "Power Bank",
+          "file": "urbancart_product_catalog_raw.csv",
+          "rows": [
+            2209
+          ],
+          "imputed_fields": {},
+          "text": "name: Power Bank; brand: HomeVibe; category: Electronics; rating: 4.5; price: INR 1570.00",
+          "snapshot_stock": 493
+        },
+        {
+          "id": "UC-ELE-871785",
+          "kind": "product",
+          "title": "USB-C Cable",
+          "file": "urbancart_product_catalog_raw.csv",
+          "rows": [
+            1062
+          ],
+          "imputed_fields": {},
+          "text": "name: USB-C Cable; brand: TechNova; category: Electronics; rating: 3.9; price: INR 1580.00",
+          "snapshot_stock": 473
+        }
+      ],
+      "model_seconds": 14.7603,
+      "embedding_seconds": 0
+    },
+    {
+      "model": "google/gemini-3.6-flash",
+      "id": "Q31",
+      "question": "Rural delivery time kya hai?",
+      "reply": {
+        "answer": "Remote aur rural pincodes ke liye delivery timeline 7-10 business days hai [shipping_delivery_policy:1.3].",
+        "source": "shipping_delivery_policy:1.3",
+        "sources": [
+          {
+            "id": "shipping_delivery_policy:1.3",
+            "kind": "policy",
+            "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+            "file": "shipping_delivery_policy.txt",
+            "section": "1.3",
+            "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+            "heading": "DELIVERY TIMELINES",
+            "text": "Remote / rural pincodes: 7-10 business days."
+          }
+        ],
+        "route": "policy_qa",
+        "status": "answered",
+        "confidence": 1.0,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "948fab8e77794b37ba0ea2d94d55960f",
+        "tool_calls": [],
+        "mock": false,
+        "mode": "openrouter",
+        "elapsed_ms": 7508,
+        "llm_calls": 2,
+        "embedding_calls": 1,
+        "intent": "policy_qa"
+      },
+      "expected": "7-10 business days",
+      "trace": {
+        "at": "2026-11-20T16:00:47.640825+00:00",
+        "route": "policy_qa",
+        "status": "answered",
+        "mode": "openrouter",
+        "source_ids": [
+          "shipping_delivery_policy:1.3"
+        ],
+        "tools": [],
+        "elapsed_ms": 7508,
+        "calls": [
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.6-flash",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.6-flash",
+            "provider": "Google AI Studio",
+            "usage": {
+              "prompt_tokens": 1227,
+              "completion_tokens": 442,
+              "total_tokens": 1669,
+              "cost": 0.00257775,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.00257775,
+                "upstream_inference_prompt_cost": 0.00092025,
+                "upstream_inference_completions_cost": 0.0016575
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 355,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 2.9832
+          },
+          {
+            "endpoint": "embeddings",
+            "requested_model": "openai/text-embedding-3-small",
+            "ok": true,
+            "http_status": 200,
+            "model": "text-embedding-3-small",
+            "provider": "OpenAI",
+            "usage": {
+              "prompt_tokens": 9,
+              "total_tokens": 9,
+              "cost": 1.8e-07,
+              "is_byok": false,
+              "cost_details": {
+                "upstream_inference_cost": 1.8e-07,
+                "upstream_inference_prompt_cost": 1.8e-07,
+                "upstream_inference_completions_cost": 0
+              }
+            },
+            "seconds": 0.7562
+          },
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.6-flash",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.6-flash",
+            "provider": "Google AI Studio",
+            "usage": {
+              "prompt_tokens": 1669,
+              "completion_tokens": 571,
+              "total_tokens": 2240,
+              "cost": 0.003393,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.003393,
+                "upstream_inference_prompt_cost": 0.00125175,
+                "upstream_inference_completions_cost": 0.00214125
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 515,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 3.5739
+          }
+        ],
+        "pipeline": "llm-v2",
+        "intent": "policy_qa",
+        "confidence": 1.0,
+        "failure": null
+      },
+      "evidence": [
+        {
+          "id": "shipping_delivery_policy:1.3",
+          "kind": "policy",
+          "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+          "file": "shipping_delivery_policy.txt",
+          "section": "1.3",
+          "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+          "heading": "DELIVERY TIMELINES",
+          "text": "Remote / rural pincodes: 7-10 business days."
+        },
+        {
+          "id": "shipping_delivery_policy:1.2",
+          "kind": "policy",
+          "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+          "file": "shipping_delivery_policy.txt",
+          "section": "1.2",
+          "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+          "heading": "DELIVERY TIMELINES",
+          "text": "Non-metro cities: 4-7 business days."
+        },
+        {
+          "id": "shipping_delivery_policy:1.1",
+          "kind": "policy",
+          "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+          "file": "shipping_delivery_policy.txt",
+          "section": "1.1",
+          "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+          "heading": "DELIVERY TIMELINES",
+          "text": "Metro cities: 2-4 business days."
+        },
+        {
+          "id": "shipping_delivery_policy:3.1",
+          "kind": "policy",
+          "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+          "file": "shipping_delivery_policy.txt",
+          "section": "3.1",
+          "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+          "heading": "SERVICEABILITY",
+          "text": "Delivery availability depends on the pincode entered at checkout."
+        },
+        {
+          "id": "shipping_delivery_policy:3.2",
+          "kind": "policy",
+          "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+          "file": "shipping_delivery_policy.txt",
+          "section": "3.2",
+          "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+          "heading": "SERVICEABILITY",
+          "text": "Some remote pincodes may not be serviceable for Cash on Delivery."
+        },
+        {
+          "id": "shipping_delivery_policy:4.2",
+          "kind": "policy",
+          "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+          "file": "shipping_delivery_policy.txt",
+          "section": "4.2",
+          "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+          "heading": "ORDER TRACKING",
+          "text": "Orders not delivered within 15 days of purchase are eligible for a full refund."
+        },
+        {
+          "id": "shipping_delivery_policy:2.1",
+          "kind": "policy",
+          "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+          "file": "shipping_delivery_policy.txt",
+          "section": "2.1",
+          "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+          "heading": "SHIPPING CHARGES",
+          "text": "Orders above Rs 499: free standard shipping."
+        },
+        {
+          "id": "shipping_delivery_policy:2.2",
+          "kind": "policy",
+          "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+          "file": "shipping_delivery_policy.txt",
+          "section": "2.2",
+          "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+          "heading": "SHIPPING CHARGES",
+          "text": "Orders below Rs 499: a flat shipping fee of Rs 40 applies."
+        },
+        {
+          "id": "shipping_delivery_policy:2.3",
+          "kind": "policy",
+          "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+          "file": "shipping_delivery_policy.txt",
+          "section": "2.3",
+          "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+          "heading": "SHIPPING CHARGES",
+          "text": "Express delivery (where available) costs an extra Rs 99."
+        },
+        {
+          "id": "shipping_delivery_policy:4.1",
+          "kind": "policy",
+          "title": "URBANCART — SHIPPING & DELIVERY POLICY",
+          "file": "shipping_delivery_policy.txt",
+          "section": "4.1",
+          "version": "Version: Q2 2024 | Approved by: Logistics & Operations",
+          "heading": "ORDER TRACKING",
+          "text": "A tracking link is shared via SMS and app notification once the order is shipped."
+        }
+      ],
+      "model_seconds": 6.5571,
+      "embedding_seconds": 0.7562
+    },
+    {
+      "model": "google/gemini-3.6-flash",
+      "id": "Q40",
+      "question": "Is product UC-ELE-916693 available in stock?",
+      "reply": {
+        "answer": "Catalog snapshot: Wireless Mouse is in stock (283 units). This is a dataset snapshot, not a live inventory check. [UC-ELE-916693]",
+        "source": "UC-ELE-916693",
+        "sources": [
+          {
+            "id": "UC-ELE-916693",
+            "kind": "product",
+            "title": "Wireless Mouse",
+            "file": "urbancart_product_catalog_raw.csv",
+            "rows": [
+              2
+            ],
+            "imputed_fields": {},
+            "text": "Catalog snapshot: Wireless Mouse is in stock (283 units)."
+          }
+        ],
+        "route": "stock_lookup",
+        "status": "answered",
+        "confidence": 1.0,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "c3a41b3d566140bdad26a14776f8c58a",
+        "tool_calls": [
+          "check_stock_status"
+        ],
+        "mock": true,
+        "mode": "openrouter",
+        "elapsed_ms": 7693,
+        "llm_calls": 2,
+        "embedding_calls": 0,
+        "intent": "product_qa"
+      },
+      "expected": "283 units",
+      "trace": {
+        "at": "2026-11-20T16:00:55.358986+00:00",
+        "route": "stock_lookup",
+        "status": "answered",
+        "mode": "openrouter",
+        "source_ids": [
+          "UC-ELE-916693"
+        ],
+        "tools": [
+          "check_stock_status"
+        ],
+        "elapsed_ms": 7693,
+        "calls": [
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.6-flash",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.6-flash",
+            "provider": "Google AI Studio",
+            "usage": {
+              "prompt_tokens": 1237,
+              "completion_tokens": 669,
+              "total_tokens": 1906,
+              "cost": 0.0034365,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.0034365,
+                "upstream_inference_prompt_cost": 0.00092775,
+                "upstream_inference_completions_cost": 0.00250875
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 562,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 4.5666
+          },
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.6-flash",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.6-flash",
+            "provider": "Google AI Studio",
+            "usage": {
+              "prompt_tokens": 794,
+              "completion_tokens": 481,
+              "total_tokens": 1275,
+              "cost": 0.00239925,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.00239925,
+                "upstream_inference_prompt_cost": 0.0005955,
+                "upstream_inference_completions_cost": 0.00180375
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 448,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 3.1005
+          }
+        ],
+        "pipeline": "llm-v2",
+        "intent": "product_qa",
+        "confidence": 1.0,
+        "failure": null
+      },
+      "evidence": [
+        {
+          "id": "UC-ELE-916693",
+          "kind": "product",
+          "title": "Wireless Mouse",
+          "file": "urbancart_product_catalog_raw.csv",
+          "rows": [
+            2
+          ],
+          "imputed_fields": {},
+          "text": "Catalog snapshot: Wireless Mouse is in stock (283 units)."
+        }
+      ],
+      "model_seconds": 7.6671,
+      "embedding_seconds": 0
+    },
+    {
+      "model": "google/gemini-3.6-flash",
+      "id": "Q50",
+      "question": "Suggest similar to UC-ELE-916693",
+      "reply": {
+        "answer": "I could not complete every requested action. Please clarify the product SKU, order ID or budget and retry.",
+        "source": null,
+        "sources": [],
+        "route": "recommendation",
+        "status": "clarify",
+        "confidence": null,
+        "escalated": false,
+        "ticket_id": null,
+        "session_id": "f1c5a004e7ba4577a34bf40cf8e25d21",
+        "tool_calls": [
+          "recommend_similar_products"
+        ],
+        "mock": true,
+        "mode": "openrouter",
+        "elapsed_ms": 8304,
+        "llm_calls": 2,
+        "embedding_calls": 0,
+        "intent": "product_qa"
+      },
+      "expected": "maximum budget",
+      "trace": {
+        "at": "2026-11-20T16:01:03.689551+00:00",
+        "route": "recommendation",
+        "status": "clarify",
+        "mode": "openrouter",
+        "source_ids": [],
+        "tools": [
+          "recommend_similar_products"
+        ],
+        "elapsed_ms": 8304,
+        "calls": [
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.6-flash",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.6-flash",
+            "provider": "Google AI Studio",
+            "usage": {
+              "prompt_tokens": 1235,
+              "completion_tokens": 1079,
+              "total_tokens": 2314,
+              "cost": 0.0049725,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.0049725,
+                "upstream_inference_prompt_cost": 0.00092625,
+                "upstream_inference_completions_cost": 0.00404625
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 974,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 5.8232
+          },
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.6-flash",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.6-flash",
+            "provider": "Google AI Studio",
+            "usage": {
+              "prompt_tokens": 791,
+              "completion_tokens": 350,
+              "total_tokens": 1141,
+              "cost": 0.00190575,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.00190575,
+                "upstream_inference_prompt_cost": 0.00059325,
+                "upstream_inference_completions_cost": 0.0013125
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 310,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 2.43
+          }
+        ],
+        "pipeline": "llm-v2",
+        "intent": "product_qa",
+        "confidence": null,
+        "failure": null
+      },
+      "evidence": [],
+      "model_seconds": 8.2532,
+      "embedding_seconds": 0
+    },
+    {
+      "model": "google/gemini-3.6-flash",
+      "id": "Q54",
+      "question": "I need a human agent for this issue",
+      "reply": {
+        "answer": "Demo support ticket: DEMO-E94A7BBCD6. Your issue was recorded locally for review. This is a simulated handoff; no real support request was sent and no response time is specified.",
+        "source": "DEMO-E94A7BBCD6",
+        "sources": [
+          {
+            "id": "DEMO-E94A7BBCD6",
+            "kind": "mock_ticket",
+            "title": "Local simulated support ticket",
+            "text": "{\"status\": \"escalated\", \"ticket_id\": \"DEMO-E94A7BBCD6\", \"simulated\": true, \"reason\": \"Customer requested a human agent.\", \"summary\": \"Customer requested human agent assistance.\", \"expected_response_time\": \"Not specified; local demonstration only.\"}"
+          }
+        ],
+        "route": "escalation",
+        "status": "escalated",
+        "confidence": 1.0,
+        "escalated": true,
+        "ticket_id": "DEMO-E94A7BBCD6",
+        "session_id": "9f14ca4e98ad4eb2a74da4b2cdd21ea3",
+        "tool_calls": [
+          "escalate_to_support"
+        ],
+        "mock": true,
+        "mode": "openrouter",
+        "elapsed_ms": 7787,
+        "llm_calls": 2,
+        "embedding_calls": 0,
+        "intent": "order_lookup"
+      },
+      "expected": "recorded locally",
+      "trace": {
+        "at": "2026-11-20T16:01:11.501811+00:00",
+        "route": "escalation",
+        "status": "escalated",
+        "mode": "openrouter",
+        "source_ids": [
+          "DEMO-E94A7BBCD6"
+        ],
+        "tools": [
+          "escalate_to_support"
+        ],
+        "elapsed_ms": 7787,
+        "calls": [
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.6-flash",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.6-flash",
+            "provider": "Google AI Studio",
+            "usage": {
+              "prompt_tokens": 1230,
+              "completion_tokens": 795,
+              "total_tokens": 2025,
+              "cost": 0.00390375,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.00390375,
+                "upstream_inference_prompt_cost": 0.0009225,
+                "upstream_inference_completions_cost": 0.00298125
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 709,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 5.3305
+          },
+          {
+            "endpoint": "chat/completions",
+            "requested_model": "google/gemini-3.6-flash",
+            "ok": true,
+            "http_status": 200,
+            "model": "google/gemini-3.6-flash",
+            "provider": "Google AI Studio",
+            "usage": {
+              "prompt_tokens": 784,
+              "completion_tokens": 266,
+              "total_tokens": 1050,
+              "cost": 0.0015855,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0.0015855,
+                "upstream_inference_prompt_cost": 0.000588,
+                "upstream_inference_completions_cost": 0.0009975
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 229,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            },
+            "seconds": 2.3938
+          }
+        ],
+        "pipeline": "llm-v2",
+        "intent": "order_lookup",
+        "confidence": 1.0,
+        "failure": null
+      },
+      "evidence": [
+        {
+          "id": "DEMO-E94A7BBCD6",
+          "kind": "mock_ticket",
+          "title": "Local simulated support ticket",
+          "text": "{\"status\": \"escalated\", \"ticket_id\": \"DEMO-E94A7BBCD6\", \"simulated\": true, \"reason\": \"Customer requested a human agent.\", \"summary\": \"Customer requested human agent assistance.\", \"expected_response_time\": \"Not specified; local demonstration only.\"}"
+        }
+      ],
+      "model_seconds": 7.7242999999999995,
+      "embedding_seconds": 0
+    }
+  ]
+}

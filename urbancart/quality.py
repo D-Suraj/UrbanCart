@@ -5,8 +5,13 @@ from .config import RAW
 from .data import CATALOG, CATEGORIES, amount, number, read_products, read_source, value
 
 
-def quality_report():
-    raw = read_source(RAW / CATALOG)
+def summarize_rules(rows):
+    passed = sum(all(r.values()) for r in rows)
+    return {"records": len(rows), "clean_records": passed, "dq_score_pct": 100 * passed / len(rows),
+            "failed_or_unverifiable_by_rule": {key: sum(not r[key] for r in rows) for key in rows[0]}}
+
+
+def raw_catalog_quality(raw):
     counts = Counter(raw.sku)
     raw_rules = []
     for r in raw.itertuples(index=False):
@@ -21,6 +26,11 @@ def quality_report():
             "return_window_0_to_30": number(r.return_window_days, 0, 30, True) is not None,
             "unique_sku": counts[r.sku] == 1,
         })
+    return summarize_rules(raw_rules)
+
+
+def quality_report():
+    raw = read_source(RAW / CATALOG)
     clean_rules = []
     for p in read_products():
         price, mrp = p["price_paise"], p["mrp_paise"]
@@ -34,11 +44,7 @@ def quality_report():
             "return_window_0_to_30": p["return_days"] is not None and 0 <= p["return_days"] <= 30,
             "unique_sku": True,  # aggregation emits one entity per SKU
         })
-    def summarize(rows):
-        passed = sum(all(r.values()) for r in rows)
-        return {"records": len(rows), "clean_records": passed, "dq_score_pct": 100 * passed / len(rows),
-                "failed_or_unverifiable_by_rule": {k: sum(not r[k] for r in rows) for k in rows[0]}}
     return {"formula": "100 * records satisfying required fields and every business rule / all records",
             "unknown_rule_values": "Counted as unverifiable, never silently considered valid.",
-            "raw_rows": summarize(raw_rules), "resolved_skus": summarize(clean_rules),
+            "raw_rows": raw_catalog_quality(raw), "resolved_skus": summarize_rules(clean_rules),
             "note": "Denominators differ after SKU consolidation. Strict DQ is separate from required-field completeness. Source price formats are parsed for numeric business checks."}

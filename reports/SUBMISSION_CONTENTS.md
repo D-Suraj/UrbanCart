@@ -1,6 +1,6 @@
 # Submission contents
 
-Open UrbanCart_Submission.ipynb for the executed stage walkthrough, README.md for setup,
+Open UrbanCart_Submission.ipynb for the executed original Learnbay skeleton, README.md for setup,
 presentation/UrbanCart_Presentation_LLM.pptx for the three-slide presentation, and
 reports/CURRENT_EVALUATION.md for measured results and remaining limitations.
 

@@ -1,5 +1,21 @@
 # Data quality, latency and tracing verification
 
+## Original notebook and candidate comparison
+
+The submission notebook preserves all 35 original cells in order. The original prose is retained except for Flask and Streamlit references in the architecture, Stage 9, and final checklist. The code cells demonstrate the shared application. The bundled raw files match the six data files in the supplied folder byte for byte.
+
+Stage 3 reports original-catalog missingness, price/rating/category/stock profiles, business-rule failures and the prior bot baseline. Stage 4 preserves 4,996 SKUs and their 5,150 source rows. Stock status comes from reported quantities, with unknown quantities labelled Unknown. The notebook uses the scaffold's Other group in its category display and retains the catalog's Beauty & Personal Care category for policy handling. Checkpoint 1 reports 2,850/4,996 complete records (57.05%) against >90%. The broader cleaned business-rule DQ is 49.62%.
+
+| Model on the same eight live cases | Mean latency | Mean observed app cost (INR) | Expected route/status | Required tool found |
+|---|---:|---:|---:|---:|
+| Gemini 3.1 Flash Lite | 3.82s | 0.137 | 8/8 | 5/5 |
+| Qwen 3.5 Plus | 123.68s | 0.420 recorded | 1/8 | 0/5 |
+| Gemini 3.6 Flash | 8.33s | 0.556 | 8/8 | 5/5 |
+
+Measured application calls include embeddings and failed calls with reported usage. Conversion uses an explicit 85 INR/USD assumption. Qwen had six unavailable responses, one request with missing cost, and an extreme delay on Q50. Its median was 25.24s. Reported costs are therefore partial for Qwen. Gemini 3.6 Flash exceeded both limits on this sample. GPT-6.2 Sol was skipped because replaying the previous token counts against its listed pricing estimated INR 0.88/query. Gemini 3.1 Flash Lite remains the default. It met the budget and scenario checks but missed the <3s target. This small sequential comparison measures cost, latency, routing and tools. Stage 8 uses its separate bundled fact and consistency evaluation.
+
+See [the live candidate report](scaffold-model-comparison.json).
+
 ## 20 November 2026
 
 Stage 4 of the supplied skeleton explicitly calls for business-rule imputation, flags and manual review. The induction at 25:15–25:58 covers EDA, business-rule violations and preprocessing. The 26:00 architecture section and scaffold retain semantic retrieval. We preserve the rule-based DQ denominator of 4,996 resolved SKUs and retain missing facts as unknown when they cannot be supported.

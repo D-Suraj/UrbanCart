@@ -78,8 +78,14 @@ is fallible. Old 60/60 exact-substring results belong to the former extractive b
 this pipeline. Existing curated cases were visible during earlier development; held-out IDs
 are not an untouched independent benchmark.
 
-Generate notebook source with python scripts/build_live_notebook.py, then execute it.
-scripts/execute_notebook.py saves actual fresh-kernel outputs. scripts/package.py validates
+The submission notebook fills the original Learnbay scaffold and keeps its 35 cells in order.
+It shares the same application modules as Flask and Streamlit. Running the app does not require
+running the notebook. To rebuild the notebook from a fresh copy of the original, run
+`python scripts/fill_skeleton.py "<path to original notebook>"`.
+`python scripts/execute_notebook.py` runs it in a fresh kernel and saves the outputs.
+Stage 8 reads the bundled evaluation by default. Set `URBANCART_RERUN_EVALUATION=1` before
+starting Jupyter to rerun the 60 evaluation queries and consistency pairs with live API calls.
+The packaging script validates
 those outputs and creates the ZIP. Credentials, private files and runtime data are excluded.
 Runtime turns.jsonl traces include pipeline=llm-v2, provider requests and failure diagnostics.
 
