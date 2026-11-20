@@ -18,10 +18,10 @@
   },
   "resolved_skus": {
     "records": 4996,
-    "clean_records": 2455,
-    "dq_score_pct": 49.13931144915933,
+    "clean_records": 2479,
+    "dq_score_pct": 49.61969575660528,
     "failed_or_unverifiable_by_rule": {
-      "required_fields": 2323,
+      "required_fields": 2146,
       "price_positive": 2048,
       "discount_range": 945,
       "rating_range": 229,
@@ -31,5 +31,10 @@
       "unique_sku": 0
     }
   },
-  "note": "Denominators differ after SKU consolidation. Strict DQ is separate from required-field completeness. Source price formats are parsed for numeric business checks."
+  "note": "Denominators differ after SKU consolidation. Strict DQ is separate from required-field completeness. Source price formats are parsed for numeric business checks.",
+  "category_imputation": {
+    "count": 298,
+    "rule": "Unanimous observed categories from at least five other resolved SKUs with the same exact name"
+  },
+  "required_fields_complete_skus": 2850
 }

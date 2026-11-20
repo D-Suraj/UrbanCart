@@ -74,6 +74,9 @@ class OpenRouter:
             raise ProviderError("Model provider returned invalid embeddings.") from exc
 
     def json_chat(self, system, content, schema, usage):
+        if self.settings.chat_model.startswith("openai/"):
+            # OpenAI strict mode requires each field in these flat response schemas.
+            schema = {**schema, "required": list(schema["properties"])}
         req = {
             "model": self.settings.chat_model,
             "messages": [{"role": "system", "content": system},

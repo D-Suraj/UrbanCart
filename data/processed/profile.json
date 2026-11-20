@@ -95,12 +95,11 @@
     "Clothing": 116
   },
   "canonical_categories": {
-    "Electronics": 919,
-    "Home & Kitchen": 909,
-    "Fashion": 905,
-    "Footwear": 1002,
-    "Beauty & Personal Care": 963,
-    "Unknown": 298
+    "Electronics": 986,
+    "Home & Kitchen": 966,
+    "Fashion": 962,
+    "Footwear": 1053,
+    "Beauty & Personal Care": 1029
   },
   "violations": {
     "price_paise:price_above_mrp": 693,
@@ -120,10 +119,10 @@
   "conflicted_skus": 154,
   "usable_required_rows": 2810,
   "raw_required_rows": 554,
-  "usable_required_skus": 2673,
+  "usable_required_skus": 2850,
   "attribute_coverage": {
     "name": 4992,
-    "category": 4698,
+    "category": 4996,
     "brand": 3632,
     "price_paise": 2948,
     "mrp_paise": 4383,
@@ -134,7 +133,7 @@
     "description": 643,
     "seller": 4992
   },
-  "review_rows": 1893,
+  "review_rows": 1932,
   "date_range": [
     "2024-08-06",
     "2026-08-06"

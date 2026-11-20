@@ -1,4 +1,4 @@
-Latest 19 November measurements: see DQ_LATENCY_FOLLOWUP.md. Strict DQ is now 49.14%; >90% DQ and <3s latency remain unmet. Earlier numbers below are historical.
+See [the latest verification](DQ_LATENCY_FOLLOWUP.md) for 49.62% strict DQ, measured model comparisons, and verified hosted LangSmith delivery.
 
 # Current full verification
 
@@ -46,8 +46,7 @@ model-reported and uncalibrated. Currency/ROI calculations use an explicit scena
 No real order feed, pincode eligibility, authentication, inventory updates or support delivery
 is supplied. Demo orders and tickets are simulations. Production deflection is unmeasured.
 
-LangSmith instrumentation/configuration is provided, but hosted delivery is unverified because
-no LangSmith API key was supplied. Local traces include the actual provider calls and costs.
+Hosted LangSmith delivery was subsequently verified with a real provider request. Local traces include the actual provider calls and costs.
 The chosen native OpenRouter tool loop and SQLite ticket persistence implement the scaffold's
 functional contract; their implementation differs from the older helper/JSON examples.
 

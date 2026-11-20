@@ -1,4 +1,4 @@
-Latest 19 November measurements: see reports/DQ_LATENCY_FOLLOWUP.md. Strict DQ is now 49.14%; >90% DQ and <3s latency remain unmet. Earlier numbers below are historical.
+See [the latest verification](reports/DQ_LATENCY_FOLLOWUP.md) for 49.62% strict DQ, measured model comparisons, and verified hosted LangSmith delivery.
 
 # UrbanCart Ask AI Assistant
 
@@ -119,8 +119,7 @@ selection fails. The local ticket is still simulated. A completed requested tool
 the agent loop immediately, reducing redundant model calls.
 
 Hosted LangSmith tracing is implemented at the provider boundary. To enable it, set
-LANGSMITH_TRACING=true, LANGSMITH_API_KEY and LANGSMITH_PROJECT in .env. No LangSmith key was
-supplied, so hosted trace delivery has not been verified. Local per-turn JSON traces work
+LANGSMITH_TRACING=true, LANGSMITH_API_KEY and LANGSMITH_PROJECT in .env. Hosted delivery was verified by posting and reading back an actual OpenRouter run. Local per-turn JSON traces work
 without that account. Tracing records endpoint/model metadata instead of credentials.
 
 For submission, UrbanCart_Submission.ipynb is the executed walkthrough; presentation/ contains

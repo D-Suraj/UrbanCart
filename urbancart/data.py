@@ -177,6 +177,26 @@ def prepare(raw_dir=RAW, output=PROCESSED):
                                      json.dumps([product[field], None])])
                     product[field] = None
         products.append(product)
+
+    # Use only observed categories from other SKUs with the same exact product name.
+    category_evidence = {}
+    for product in products:
+        if product["name"] and product["category"] and "category" not in product["conflicts"]:
+            category_evidence.setdefault(product["name"], []).append(product)
+    for product in products:
+        if not product["name"] or product["category"] or "category" in product["conflicts"]:
+            continue
+        evidence = category_evidence.get(product["name"], [])
+        categories = {p["category"] for p in evidence}
+        if len(evidence) < 5 or len(categories) != 1:
+            continue
+        product["category"] = next(iter(categories))
+        product["imputed_fields"] = {"category": {"rule": "exact_name_category_consensus",
+            "supporting_skus": len(evidence), "example_source_rows": [p["source_rows"][0] for p in evidence[:5]]}}
+        for source_row in product["source_rows"]:
+            audit.append([source_row, product["sku"], "category", catalog.iloc[source_row - 2]["category"],
+                          product["category"], "exact_name_category_consensus"])
+            impacted[source_row] += 1
     audit_table = pd.DataFrame(audit, columns=["source_row", "sku", "field", "raw", "clean", "rule"])
     audit_table.to_csv(output / "cleaning_audit.csv", index=False)
     pd.DataFrame([{"source_row": i, "sku": raw.sku, "correction_count": impacted[i],

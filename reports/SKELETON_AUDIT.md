@@ -1,4 +1,4 @@
-Latest 19 November measurements: see DQ_LATENCY_FOLLOWUP.md. Strict DQ is now 49.14%; >90% DQ and <3s latency remain unmet. Earlier numbers below are historical.
+See [the latest verification](DQ_LATENCY_FOLLOWUP.md) for 49.62% strict DQ, measured model comparisons, and verified hosted LangSmith delivery.
 
 # Supplied skeleton audit — corrected LLM workflow
 
@@ -52,7 +52,7 @@ missing facts simply to increase a score. The notebook displays all rule-level f
 
 CURRENT_EVALUATION.md provides the final recorded measurements, fixes, retests and limitations.
 LangSmith instrumentation is installed; local structured provider traces are used for evidence.
-No LangSmith account key was supplied, so hosted trace delivery is unverified.
+Hosted trace delivery was verified with a real OpenRouter request and read-back.
 
 ## Functional-gap correction
 
@@ -65,8 +65,7 @@ have a server fallback when the agent fails to execute escalation. Completed pla
 end the tool loop without an extra completion-only call.
 
 Live mixed-workflow evidence is in mixed-workflow-verification.json. Hosted LangSmith tracing
-has opt-in configuration and provider instrumentation; a LangSmith key is still needed to
-verify delivery to the hosted service. This does not require sharing that key in GitHub.
+has opt-in configuration and verified hosted delivery. Each fresh installation needs its own key.
 
 The native OpenRouter agent loop and SQLite ticket storage remain explicit implementation
 adaptations of the skeleton's behaviour. The old helper API and JSON queue are not represented

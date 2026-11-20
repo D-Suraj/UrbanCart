@@ -108,6 +108,7 @@ Product return_conflict means eligibility is unverified; give general policy wit
 For a specific product with a return conflict, begin by saying eligibility cannot be confirmed.
 Do not begin with 'yes' or 'you can return'. Explain conflicting records in plain language, not
 internal flag names. Then give the general category policy and relevant payment/refund policy.
+When a product category is marked in imputed_fields, label it as inferred if you report it.
 Missing/null fields mean unavailable. Distinguish absent info from a negative fact. Do not apply
 general world knowledge to fill missing specifications: even for a nonsensical attribute such as
 battery life of clothing, say the supplied catalog does not verify that specification.
@@ -203,20 +204,8 @@ def retrieve(core, request, intent, state, usage):
     kinds = list(dict.fromkeys(intent.knowledge_sources)) or (["policy"] if intent.intent == "policy_qa" else ["product"])
     if intent.intent == "policy_qa" and names and "product" not in kinds:
         kinds.append("product")
-    if intent.intent == "policy_qa" and re.search(r"UC-[A-Z]{3}-\d{6}", query, re.I):
+    if intent.intent == "policy_qa" and "product" not in kinds and re.search(r"UC-[A-Z]{3}-\d{6}", query, re.I):
         kinds.append("product")
-    for kind in kinds:
-        # Exact catalog filters replace semantic hits below; avoid a discarded embedding call.
-        exact_product = (names or intent.maximum_rupees is not None or intent.category or
-                         re.search(r"UC-[A-Z]{3}-\d{6}", request.query, re.I) or intent.reference_skus)
-        if kind != "product" or not exact_product:
-            docs.extend(core.retrieval.search(query, kind, usage=usage))
-        if kind == "policy":
-            # Lexical evidence supplements semantic retrieval on this small corpus; it does
-            # not select the answer. This helps retain return clauses in mixed COD questions.
-            model, matrix = core.retrieval.lexical[kind]
-            scores = (matrix @ model.transform([query.casefold()]).T).toarray().ravel()
-            docs.extend(core.retrieval.docs[kind][i] for i in scores.argsort()[::-1][:5] if scores[i] > 0)
     # Filters are typed LLM extraction; identifiers are only accepted from the user/history.
     user_history = " ".join(t["content"] for t in state.get("history", []) if t["role"] == "user")
     supplied = request.query + " " + user_history
@@ -226,6 +215,15 @@ def retrieve(core, request, intent, state, usage):
         skus = list(dict.fromkeys(current))
     elif intent.product_name:
         skus = [s for s in skus if core.retrieval.products.get(s, {}).get("name") == intent.product_name]
+    exact_product = bool(skus or names or intent.maximum_rupees is not None or intent.category)
+    semantic_kinds = [kind for kind in kinds if kind != "product" or not exact_product]
+    for matches in core.retrieval.search_many(query, semantic_kinds, usage=usage).values():
+        docs.extend(matches)
+    if "policy" in kinds:
+        # Lexical hits complement semantic retrieval for policy wording and abbreviations.
+        model, matrix = core.retrieval.lexical["policy"]
+        scores = (matrix @ model.transform([query.casefold()]).T).toarray().ravel()
+        docs.extend(core.retrieval.docs["policy"][i] for i in scores.argsort()[::-1][:5] if scores[i] > 0)
     if "product" in kinds:
         if skus:
             docs = [d for d in docs if d["kind"] != "product"]

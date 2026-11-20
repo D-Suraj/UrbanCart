@@ -31354,3 +31354,313 @@ source_row,sku,field,raw,clean,rule
 5151,UC-FOO-705226,discount_pct,23,23.0,normalized
 5151,UC-FOO-705226,return_days,7.0,7,catalog_policy_conflict
 5151,UC-FOO-705226,description,"Casual Sneakers by a trusted brand. Good quality, value for money.",,description_name_mismatch
+12,UC-BEA-726354,category,,Beauty & Personal Care,exact_name_category_consensus
+17,UC-BEA-737050,category,,Beauty & Personal Care,exact_name_category_consensus
+739,UC-BEA-737050,category,,Beauty & Personal Care,exact_name_category_consensus
+35,UC-BEA-538878,category,,Beauty & Personal Care,exact_name_category_consensus
+39,UC-BEA-367667,category,,Beauty & Personal Care,exact_name_category_consensus
+59,UC-BEA-002824,category,,Beauty & Personal Care,exact_name_category_consensus
+69,UC-FAS-977782,category,,Fashion,exact_name_category_consensus
+113,UC-ELE-869495,category,,Electronics,exact_name_category_consensus
+120,UC-ELE-826966,category,,Electronics,exact_name_category_consensus
+142,UC-FAS-415683,category,,Fashion,exact_name_category_consensus
+159,UC-FAS-020679,category,,Fashion,exact_name_category_consensus
+1966,UC-FAS-020679,category,,Fashion,exact_name_category_consensus
+186,UC-HOM-439891,category,,Home & Kitchen,exact_name_category_consensus
+201,UC-FOO-364583,category,,Footwear,exact_name_category_consensus
+207,UC-ELE-798651,category,,Electronics,exact_name_category_consensus
+217,UC-ELE-367891,category,,Electronics,exact_name_category_consensus
+223,UC-FOO-384548,category,,Footwear,exact_name_category_consensus
+231,UC-BEA-547228,category,,Beauty & Personal Care,exact_name_category_consensus
+268,UC-BEA-916080,category,,Beauty & Personal Care,exact_name_category_consensus
+286,UC-HOM-493234,category,,Home & Kitchen,exact_name_category_consensus
+289,UC-FAS-899286,category,,Fashion,exact_name_category_consensus
+332,UC-BEA-986480,category,,Beauty & Personal Care,exact_name_category_consensus
+342,UC-FAS-294636,category,,Fashion,exact_name_category_consensus
+346,UC-BEA-459123,category,,Beauty & Personal Care,exact_name_category_consensus
+363,UC-HOM-906593,category,,Home & Kitchen,exact_name_category_consensus
+393,UC-FOO-680715,category,,Footwear,exact_name_category_consensus
+398,UC-HOM-870873,category,,Home & Kitchen,exact_name_category_consensus
+400,UC-FOO-218910,category,,Footwear,exact_name_category_consensus
+404,UC-BEA-566140,category,,Beauty & Personal Care,exact_name_category_consensus
+462,UC-BEA-633029,category,,Beauty & Personal Care,exact_name_category_consensus
+472,UC-ELE-889449,category,,Electronics,exact_name_category_consensus
+493,UC-BEA-191972,category,,Beauty & Personal Care,exact_name_category_consensus
+512,UC-ELE-933227,category,,Electronics,exact_name_category_consensus
+539,UC-HOM-628772,category,,Home & Kitchen,exact_name_category_consensus
+543,UC-BEA-298679,category,,Beauty & Personal Care,exact_name_category_consensus
+552,UC-BEA-313461,category,,Beauty & Personal Care,exact_name_category_consensus
+578,UC-ELE-918962,category,,Electronics,exact_name_category_consensus
+604,UC-BEA-295036,category,,Beauty & Personal Care,exact_name_category_consensus
+648,UC-ELE-252076,category,,Electronics,exact_name_category_consensus
+682,UC-FAS-147291,category,,Fashion,exact_name_category_consensus
+3218,UC-FAS-147291,category,,Fashion,exact_name_category_consensus
+688,UC-BEA-382237,category,,Beauty & Personal Care,exact_name_category_consensus
+693,UC-HOM-418859,category,,Home & Kitchen,exact_name_category_consensus
+697,UC-FAS-169821,category,,Fashion,exact_name_category_consensus
+708,UC-FOO-216765,category,,Footwear,exact_name_category_consensus
+718,UC-ELE-731881,category,,Electronics,exact_name_category_consensus
+726,UC-FOO-743882,category,,Footwear,exact_name_category_consensus
+750,UC-ELE-354878,category,,Electronics,exact_name_category_consensus
+4034,UC-ELE-354878,category,,Electronics,exact_name_category_consensus
+773,UC-FAS-900578,category,,Fashion,exact_name_category_consensus
+793,UC-FAS-273824,category,,Fashion,exact_name_category_consensus
+794,UC-FOO-872835,category,,Footwear,exact_name_category_consensus
+797,UC-HOM-250018,category,,Home & Kitchen,exact_name_category_consensus
+801,UC-FAS-115008,category,,Fashion,exact_name_category_consensus
+802,UC-FOO-109445,category,,Footwear,exact_name_category_consensus
+805,UC-BEA-548852,category,,Beauty & Personal Care,exact_name_category_consensus
+846,UC-BEA-649060,category,,Beauty & Personal Care,exact_name_category_consensus
+888,UC-BEA-763560,category,,Beauty & Personal Care,exact_name_category_consensus
+906,UC-FAS-148214,category,,Fashion,exact_name_category_consensus
+921,UC-FAS-777156,category,,Fashion,exact_name_category_consensus
+959,UC-HOM-089805,category,,Home & Kitchen,exact_name_category_consensus
+3528,UC-HOM-089805,category,,Home & Kitchen,exact_name_category_consensus
+966,UC-FOO-564554,category,,Footwear,exact_name_category_consensus
+3594,UC-FOO-564554,category,,Footwear,exact_name_category_consensus
+975,UC-FOO-371160,category,,Footwear,exact_name_category_consensus
+977,UC-ELE-935902,category,,Electronics,exact_name_category_consensus
+985,UC-HOM-261856,category,,Home & Kitchen,exact_name_category_consensus
+1011,UC-FAS-469979,category,,Fashion,exact_name_category_consensus
+1024,UC-FAS-235365,category,,Fashion,exact_name_category_consensus
+1032,UC-ELE-355556,category,,Electronics,exact_name_category_consensus
+1068,UC-ELE-772865,category,,Electronics,exact_name_category_consensus
+1070,UC-HOM-180604,category,,Home & Kitchen,exact_name_category_consensus
+1106,UC-HOM-945920,category,,Home & Kitchen,exact_name_category_consensus
+1112,UC-ELE-618913,category,,Electronics,exact_name_category_consensus
+1127,UC-BEA-716978,category,,Beauty & Personal Care,exact_name_category_consensus
+1141,UC-FAS-842679,category,,Fashion,exact_name_category_consensus
+1145,UC-HOM-053536,category,,Home & Kitchen,exact_name_category_consensus
+1187,UC-BEA-320630,category,,Beauty & Personal Care,exact_name_category_consensus
+1204,UC-HOM-488886,category,,Home & Kitchen,exact_name_category_consensus
+1212,UC-FAS-945289,category,,Fashion,exact_name_category_consensus
+1216,UC-BEA-213952,category,,Beauty & Personal Care,exact_name_category_consensus
+1240,UC-BEA-733860,category,,Beauty & Personal Care,exact_name_category_consensus
+1243,UC-BEA-273364,category,,Beauty & Personal Care,exact_name_category_consensus
+1244,UC-FAS-700985,category,,Fashion,exact_name_category_consensus
+1254,UC-FOO-348564,category,,Footwear,exact_name_category_consensus
+1275,UC-FOO-185826,category,,Footwear,exact_name_category_consensus
+1288,UC-BEA-853964,category,,Beauty & Personal Care,exact_name_category_consensus
+1305,UC-HOM-271779,category,,Home & Kitchen,exact_name_category_consensus
+1309,UC-FOO-831869,category,,Footwear,exact_name_category_consensus
+1311,UC-HOM-300057,category,,Home & Kitchen,exact_name_category_consensus
+3002,UC-HOM-300057,category,,Home & Kitchen,exact_name_category_consensus
+1352,UC-FOO-768683,category,,Footwear,exact_name_category_consensus
+1357,UC-ELE-703535,category,,Electronics,exact_name_category_consensus
+1366,UC-FOO-770268,category,,Footwear,exact_name_category_consensus
+1403,UC-HOM-223011,category,,Home & Kitchen,exact_name_category_consensus
+1427,UC-FAS-669712,category,,Fashion,exact_name_category_consensus
+1435,UC-BEA-987516,category,,Beauty & Personal Care,exact_name_category_consensus
+1448,UC-ELE-442300,category,,Electronics,exact_name_category_consensus
+1463,UC-HOM-697808,category,,Home & Kitchen,exact_name_category_consensus
+1473,UC-ELE-693099,category,,Electronics,exact_name_category_consensus
+1499,UC-ELE-778614,category,,Electronics,exact_name_category_consensus
+2285,UC-ELE-778614,category,,Electronics,exact_name_category_consensus
+1523,UC-HOM-294952,category,,Home & Kitchen,exact_name_category_consensus
+1529,UC-HOM-200288,category,,Home & Kitchen,exact_name_category_consensus
+1535,UC-FOO-901486,category,,Footwear,exact_name_category_consensus
+1546,UC-FOO-741773,category,,Footwear,exact_name_category_consensus
+1550,UC-FAS-613303,category,,Fashion,exact_name_category_consensus
+1555,UC-HOM-856988,category,,Home & Kitchen,exact_name_category_consensus
+1565,UC-FAS-771067,category,,Fashion,exact_name_category_consensus
+1569,UC-BEA-715898,category,,Beauty & Personal Care,exact_name_category_consensus
+1579,UC-FOO-742775,category,,Footwear,exact_name_category_consensus
+1596,UC-BEA-211021,category,,Beauty & Personal Care,exact_name_category_consensus
+1607,UC-HOM-142484,category,,Home & Kitchen,exact_name_category_consensus
+1618,UC-HOM-059441,category,,Home & Kitchen,exact_name_category_consensus
+1640,UC-FAS-517034,category,,Fashion,exact_name_category_consensus
+1652,UC-HOM-689057,category,,Home & Kitchen,exact_name_category_consensus
+1659,UC-FOO-563875,category,,Footwear,exact_name_category_consensus
+1692,UC-HOM-054953,category,,Home & Kitchen,exact_name_category_consensus
+1736,UC-ELE-687960,category,,Electronics,exact_name_category_consensus
+1738,UC-ELE-487845,category,,Electronics,exact_name_category_consensus
+1784,UC-ELE-525330,category,,Electronics,exact_name_category_consensus
+1787,UC-FOO-144936,category,,Footwear,exact_name_category_consensus
+1804,UC-HOM-841841,category,,Home & Kitchen,exact_name_category_consensus
+1815,UC-ELE-702836,category,,Electronics,exact_name_category_consensus
+1852,UC-BEA-993555,category,,Beauty & Personal Care,exact_name_category_consensus
+1861,UC-FOO-801985,category,,Footwear,exact_name_category_consensus
+1919,UC-BEA-704831,category,,Beauty & Personal Care,exact_name_category_consensus
+1922,UC-HOM-922609,category,,Home & Kitchen,exact_name_category_consensus
+1928,UC-BEA-658443,category,,Beauty & Personal Care,exact_name_category_consensus
+1960,UC-FAS-032874,category,,Fashion,exact_name_category_consensus
+1994,UC-FAS-806634,category,,Fashion,exact_name_category_consensus
+1999,UC-FOO-916610,category,,Footwear,exact_name_category_consensus
+2008,UC-FAS-826342,category,,Fashion,exact_name_category_consensus
+2035,UC-FOO-212862,category,,Footwear,exact_name_category_consensus
+2087,UC-ELE-367475,category,,Electronics,exact_name_category_consensus
+2104,UC-FOO-831028,category,,Footwear,exact_name_category_consensus
+2114,UC-FOO-134809,category,,Footwear,exact_name_category_consensus
+2122,UC-BEA-226189,category,,Beauty & Personal Care,exact_name_category_consensus
+2141,UC-ELE-174613,category,,Electronics,exact_name_category_consensus
+2145,UC-FAS-610051,category,,Fashion,exact_name_category_consensus
+2160,UC-FAS-822893,category,,Fashion,exact_name_category_consensus
+2163,UC-FOO-367195,category,,Footwear,exact_name_category_consensus
+2166,UC-ELE-077972,category,,Electronics,exact_name_category_consensus
+2233,UC-FAS-003464,category,,Fashion,exact_name_category_consensus
+2256,UC-FAS-664847,category,,Fashion,exact_name_category_consensus
+2283,UC-ELE-556367,category,,Electronics,exact_name_category_consensus
+2284,UC-ELE-849490,category,,Electronics,exact_name_category_consensus
+2309,UC-BEA-980375,category,,Beauty & Personal Care,exact_name_category_consensus
+2314,UC-BEA-764306,category,,Beauty & Personal Care,exact_name_category_consensus
+2321,UC-ELE-963485,category,,Electronics,exact_name_category_consensus
+2373,UC-BEA-247572,category,,Beauty & Personal Care,exact_name_category_consensus
+2380,UC-ELE-381244,category,,Electronics,exact_name_category_consensus
+2383,UC-HOM-643178,category,,Home & Kitchen,exact_name_category_consensus
+2433,UC-HOM-743075,category,,Home & Kitchen,exact_name_category_consensus
+2453,UC-FAS-191424,category,,Fashion,exact_name_category_consensus
+2455,UC-BEA-477868,category,,Beauty & Personal Care,exact_name_category_consensus
+2461,UC-HOM-264417,category,,Home & Kitchen,exact_name_category_consensus
+2468,UC-BEA-703569,category,,Beauty & Personal Care,exact_name_category_consensus
+2487,UC-FAS-379162,category,,Fashion,exact_name_category_consensus
+2490,UC-FOO-172118,category,,Footwear,exact_name_category_consensus
+2509,UC-FOO-975685,category,,Footwear,exact_name_category_consensus
+2528,UC-ELE-407915,category,,Electronics,exact_name_category_consensus
+2542,UC-BEA-554101,category,,Beauty & Personal Care,exact_name_category_consensus
+2545,UC-ELE-661067,category,,Electronics,exact_name_category_consensus
+2556,UC-HOM-538922,category,,Home & Kitchen,exact_name_category_consensus
+2557,UC-ELE-747064,category,,Electronics,exact_name_category_consensus
+2559,UC-FAS-521713,category,,Fashion,exact_name_category_consensus
+2575,UC-BEA-885965,category,,Beauty & Personal Care,exact_name_category_consensus
+2581,UC-BEA-414464,category,,Beauty & Personal Care,exact_name_category_consensus
+2594,UC-BEA-753891,category,,Beauty & Personal Care,exact_name_category_consensus
+2603,UC-BEA-135346,category,,Beauty & Personal Care,exact_name_category_consensus
+2626,UC-HOM-535393,category,,Home & Kitchen,exact_name_category_consensus
+2640,UC-BEA-949265,category,,Beauty & Personal Care,exact_name_category_consensus
+2660,UC-FAS-608615,category,,Fashion,exact_name_category_consensus
+2666,UC-HOM-950432,category,,Home & Kitchen,exact_name_category_consensus
+2676,UC-FOO-557541,category,,Footwear,exact_name_category_consensus
+2688,UC-FAS-320620,category,,Fashion,exact_name_category_consensus
+2705,UC-BEA-322528,category,,Beauty & Personal Care,exact_name_category_consensus
+2746,UC-ELE-193627,category,,Electronics,exact_name_category_consensus
+2777,UC-HOM-877363,category,,Home & Kitchen,exact_name_category_consensus
+2784,UC-FOO-022041,category,,Footwear,exact_name_category_consensus
+2798,UC-HOM-467510,category,,Home & Kitchen,exact_name_category_consensus
+2824,UC-FOO-682159,category,,Footwear,exact_name_category_consensus
+2828,UC-HOM-855831,category,,Home & Kitchen,exact_name_category_consensus
+2843,UC-FAS-181918,category,,Fashion,exact_name_category_consensus
+2871,UC-BEA-870393,category,,Beauty & Personal Care,exact_name_category_consensus
+2920,UC-FAS-988564,category,,Fashion,exact_name_category_consensus
+2924,UC-FOO-951618,category,,Footwear,exact_name_category_consensus
+2946,UC-ELE-855581,category,,Electronics,exact_name_category_consensus
+2950,UC-ELE-099162,category,,Electronics,exact_name_category_consensus
+2953,UC-FAS-902794,category,,Fashion,exact_name_category_consensus
+2977,UC-BEA-919328,category,,Beauty & Personal Care,exact_name_category_consensus
+2978,UC-BEA-928055,category,,Beauty & Personal Care,exact_name_category_consensus
+3026,UC-BEA-621302,category,,Beauty & Personal Care,exact_name_category_consensus
+3043,UC-HOM-954040,category,,Home & Kitchen,exact_name_category_consensus
+3058,UC-HOM-348378,category,,Home & Kitchen,exact_name_category_consensus
+3059,UC-HOM-115852,category,,Home & Kitchen,exact_name_category_consensus
+3066,UC-FAS-927992,category,,Fashion,exact_name_category_consensus
+3077,UC-FOO-385936,category,,Footwear,exact_name_category_consensus
+3126,UC-HOM-765622,category,,Home & Kitchen,exact_name_category_consensus
+3140,UC-HOM-326684,category,,Home & Kitchen,exact_name_category_consensus
+4809,UC-HOM-326684,category,,Home & Kitchen,exact_name_category_consensus
+3151,UC-ELE-728039,category,,Electronics,exact_name_category_consensus
+3176,UC-HOM-142017,category,,Home & Kitchen,exact_name_category_consensus
+3180,UC-BEA-451666,category,,Beauty & Personal Care,exact_name_category_consensus
+3186,UC-ELE-512030,category,,Electronics,exact_name_category_consensus
+3200,UC-FAS-623470,category,,Fashion,exact_name_category_consensus
+3212,UC-HOM-877001,category,,Home & Kitchen,exact_name_category_consensus
+3253,UC-BEA-843469,category,,Beauty & Personal Care,exact_name_category_consensus
+3266,UC-ELE-579671,category,,Electronics,exact_name_category_consensus
+3310,UC-FOO-367228,category,,Footwear,exact_name_category_consensus
+5044,UC-FOO-367228,category,,Footwear,exact_name_category_consensus
+3321,UC-ELE-492645,category,,Electronics,exact_name_category_consensus
+3347,UC-HOM-578490,category,,Home & Kitchen,exact_name_category_consensus
+3370,UC-BEA-470597,category,,Beauty & Personal Care,exact_name_category_consensus
+3374,UC-FOO-108875,category,,Footwear,exact_name_category_consensus
+3390,UC-FAS-163644,category,,Fashion,exact_name_category_consensus
+3393,UC-HOM-203592,category,,Home & Kitchen,exact_name_category_consensus
+3396,UC-ELE-292145,category,,Electronics,exact_name_category_consensus
+3435,UC-ELE-937556,category,,Electronics,exact_name_category_consensus
+3457,UC-FOO-016640,category,,Footwear,exact_name_category_consensus
+3458,UC-ELE-139861,category,,Electronics,exact_name_category_consensus
+3473,UC-FAS-968391,category,,Fashion,exact_name_category_consensus
+3498,UC-HOM-113322,category,,Home & Kitchen,exact_name_category_consensus
+3506,UC-FOO-162275,category,,Footwear,exact_name_category_consensus
+4783,UC-FOO-162275,category,,Footwear,exact_name_category_consensus
+3511,UC-FOO-878668,category,,Footwear,exact_name_category_consensus
+3514,UC-FOO-403721,category,,Footwear,exact_name_category_consensus
+3527,UC-FOO-089209,category,,Footwear,exact_name_category_consensus
+3584,UC-FOO-800265,category,,Footwear,exact_name_category_consensus
+3599,UC-FAS-595579,category,,Fashion,exact_name_category_consensus
+3645,UC-FAS-594529,category,,Fashion,exact_name_category_consensus
+3650,UC-HOM-578053,category,,Home & Kitchen,exact_name_category_consensus
+3696,UC-BEA-787047,category,,Beauty & Personal Care,exact_name_category_consensus
+3698,UC-FOO-506751,category,,Footwear,exact_name_category_consensus
+3700,UC-ELE-563411,category,,Electronics,exact_name_category_consensus
+3737,UC-ELE-957481,category,,Electronics,exact_name_category_consensus
+3758,UC-ELE-149261,category,,Electronics,exact_name_category_consensus
+3779,UC-ELE-254369,category,,Electronics,exact_name_category_consensus
+3788,UC-FAS-100452,category,,Fashion,exact_name_category_consensus
+3790,UC-BEA-098350,category,,Beauty & Personal Care,exact_name_category_consensus
+3792,UC-BEA-868297,category,,Beauty & Personal Care,exact_name_category_consensus
+3803,UC-FAS-697725,category,,Fashion,exact_name_category_consensus
+3807,UC-ELE-419900,category,,Electronics,exact_name_category_consensus
+3813,UC-FAS-755498,category,,Fashion,exact_name_category_consensus
+3815,UC-HOM-790938,category,,Home & Kitchen,exact_name_category_consensus
+3824,UC-ELE-452709,category,,Electronics,exact_name_category_consensus
+3856,UC-FAS-256363,category,,Fashion,exact_name_category_consensus
+3869,UC-ELE-797478,category,,Electronics,exact_name_category_consensus
+3884,UC-ELE-489969,category,,Electronics,exact_name_category_consensus
+3885,UC-FOO-332215,category,,Footwear,exact_name_category_consensus
+3901,UC-FAS-557127,category,,Fashion,exact_name_category_consensus
+3903,UC-ELE-750253,category,,Electronics,exact_name_category_consensus
+3928,UC-HOM-236589,category,,Home & Kitchen,exact_name_category_consensus
+3932,UC-HOM-582128,category,,Home & Kitchen,exact_name_category_consensus
+3959,UC-FAS-236252,category,,Fashion,exact_name_category_consensus
+3963,UC-BEA-003369,category,,Beauty & Personal Care,exact_name_category_consensus
+3966,UC-ELE-109008,category,,Electronics,exact_name_category_consensus
+3972,UC-BEA-416608,category,,Beauty & Personal Care,exact_name_category_consensus
+4030,UC-ELE-201476,category,,Electronics,exact_name_category_consensus
+4037,UC-FAS-655326,category,,Fashion,exact_name_category_consensus
+4040,UC-BEA-610291,category,,Beauty & Personal Care,exact_name_category_consensus
+4051,UC-FOO-069357,category,,Footwear,exact_name_category_consensus
+4076,UC-FAS-027633,category,,Fashion,exact_name_category_consensus
+4077,UC-BEA-499742,category,,Beauty & Personal Care,exact_name_category_consensus
+4094,UC-FAS-556250,category,,Fashion,exact_name_category_consensus
+4098,UC-BEA-590789,category,,Beauty & Personal Care,exact_name_category_consensus
+4132,UC-FOO-168606,category,,Footwear,exact_name_category_consensus
+4152,UC-ELE-310282,category,,Electronics,exact_name_category_consensus
+4189,UC-ELE-128321,category,,Electronics,exact_name_category_consensus
+4221,UC-FAS-112655,category,,Fashion,exact_name_category_consensus
+5086,UC-FAS-112655,category,,Fashion,exact_name_category_consensus
+4246,UC-HOM-985649,category,,Home & Kitchen,exact_name_category_consensus
+4256,UC-ELE-245218,category,,Electronics,exact_name_category_consensus
+4303,UC-BEA-516044,category,,Beauty & Personal Care,exact_name_category_consensus
+4318,UC-FOO-898735,category,,Footwear,exact_name_category_consensus
+4342,UC-ELE-392447,category,,Electronics,exact_name_category_consensus
+4368,UC-FOO-675081,category,,Footwear,exact_name_category_consensus
+4371,UC-BEA-324704,category,,Beauty & Personal Care,exact_name_category_consensus
+4377,UC-BEA-159747,category,,Beauty & Personal Care,exact_name_category_consensus
+4396,UC-FOO-711142,category,,Footwear,exact_name_category_consensus
+4430,UC-FOO-155885,category,,Footwear,exact_name_category_consensus
+4468,UC-HOM-267387,category,,Home & Kitchen,exact_name_category_consensus
+4504,UC-HOM-898662,category,,Home & Kitchen,exact_name_category_consensus
+4526,UC-ELE-088563,category,,Electronics,exact_name_category_consensus
+4533,UC-BEA-426144,category,,Beauty & Personal Care,exact_name_category_consensus
+4539,UC-FAS-463512,category,,Fashion,exact_name_category_consensus
+4546,UC-HOM-379943,category,,Home & Kitchen,exact_name_category_consensus
+4552,UC-BEA-249469,category,,Beauty & Personal Care,exact_name_category_consensus
+4584,UC-FAS-072876,category,,Fashion,exact_name_category_consensus
+4593,UC-FOO-829539,category,,Footwear,exact_name_category_consensus
+4599,UC-BEA-543951,category,,Beauty & Personal Care,exact_name_category_consensus
+4606,UC-ELE-759528,category,,Electronics,exact_name_category_consensus
+4630,UC-ELE-777797,category,,Electronics,exact_name_category_consensus
+4669,UC-ELE-870809,category,,Electronics,exact_name_category_consensus
+4753,UC-FAS-572806,category,,Fashion,exact_name_category_consensus
+4814,UC-ELE-674760,category,,Electronics,exact_name_category_consensus
+4823,UC-HOM-350467,category,,Home & Kitchen,exact_name_category_consensus
+4870,UC-ELE-666276,category,,Electronics,exact_name_category_consensus
+4916,UC-FAS-359775,category,,Fashion,exact_name_category_consensus
+4941,UC-HOM-703776,category,,Home & Kitchen,exact_name_category_consensus
+4988,UC-FAS-027048,category,,Fashion,exact_name_category_consensus
+5003,UC-HOM-087874,category,,Home & Kitchen,exact_name_category_consensus
+5018,UC-HOM-716048,category,,Home & Kitchen,exact_name_category_consensus
+5064,UC-ELE-863102,category,,Electronics,exact_name_category_consensus
+5074,UC-FOO-961541,category,,Footwear,exact_name_category_consensus
+5095,UC-BEA-728798,category,,Beauty & Personal Care,exact_name_category_consensus
+5105,UC-ELE-285618,category,,Electronics,exact_name_category_consensus
+5128,UC-ELE-066908,category,,Electronics,exact_name_category_consensus
+5147,UC-ELE-501533,category,,Electronics,exact_name_category_consensus

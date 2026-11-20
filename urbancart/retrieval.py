@@ -28,12 +28,13 @@ def search_text(text):
 def product_doc(product):
     fields = []
     for key in ("name", "brand", "category", "rating", "description"):
-        if product[key] is not None:
+        if product[key] is not None and key not in product.get("imputed_fields", {}):
             fields.append(f"{key}: {product[key]}")
     if product["price_paise"] is not None:
         fields.append(f"price: INR {product['price_paise'] / 100:.2f}")
     return {"id": product["sku"], "kind": "product", "title": product["name"] or product["sku"],
             "file": "urbancart_product_catalog_raw.csv", "rows": product["source_rows"],
+            "imputed_fields": product.get("imputed_fields", {}),
             "text": "; ".join(fields)}
 
 
@@ -90,13 +91,24 @@ class Retrieval:
         }, indent=2), encoding="utf-8")
 
     def search(self, query, kind, limit=5, usage=None):
+        return self.search_many(query, [kind], limit, usage)[kind]
+
+    def search_many(self, query, kinds, limit=5, usage=None):
+        if not kinds:
+            return {}
+        text = search_text(query)
         if self.vector:
-            vector = self.provider.embed([search_text(query)], usage if usage is not None else [])[0]
-            result = self.vector[kind].query(query_embeddings=[vector], n_results=limit, include=[])
-            return [self.by_id[key] for key in result["ids"][0]]
-        model, matrix = self.lexical[kind]
-        scores = (matrix @ model.transform([search_text(query)]).T).toarray().ravel()
-        return [self.docs[kind][i] for i in scores.argsort()[::-1][:limit] if scores[i] > 0]
+            vector = self.provider.embed([text], usage if usage is not None else [])[0]
+        matches = {}
+        for kind in kinds:
+            if self.vector:
+                result = self.vector[kind].query(query_embeddings=[vector], n_results=limit, include=[])
+                matches[kind] = [self.by_id[key] for key in result["ids"][0]]
+            else:
+                model, matrix = self.lexical[kind]
+                scores = (matrix @ model.transform([text]).T).toarray().ravel()
+                matches[kind] = [self.docs[kind][i] for i in scores.argsort()[::-1][:limit] if scores[i] > 0]
+        return matches
 
     def match_names(self, query):
         query = normalize(search_text(query))

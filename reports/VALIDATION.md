@@ -61,3 +61,5 @@ full-run failure remains in the reported totals. After this change, tests/test_l
 18 November review fixes: existing full suite 21 passed; expanded live regression suite 11 passed, including the new six-finding regression. No fresh 60-case accuracy claim is made.
 
 Updated notebook: all 12 code cells executed successfully after rebuilding the interrupted derived index. Runner now allows 900 seconds per output wait for initial indexing.
+
+20 November: 23 automated tests passed. A controlled retrieval check confirmed that two collections share one query embedding. The processed category rule was checked by withholding each applicable known category in turn. The hosted trace was read back successfully. See [the follow-up report](DQ_LATENCY_FOLLOWUP.md) for the model comparison and open requirements.
